@@ -1,0 +1,193 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--Css para el datables -->
+  <link rel="stylesheet" href="  https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<!--Css para el datables -->
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Laureate Contract Alert</title>
+</head>
+  <body>
+    
+    <!-- Codigo para el Navbar-->
+    <nav class="#212121 grey darken-4">
+       <div class="nav-wrapper">
+        <div class="container">
+          <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+        </div>
+               <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+       </div>
+    </nav>
+    <!--Fin Codigo para el Navbar-->
+      <br/><br/><br/>
+        @{
+          string mensaje = "";
+          int nivelmensaje = 0;
+          
+          if(ViewData["Mensaje"] != null &&  ViewData["NivelMensaje"] !=null)
+          {
+              mensaje = (string)ViewData["Mensaje"];
+              nivelmensaje = (int)ViewData["NivelMensaje"];                   
+          }   
+          
+          if (nivelmensaje == 2)
+          {
+                 <script>swal({
+                 title: "Good job!",
+                 text: "Generation Action Rightly!",
+                 type: "success",
+                 timer: 5000
+                 })
+                 </script>                                                                                                         
+          }
+          else
+            if (nivelmensaje == 3)
+            {
+              <script>swal({
+              title: "Oops...",
+              text: "An error occurred while performing this action!",
+              type: "error",
+              timer: 5000
+              })
+              </script>          
+            }                      
+       }
+      <div class="container">
+         <center>
+            <h4><u>Registered providers in the system</u></h4>
+         </center>
+      </div>
+       
+      <br />
+      <div class="container">
+       <div class="row">
+        <div class="col s12">
+            <table class="striped responsive-table bordered centered" id="date-table">
+              <thead>
+                <tr class="active">
+                  <th >Name</th>
+                  <th >Mail</th>
+                  <th >Contact name</th>
+                  <th >Phone Contact</th>
+                  <th >Location</th>
+                  <th >Description</th>
+                  <th >Type Provider</th>
+                  <th >Edition</th>
+               </tr>
+              </thead>
+
+              <tbody>
+      @{
+          List<SP_selectAllProvider_Result> AllProvider = (List<SP_selectAllProvider_Result>)ViewData["AllProvider"];
+          foreach (SP_selectAllProvider_Result provider in AllProvider)
+          {
+               <tr> 
+                 <td>@provider.Nombre_Proveedor</td>                         
+                 <td>@provider.Correo_Proveedor</td> 
+                 <td>@provider.Nombre_Contacto</td>
+                 <td>@provider.Telefono_Contacto</td>
+                 <td>@provider.Ubicacion</td>
+                 <td>@provider.Descripcion</td>
+                 <td>@provider.Expr1</td>
+                 <td>
+                   <div class="chip"><a href="../BackEnd/EditarProveedor?ProveedorId=@provider.ProveedorId">Edit</a><a>||</a><a onclick="Verificar(@provider.ProveedorId)">Delete</a></div>
+                 </td>   
+               </tr>                  
+          }
+       }             
+              </tbody>
+          </table>
+
+            
+ <!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+            <br /><br />
+     <div class="row">
+        <div class="col s12">
+            <center>
+                <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </center>          
+        </div>
+     </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+
+        </div>
+      </div>
+    </div>
+
+<!--Se hace la importacion de las librerias para usar materialize, bootstrap y jquery-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--Fin bloque de codigo donde se hace la importacion de las librerias para usar materialize, bootstrap y jquery-->
+ 
+<!-- se importan las librerias que se usan unicamente para la tablas, estas librerias le agregan el funcionamiento de la paginacion, la busqueda. el ordenado y la cantidad
+de datos que se van a mostrar, 10, 20, 50, 100, etc -->
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<!-- Fin del codigo donde se importan las librerias que se usan unicamente para la tablas, estas librerias le agregan el funcionamiento de la paginacion, la busqueda. el ordenado y la cantidad
+de datos que se van a mostrar, 10, 20, 50, 100, etc -->
+                 
+<!--Este Script sirve para pedirle una confirmacion al usuario si realmente desea eliminar el contrato o no, se usa la libreria sweetAlert para todas las alertas del sistema,
+    esto porque tiene un diseño agradable y bonito y poder darle un toque diferente al sistema, esta libreria hace la misma funcionalidad que un Alert normal de javascript, solo que esta
+    libreria es mas vistosa y tiene mejor presentacion. -->
+  
+<script>
+    function Verificar(valor) {
+        swal(
+             {
+                 title: "Are you sure?",
+                 text: "You will not be able to recover this contract!",
+                 type: "warning", showCancelButton: true,
+                 confirmButtonColor: "#DD6B55",
+                 confirmButtonText: "Yes, delete it!",
+                 cancelButtonText: "No, cancel plx!",
+                 closeOnConfirm: false,
+                 closeOnCancel: false
+             },
+             function (isConfirm) {
+                 if (isConfirm) {
+                     //si el usuario confirma que desea eliminar el contrato, se hace una redireccion al contrator BackEnd y a la accion Eliminar contrato, pasandole como parametro
+                     //El id del contrato para que elimine unicamente el contrato que el selecciono
+                     var path = "../BackEnd/EliminarProveedor?ProveedorId=" + valor;
+                     swal("Deleted!", "This Provider has been deleted.", "success");
+                     location.href = path;
+
+                 }
+                 else {
+                     swal("Cancelled", "This Provider is safe :)", "error");
+                 }
+             });
+    }
+</script>    
+  <!--Fin Script sirve para pedirle una confirmacion al usuario si realmente desea eliminar el contrato o no, se usa la libreria sweetAlert para todas las alertas del sistema,
+  esto porque tiene un diseño agradable y bonito y poder darle un toque diferente al sistema, esta libreria hace la misma funcionalidad que un Alert normal de javascript, solo que esta
+  libreria es mas vistosa y tiene mejor presentacion. -->
+
+<!-- Script para la tabla, esto le agrega la funcionalidad de busqueda por cualquier parametro, paginacion, ordenacion, etc -->
+<script>
+    $(document).ready(function () {
+        $('#date-table').dataTable({
+            "bPaginate": true,
+            "bLengthChange": false,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "bAutoWidth": true,
+            "iDisplayStart": 0,
+            "iDisplayLength": 10,
+            responsive: true
+        });
+    });
+</script>
+<!--Fin Script para la tabla, esto le agrega la funcionalidad de busqueda por cualquier parametro, paginacion, ordenacion, etc -->
+
+  </body>
+</html>

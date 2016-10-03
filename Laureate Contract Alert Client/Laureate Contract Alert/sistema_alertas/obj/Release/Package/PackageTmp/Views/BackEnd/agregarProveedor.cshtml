@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Add New Provider</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+      @{
+        string mensaje = "";
+        int nivelmensaje = 0;
+          
+        if(ViewData["Mensaje"] != null &&  ViewData["NivelMensaje"] !=null)
+        {
+            mensaje = (string)ViewData["Mensaje"];
+            nivelmensaje = (int)ViewData["NivelMensaje"];                   
+        }
+           
+        if (nivelmensaje == 2)
+        {
+           <script>swal({
+           title: "Good job!",
+           text: "Supplier Added Rightly!",
+           type: "success",
+           timer: 5000
+           })
+           </script>                                                                                                         
+        }
+        else
+          if (nivelmensaje == 3)
+          {
+            <script>swal({
+            title: "Oops...",
+            text: "Error in inserting!",
+            type: "error",
+            timer: 5000
+            })
+             </script>          
+          }                      
+       }
+
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="post" action="../BackEnd/agregarProveedor" onsubmit='return validar()'>
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Creating new provider</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s5">
+              <input id="Name_Provider" name="Name_Provider" type="text" class="validate" required>
+               <label for="Name_Provider" class="flow-text">Name Provider<span style="color:red;"> *</span></label>
+            </div>
+
+<!-- Codigo que mostrara nombre del contrato-->
+            <div class="input-field col s5">
+              <input id="email_Provider" name="email_Provider" type="email" class="validate" required>
+              <label for="email_Provider" class="flow-text">Mail Provider<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s10">
+              <select id="Provider" name="Provider" multiple>
+                <option value="" disabled selected class="flow-text">Select</option>
+                   @{
+                      List<string> typeProvider = (List<string>)ViewData["TypeProvider"];
+                     int contador =1;
+                     foreach (string tiposproveedor in typeProvider)
+                     {    
+                        <option value="@contador"  class="flow-text">@tiposproveedor</option>
+                         contador++;
+                     }
+                 }
+              </select>
+              <label class="flow-text">Type Provider<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <input id="Name_Contact" name="Name_Contact" type="text" class="validate">
+                <label for="Name_Contact" class="flow-text">Primary Contact Name Supplier</label>
+            </div>
+
+            <div class="input-field col s5">
+              <input id="Phone_Contact" name="Phone_Contact" type="text" pattern="[0-9+-\s]{8,20}" title="No letters are allowed in this field">
+              <label for="Phone_Contact" class="flow-text">Phone Contact</label>
+            </div>
+
+          </div>
+
+          <div class="row">
+              <div class="input-field col s10">
+                <textarea id="Description_Ubication"  name="Description_Ubication" placeholder="Description supplier location" class="materialize-textarea"></textarea>
+                <label for="Description_Ubication" class="flow-text">Location Provider</label>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s10">
+                <textarea id="Description" name="Description_Provider" length="500" placeholder="A brief description about the provider" class="materialize-textarea"></textarea>
+                <label for="textarea1" class="flow-text">Description</label>
+              </div>
+          </div>
+<br><br>
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                 <a class="waves-effect waves-light btn" href="../BackEnd/ModificarBorrador">Return to Drafts</a>
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Supplier Registration</h5></center>
+                <p ALIGN=justify>The vendor management module allows you to register new vendors into the system in order to maintain an order of all external suppliers who provide a service or 
+                sell some product to the company.<br /><br /> Vendors are divided into two types: 1) Manufacturing Suppliers 2) Distributing Suppliers.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+
+<script type='text/javascript'>
+function validar()
+{   
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Name_Provider').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+introduzca al menos 10 caracteres.*/
+if(document.getElementById('email_Provider').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+}
+
+  return todo_correcto;
+}
+
+</script>
+
+
+</body>
+</html>

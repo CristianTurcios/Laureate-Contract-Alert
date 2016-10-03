@@ -1,0 +1,494 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Detallles Contrato</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<div class="container">
+  <br>
+    <div class="row">
+   
+        
+      <div class="col s3">
+        <div class="collection">
+        @{
+            List<SP_selectAllDetailsContract_Result> DetailsContract2 = (List<SP_selectAllDetailsContract_Result>)ViewData["detailsContract"];
+
+            foreach (SP_selectAllDetailsContract_Result detailsContract in DetailsContract2)
+            {
+              <a href="#!" class="collection-item active">General description:</a> 
+              <a href="#!" class="collection-item ">Name: @detailsContract.Nombre_Contrato</a>
+              <a href="#!" class="collection-item">State Contract: @detailsContract.Descripcion</a>
+              <a href="#!" class="collection-item">Type of Expenses: @detailsContract.Gastos</a>
+              <a href="#!" class="collection-item">Type of contract: @detailsContract.Nombre_Tipo_Contrato</a>
+              <a href="#!" class="collection-item ">Due date: @detailsContract.Fecha_Finalizacion.ToString("d")</a>
+              <a href="#!" class="collection-item ">Payment method: @detailsContract.Nombre_Metodo_Pago</a>
+              <a href="#!" class="collection-item" id="CostoTotal2">@detailsContract.Costo_Total</a>
+              <a href="#!" class="collection-item">Payment type: @detailsContract.Nombre_Tipo_Pago</a>
+              <a href="#!" class="collection-item" id="CostoPorPago2"> @detailsContract.Costo_Por_Cada_Pago</a>
+              <a href="#!" class="collection-item">Renewal Payment Date: @detailsContract.Fecha_Renovacion_Pago.ToString("d")</a>
+              <a href="#!" class="collection-item">Creation Date in the system: @detailsContract.Fecha_Creacion.ToString("d")</a>
+            }
+         }
+          
+        </div>
+      </div>
+
+      <div class="col s6">
+       <div class="collection"><a href="#!" class="collection-item active"><center>Details:</center></a> </div>
+        <table class="bordered striped responsive-table">
+          <thead>
+          </thead>
+
+            <tbody>
+              @{
+                  List<SP_selectAllDetailsContract_Result> DetailsContract = (List<SP_selectAllDetailsContract_Result>)ViewData["detailsContract"];
+                  foreach (SP_selectAllDetailsContract_Result detailsContract in DetailsContract)
+                  {
+                 <tr>  
+                  <td></td>
+                  <td>Contract Number:@detailsContract.Numero_Contrato</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Name Contract:@detailsContract.Nombre_Contrato</td>
+                  <td></td>
+                 </tr>
+                 <tr>  
+                  <td></td>
+                  <td>Service Contract Number:@detailsContract.Numero_Servicio_Contrato</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Business Unit:@detailsContract.Nombre_Unidad_Negocio</td>
+                  <td></td>
+                 </tr>
+                 <tr>
+                  <td></td>
+                  <td>Contract type:@detailsContract.Nombre_Tipo_Contrato</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>State Contract: @detailsContract.Descripcion</td>
+                  <td></td>
+                 </tr>
+                  }
+                 }
+                                      
+                 <tr>
+                  <td></td>
+                @{
+                    List<SP_selectProviderById_Result> ProviderManufacturing = (List<SP_selectProviderById_Result>)ViewData["ProviderManufacturingContract"];
+                    foreach (SP_selectProviderById_Result providerManufacturing in ProviderManufacturing)
+                    {
+                    <td>Supplier Manufacturing:<a href="../Main/DetallesProveedor?ProveedorId=@providerManufacturing.ProveedorId">@providerManufacturing.Nombre_Proveedor</a> </td>
+                    }
+                 }
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                 @{
+                     List<SP_selectProviderById_Result> ProviderVendor = (List<SP_selectProviderById_Result>)ViewData["ProviderVendorContract"];
+                     foreach (SP_selectProviderById_Result providervendor in ProviderVendor)
+                     {
+                      <td>Seller supplier:<a href="../Main/DetallesProveedor?ProveedorId=@providervendor.ProveedorId">@providervendor.Nombre_Proveedor</a></td>
+                     }
+                  }
+                 
+                  <td></td>
+                 </tr>
+              <tr>
+                <td></td>
+                @{                   
+                    List<SP_selectUserById_Result> UserApprover = (List<SP_selectUserById_Result>)ViewData["UserApproverContract"];
+
+                    foreach (SP_selectUserById_Result approver in UserApprover)
+                    {
+                      <td>Approver:<a href="../Main/DetallesUsuario?UserId=@approver.UsuarioId">@approver.Nombre @approver.Apellido</a></td>
+                        
+                    }
+                  }              
+                <td></td>
+                <td></td>
+                <td></td>
+                @{                   
+                    List<SP_selectUserById_Result> UserAdministrator = (List<SP_selectUserById_Result>)ViewData["UserAdministratorContract"];
+
+                    foreach (SP_selectUserById_Result administrator in UserAdministrator)
+                    {
+                      <td>Administrator:<a href="../Main/DetallesUsuario?UserId=@administrator.UsuarioId">@administrator.Nombre @administrator.Apellido</a></td>                       
+                    }
+                  }               
+                <td></td>
+              </tr>
+              @{
+                  List<SP_selectAllDetailsContract_Result> DetailsContract1 = (List<SP_selectAllDetailsContract_Result>)ViewData["detailsContract"];
+                  foreach (SP_selectAllDetailsContract_Result detailsContract in DetailsContract1)
+                  {
+
+              <tr>
+                <td></td>
+                <td id="CostoTotal">@detailsContract.Costo_Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Payment type:@detailsContract.Nombre_Tipo_Pago</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td id="CostoPorPago">@detailsContract.Costo_Por_Cada_Pago</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Renewal Date Payment:@detailsContract.Fecha_Renovacion_Pago.ToString("d")</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                 @{ 
+                      if (detailsContract.Garantia.Equals(""))
+                   {
+                        <td>Warranty: N/A</td>
+                   }
+                   else
+                   {
+                       <td>Warranty: @detailsContract.Garantia</td>
+                   }               
+                 }                  
+                <td></td>
+                <td></td>
+                <td></td>
+                @{ 
+                   if (detailsContract.Fecha_Vencimiento_Garantia.ToString("d").Equals("1/1/1901"))
+                   {
+                         <td>Guarantee Maturity Date: N/A</td>
+                   }
+                   else
+                   {
+                        <td>Guarantee Maturity Date: @detailsContract.Fecha_Vencimiento_Garantia.ToString("d")</td>
+                   }               
+                 }              
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                @{ 
+                   if (detailsContract.Cantidad_Licencias ==0)
+                   {
+                        <td>Number Licenses: N/A</td>
+                   }
+                   else
+                   {
+                       <td>Number Licenses: @detailsContract.Cantidad_Licencias</td>
+                   }               
+                 }                
+                <td></td>
+                <td></td>
+                <td></td>
+                 @{ 
+                      if (detailsContract.Codigo_Presupuestario2016.Equals("0"))
+                   {
+                        <td>Budgetary code Purchase Order: N/A </td>
+                   }
+                   else
+                   {
+                       <td>Budgetary code Purchase Order: @detailsContract.Codigo_Presupuestario2016 </td>
+                   }               
+                 }  
+                
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Date Start Contract: @detailsContract.Fecha_Inicio.ToString("d")</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Date End Contract:@detailsContract.Fecha_Finalizacion.ToString("d")</td>
+                <td></td>
+              </tr>
+                <tr>
+                <td></td>
+                <td>Payment method: @detailsContract.Nombre_Metodo_Pago</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                @{ 
+                   if (detailsContract.Ultimos_Digitos_Tarjeta.Equals("0"))
+                   {
+                        <td>Last Digit Card: N/A</td>
+                   }
+                   else
+                   {
+                        <td>Last Digit Card:@detailsContract.Ultimos_Digitos_Tarjeta</td>
+                   }               
+                 }            
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Name appointee to card: @detailsContract.Nombre_Persona_Asignada_A_Tarjeta</td>
+                <td></td>
+                <td></td>
+                <td></td>               
+                 @{ 
+                    if (detailsContract.Fecha_Vencimiento_Tarjeta.ToString("d").Equals("1/1/2016"))
+                    {
+                        <td>Card Expiration Date: N/A</td>
+                    }
+                    else
+                    {
+                        <td>Card Expiration Date:  @detailsContract.Fecha_Vencimiento_Tarjeta.ToString("d")</td>
+                    }               
+                  }
+                <td></td>
+              </tr>    
+              <tr>
+                <td></td>
+                <td>Attached files: <a   href="../Main/downloadAdjuntos?path=C:\Uploads\@detailsContract.Direccion_Archivo">@detailsContract.Direccion_Archivo</a>   </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                @{ 
+                   if (detailsContract.Detalles_contrato.Equals(""))
+                   {
+                        <td>Description: N/A</td>
+                   }
+                   else
+                   {
+                        <td>Description: @detailsContract.Detalles_contrato</td>
+                   }               
+                 }
+                
+                <td></td>
+              </tr>                
+                  }
+              }                
+            </tbody>
+          </table>
+
+          <div class="row">
+            <br><br>
+            <center>
+              <a class="waves-effect waves-light btn" href="../Main/main">Back to Contracts</a>
+            </center>
+          </div>
+      </div>
+
+      <div class="col s3">
+        <div class="collection" id="Productos">
+        @{
+            List<SP_selectAllDetailsContract_Result> DetailsContract3 = (List<SP_selectAllDetailsContract_Result>)ViewData["detailsContract"];
+
+            foreach (SP_selectAllDetailsContract_Result detailsContract in DetailsContract2)
+            {
+               <input id="pig" name="pig" type="text" value="@detailsContract.Detalles_Producto" style="display:none">
+            }
+         }      
+           <a href="#!" class="collection-item active">Associated Products A This Agreement</a>                      
+        </div>
+      </div>
+
+      <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+         <a class="btn-floating btn-large #00796b teal darken-2">
+           <i class="large material-icons">mode_edit</i>
+         </a>
+         <ul>                    
+          <li><a class="btn-floating green btn modal-trigger"    data-target="modal1" ><i class="material-icons">insert_chart</i></a></li>         
+         </ul>
+      </div>
+
+      <!-- Modal Structure --> 
+        <!-- FXEXCHANGERATE.COM EXCHANGE RATE CONVERTER START -->
+        <div style="width:480px;height:150px;background-color:#CEDFDE;" id="modal1" class="modal">
+            <div style="background-color:#1094A5;height:18px;text-align:center;width:478px; margin:2px 0px 0px 2px;">
+               <a style="color:#FFFFFF;font-size:14px;font-weight:Bold;font-family:arial;"  href="http://www.fxexchangerate.com/">Currency Converter</a>
+            </div>
+            <script type="text/javascript">
+                var fm = "USD"; var ft = "HNL"; var hb = "1094A5"; var hc = "FFFFFF"; var bb = "CEDFDE"; var bo = "1094A5"; var tz = "timezone"; var wh = "468x90"; var lg = "en";
+            </script>
+            <script type="text/javascript" src="http://www.fxexchangerate.com/converter.php"></script>
+        </div>
+        <!-- FXEXCHANGERATE.COM  EXCHANGE RATE CONVERTER END -->
+
+     <!--  <div id="modal1" class="modal">
+         <div class="modal-content">
+             <center><h4>Currency converter</h4></center>
+            <p>Select the currency of origin and destination currency and the amount to be converted so that the system generates conversion</p>
+        
+
+          <div class="row">
+            <div class="input-field col s11">
+              <select id="MonedaOrigen">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="HNL">HNL</option>
+              </select>
+              <label>Source currency</label>
+            </div>
+          </div>
+       
+          <div class="row">
+             <div class="input-field col s11">
+               <select id="MonedaDestino">
+                 <option value="" disabled selected>Choose your option</option>
+                 <option value="USD">USD</option>
+                 <option value="EUR">EUR</option>
+                 <option value="HNL">HNL</option>
+               </select>
+               <label>currency Destination</label>
+             </div>
+          </div>
+      
+          <div class="row">
+            <div class="input-field col s11">
+              <input id="Cantidad" name="Cantidad" type="text" class="validate" >
+              <label for="Cantidad" class="flow-text">Quantity</label>
+            </div>
+          </div>
+                
+          <div class="row">
+            <center><a href="javascript:CambioMoneda();" class=" modal-action modal-close waves-effect  waves-light btn">Convert</a></center>
+         </div>
+      </div>
+
+ </div> -->
+
+    </div>
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--End Import jQuery before materialize.js-->
+ <script type="text/javascript" src="../Content/js/numeral.js"></script>
+
+
+<!--Script para abrir el modal -->
+<script>
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+</script>
+<!--Fin Script para abrir el modal -->
+
+<script type="text/javascript">
+
+    //Esta funcion lo que hace es hacer el cambio de moneda. Los parametros sera, moneda de origen, moneda de destion y la cantidad a convertir
+    //Se hace una llamada via ajax para no recargar la pagina y que se muestre automaticamente al usuario al momento que el haga click
+    function CambioMoneda()
+    {
+        var monedaOrigen = document.getElementById("MonedaOrigen").value;
+        var monedaDestino = document.getElementById("MonedaDestino").value;
+        var Cantidad = document.getElementById("Cantidad").value;
+               
+        var path="https://www.google.com/finance/converter?a="+Cantidad+"&from="+monedaOrigen+"&to="+monedaDestino;
+
+        $.get(path,
+        {},
+        function (data)
+        {
+            //Esta es la parte principal del programa, en el data lo que hace es traer toda la pagina escrita en html, luego se hace un split para dividir la cadena en dos,luego se vuelve a hacer otro split para tomar
+            //solo la parte donde se encuentra la moneda que se ha hecho la conversion, y ya, asi es como se consume el api de google finance
+            var cambioMoneda = 0;
+
+            var PrimeraParteCadena=  data.split("<span class=bld>")
+            var SegundaParteCadena = PrimeraParteCadena[1].split(" "+monedaDestino+"</span>");                         
+            var cambioMoneda = numeral(SegundaParteCadena[0]).format('0,0.000');
+           
+            swal({   
+                title: "Transformed currency!",
+                text: "Conversion to " + document.getElementById("MonedaDestino").value + " is: <span style='color:#da1829'>" + cambioMoneda + " " + monedaDestino + "<span>",
+                html: true
+            });
+
+        });
+    }
+</script> 
+
+<script>
+    $(document).ready(function ()
+    {
+        var Valor = document.getElementById("CostoTotal").innerText;       
+        var Valor3 = document.getElementById("CostoPorPago").innerText;
+            
+        Valor = numeral(Valor).format('$0,0.000');
+        $("#CostoTotal").text("Total cost($):" + " " + Valor);
+
+        $("#CostoTotal2").text("Total cost($):" + " " + Valor);
+
+        Valor3 = numeral(Valor3).format('$0,0.000');
+        $("#CostoPorPago").text("Cost Of Payment($):" + " " + Valor3);
+       
+        $("#CostoPorPago2").text("Cost Of Payment($):" + " " + Valor3);
+  
+        var productos = document.getElementById("pig").value;
+    
+        var productos2 = productos.split("¡");
+        for (var i = 0; i < (productos2.length - 1) ; i++)
+        {
+            $('#Productos').append('<a href="../Main/DetallesProducto2?ProductName='+productos2[i]+'" class="collection-item">'+productos2[i]+'</a>');
+        }
+    });
+</script>
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+
+</body>
+</html>

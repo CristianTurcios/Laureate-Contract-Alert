@@ -1,0 +1,166 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Add New Business Unit</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="post" action="../BackEnd/EditarUnidadNegocio" onsubmit='return validar()' enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Business Unit Edition</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s5">
+             @{                   
+                 List<SP_SelectUnidadNegociosById_Result> BusinessUnit = (List<SP_SelectUnidadNegociosById_Result>)ViewData["businessunit"];
+                 foreach (SP_SelectUnidadNegociosById_Result businessUnit in BusinessUnit)
+                 {
+                     <input id="Business_Unit_Number" name="Business_Unit_Number" value="@businessUnit.Numero_Unidad_Negocio" type="text" class="validate" required> 
+                     <input id="UnidadNegocioId" name="UnidadNegocioId" style="display:none" value="@businessUnit.Unidad_NegocioId" type="text" class="validate" required> 
+                 }
+                    
+              }                       
+               <label for="Business_Unit_Number" class="flow-text">Number Business Unit<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              @{                                 
+                 foreach (SP_SelectUnidadNegociosById_Result businessUnit in BusinessUnit)
+                 {
+                    <input id="Business_Unit_Name" name="Business_Unit_Name" value="@businessUnit.Nombre_Unidad_Negocio" type="text" class="validate" required>
+                 }
+               }             
+              <label for="Business_Unit_Name" class="flow-text">Name Business Unit<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s10">
+              @{                                 
+                 foreach (SP_SelectUnidadNegociosById_Result businessUnit in BusinessUnit)
+                 {
+                     <input id="Previous_Business_Unit_Name" name="Previous_Business_Unit_Name" value="@businessUnit.Nombre_Previo_Unidad_Negocio" type="text" class="validate" required>
+                 }
+               }            
+              <label for="Previous_Business_Unit_Name" class="flow-text">Previous name Business Unit<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancel">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Business Registration Unit</h5></center>
+                <p ALIGN=justify>The Business Unit Registration module lets you add different business units that 
+	may need contract management.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--End Import jQuery before materialize.js-->
+
+
+
+<script type='text/javascript'>
+function validar()
+{
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Business_Unit_Number').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+introduzca al menos 10 caracteres.*/
+if(document.getElementById('Business_Unit_Name').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Previous_Business_Unit_Name').value == '')
+{
+    todo_correcto = false;
+}
+
+
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+}
+
+  return todo_correcto;
+}
+
+</script>
+
+
+</body>
+</html>

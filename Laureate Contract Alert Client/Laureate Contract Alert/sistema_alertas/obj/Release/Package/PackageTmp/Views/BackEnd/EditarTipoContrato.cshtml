@@ -1,0 +1,154 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Add Type Contract</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+       
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="post" action="../BackEnd/EditarTipoContrato" onsubmit='return validar()'>
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Edition Type Contracts</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s10">
+               @{                  
+                  List<SP_selectTypeContractById_Result> TypeContracts = (List<SP_selectTypeContractById_Result>)ViewData["typecontractid"];
+                  foreach (SP_selectTypeContractById_Result typecontract in TypeContracts)
+                  {
+                     <input id="Type_Contract" name="Type_Contract" value="@typecontract.Nombre_Tipo_Contrato" type="text" class="validate" required>
+                     <input id="TypeContractId" name="TypeContractId" style="display:none" type="text" value="@typecontract.Tipo_ContratoId" class="validate" required>
+                  }
+                }   
+             
+               <label for="Type_Contract" class="flow-text">Name Type Contract<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s10">
+               @{                                   
+                  foreach (SP_selectTypeContractById_Result typecontract in TypeContracts)
+                  {
+                     <textarea id="Description" name="Description" length="500" placeholder="A brief description about the product" class="materialize-textarea">@typecontract.Descripcion</textarea> 
+                  }                 
+                }                
+                <label for="textarea1" class="flow-text">Description</label>
+              </div>
+          </div>
+
+<br><br>
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancel">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Registration Contract Types</h5></center>
+                <p ALIGN=justify>The management record contract module allows you to register a new type of contract in the system. By default the system handles 3 types of contracts: <br /><br />
+                1) License 2) Lease 3) Maintenance. But you can add a new type of contract if needed.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+
+<!--Script para el select-->
+  <script>
+      $(document).ready(function () {
+          $('select').material_select();
+      });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+        $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+
+<script type='text/javascript'>
+    function validar() {
+        /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+      y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+        var todo_correcto = true;
+
+        if (document.getElementById('Type_Contract').value.length == '') {
+            todo_correcto = false;
+        }
+
+        /*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+        todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+        al usuario de que algunos datos ingresados no son los que esperamos.*/
+        if (!todo_correcto) {
+            swal({
+                title: "Oops...",
+                text: "Some fields are not correct or are incomplete, check them again!",
+                type: "error",
+                timer: 5000
+            })
+        }
+
+        return todo_correcto;
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Add New Producto</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="POST" action="../BackEnd/EditarProducto" onsubmit='return validar()'  enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Edition Products</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s5">
+                @{
+                    List<SP_selectProductById_Result> Products = (List<SP_selectProductById_Result>)ViewData["ProductById"];
+                    foreach (SP_selectProductById_Result product in Products)
+                   {
+                      <input id="Name_Product" name="Name_Product" type="text" value="@product.Nombre_Producto" class="validate" required>
+                      <input id="ProductId" name="ProductId" style="display:none" type="text" value="@product.ProductoId" class="validate" required>
+                      <input id="value" name="value" style="display:none"  disabled type="text" value="@product.Proveedor_ManufactureroId @product.Proveedor_DistribuidorId" class="validate" required>
+                   }
+                }               
+               <label for="Name_Product" class="flow-text">Product name<span style="color:red;"> *</span></label>
+            </div>
+
+<!-- Codigo que mostrara nombre del contrato-->
+            <div class="input-field col s4">
+               @{                    
+                   foreach (SP_selectProductById_Result product in Products)
+                   {
+                      <input id="Price2" name="Price2" type="text"  onblur="number_format();" required  pattern="[0-9.,]{1,20}"  value="@product.Precio" title="No letters are allowed in this field">
+                      <input id="Price" name="Price" type="text" value="@product.Precio" style="display:none">   
+                   }
+                }                          
+              <label for="Price2" class="flow-text">Single Price ($)<span style="color:red;"> *</span></label>
+            </div>           
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <select id="Provider_Manufacturing" name="Provider_Manufacturing" >
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                   List<SP_selectProviderManufacturing_Result> Provider_Manufacturing = (List<SP_selectProviderManufacturing_Result>)ViewData["providerManufacturing"];
+
+                   foreach (SP_selectProviderManufacturing_Result providerManufacturing in Provider_Manufacturing)
+                   {
+                      <option value="@providerManufacturing.ProveedorId" class="flow-text">@providerManufacturing.Nombre_Proveedor</option>
+                     
+                   }
+                 }
+              </select>
+              <label class="flow-text">Supplier that manufactures the product<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              <select id="Provider_Vendor" name="Provider_Vendor" >
+                <option value="" disabled selected class="flow-text">Seleccione</option>
+                   @{
+                    List<SP_selectProviderVender_Result> Provider_Vendor = (List<SP_selectProviderVender_Result>)ViewData["providervendor"];
+
+                    foreach (SP_selectProviderVender_Result providerVendor in Provider_Vendor)
+                   {
+                      <option value="@providerVendor.ProveedorId" class="flow-text">@providerVendor.Nombre_Proveedor</option>
+                     
+                   }
+                 }
+              </select>
+              <label class="flow-text">Provider that distributes the product<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s10">
+                @{                    
+                   foreach (SP_selectProductById_Result product in Products)
+                   {
+                      <textarea id="Description" name="Description" length="500" class="materialize-textarea">@product.Descripcion</textarea>
+                   }
+                }                 
+                <label for="textarea1" class="flow-text">Description</label>
+              </div>
+          </div>
+
+           <label for="Contract_Name">¿Enable file upload?</label>
+             <div class="switch">
+               <label>
+                 Off
+                  <input type="checkbox" id="switch" onClick="if (this.checked == true) { Habiliar() } else { DesHabiliar() }" >
+                  <span class="lever"></span>
+                 On
+               </label>
+             </div> 
+
+           <div class="row">
+            <div class="col s10">
+              <div class="file-field input-field">
+                @{   
+                    foreach (SP_selectProductById_Result product in Products)
+                    {
+                        if (product.Direccion_Fotografia.Equals(""))
+                        {
+                          <div class="btn">
+                            <span>File</span>
+                              <input type="file"   name="imagen">
+                           </div>
+
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" name="imagen" type="text" placeholder="Upload a file">
+                          </div>  
+                        }
+
+                        else
+                        {
+                         <div class="btn">
+                           <span>File</span>
+                             <input type="file" disabled id="Upload" name="imagen">
+                           </div>
+
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" id="Upload2" name="imagen" disabled value="@product.Direccion_Fotografia" type="text" placeholder="Upload a file">
+                            <input  id="UploadOculto" name="UploadOculto" value="@product.Direccion_Fotografia" type="text" style="display:none">
+                          </div>  
+                        }
+                    }                       
+                 }
+            </div>
+          </div>
+          </div>
+
+<br><br>
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancel">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Product Registration</h5></center>
+                <p ALIGN=justify>The management module Product Registration allows you to add new products to the system, those products registered in the system are dependent on the suppliers who 
+	            have previously been registered.<br /><br />
+                To register a new product you must specify who the manufacturing supplier and distributing provider are.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<script type="text/javascript" src="../Content/js/numeral.js"></script>
+
+<script>
+    function Habiliar()
+    {
+        $("#Upload").attr("disabled", false);
+        $("#Upload2").attr("disabled", false);
+        $("#Upload2").attr("value", "");
+    }
+</script>
+
+<script>
+    function DesHabiliar()
+    {
+        $("#Upload").attr("disabled", true);
+        $("#Upload2").attr("disabled", true);
+    }
+</script>
+
+<script>
+    function number_format() {
+        var Valor = document.getElementById("Price2").value;
+        Valor = numeral().unformat(Valor);
+        $("#Price").val(Valor);
+
+        Valor = numeral(Valor).format('0,0.000');
+        $("#Price2").val(Valor);
+    }
+</script>
+
+<!--Con este script lo que se hace es que se selecciona una vez la pagina este lista los combobox 1.Aprobadores, 2.Administradores, 3.Proveedores Manufactureros 4.Proveedores Distribuidores
+    No se hace de la forma en como se hace con los demas, ya que estos estan guardados con un id especifico en el sistema, y el value con que se inserten debe ser el mismo id con el que estan registrados en el sistema
+    Para hacer la seleccion de estos una vez se encuentra cargado el documento, se hace por medio de jquery jalando el valor que tiene un input que se encuentra deshabilitado, esto se hace asi porque no encontre otra forma en el momento de pasar
+    valores entre c# y javascript directamente.
+    Luego que se tienen los valores se hace un split y ya se manipula el elemento con jquery y se cambia la propiedad y queda listo
+    -->
+   <script>
+       $(document).ready(function () {
+           var valor = document.getElementById("value").value;
+           var valor2 = valor.split(" ");
+          
+           $('#Provider_Manufacturing > option[value="' + valor2[0] + '"]').attr('selected', 'selected');
+           $("#Provider_Manufacturing").trigger('contentChanged');
+           $('#Provider_Manufacturing').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#Provider_Vendor > option[value="' + valor2[1] + '"]').attr('selected', 'selected');
+           $("#Provider_Vendor").trigger('contentChanged');
+           $('#Provider_Vendor').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           if ($("#Upload2").val() == null)
+           {
+               $("#switch").prop("checked", "checked");
+           }
+       });
+   </script>
+
+<!--Fin script lo que se hace es que se selecciona una vez la pagina este lista los combobox 1.Aprobadores, 2.Administradores, 3.Proveedores Manufactureros 4.Proveedores Distribuidores
+    No se hace de la forma en como se hace con los demas, ya que estos estan guardados con un id especifico en el sistema, y el value con que se inserten debe ser el mismo id con el que estan registrados en el sistema
+    Para hacer la seleccion de estos una vez se encuentra cargado el documento, se hace por medio de jquery jalando el valor que tiene un input que se encuentra deshabilitado, esto se hace asi porque no encontre otra forma en el momento de pasar
+    valores entre c# y javascript directamente.
+    Luego que se tienen los valores se hace un split y ya se manipula el elemento con jquery y se cambia la propiedad y queda listo
+    -->
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+
+<script type='text/javascript'>
+
+    
+function validar()
+{
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Name_Product').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+introduzca al menos 10 caracteres.*/
+if(document.getElementById('Price').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Provider_Manufacturing').value == '')
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Provider_Vendor').value == '')
+{
+    todo_correcto = false;
+}
+
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+}
+
+  return todo_correcto;
+}
+
+</script>
+
+
+</body>
+</html>

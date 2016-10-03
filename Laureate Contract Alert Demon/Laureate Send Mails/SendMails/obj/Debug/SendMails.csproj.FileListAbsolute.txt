@@ -1,0 +1,10 @@
+C:\Users\cturcios\Desktop\SendMails\SendMails\bin\Debug\SendMails.exe.config
+C:\Users\cturcios\Desktop\SendMails\SendMails\bin\Debug\SendMails.exe
+C:\Users\cturcios\Desktop\SendMails\SendMails\bin\Debug\SendMails.pdb
+C:\Users\cturcios\Desktop\SendMails\SendMails\obj\Debug\SendMails.exe
+C:\Users\cturcios\Desktop\SendMails\SendMails\obj\Debug\SendMails.pdb
+C:\Users\cturcios\Desktop\SendMails\SendMails\obj\Debug\SendMails.csprojResolveAssemblyReference.cache
+C:\Users\cturcios\Desktop\SendMails\SendMails\bin\Debug\SendMails.exe.manifest
+C:\Users\cturcios\Desktop\SendMails\SendMails\bin\Debug\SendMails.application
+C:\Users\cturcios\Desktop\SendMails\SendMails\obj\Debug\SendMails.exe.manifest
+C:\Users\cturcios\Desktop\SendMails\SendMails\obj\Debug\SendMails.application

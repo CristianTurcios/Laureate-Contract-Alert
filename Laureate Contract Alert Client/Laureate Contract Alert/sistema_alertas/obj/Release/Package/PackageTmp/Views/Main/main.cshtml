@@ -1,0 +1,404 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--Css para el datables -->
+  <link rel="stylesheet" href="  https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+<!--Css para el datables -->
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Laureate Contract Alert</title>
+</head>
+<body>
+
+<!-- Nota: para la mayoria del diseño se creo usando materialize , una libreria de google, muy parecida a bootstrap, la mayoria del estilo y elementos como inputs, tables, dropdown, etc
+fueron creados usados esa libreria, se recomienda primero estudiar esta libreria o consultarla para poder entender de una manera mas rapida y facil el codigo -->
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <li><a  href="../BackEnd/MainBackEnd">Manage Site</a></li>
+           <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Codigo para el menu de Tabs-->
+<!-- Los tabs se utilizan para hacer creer que se ha programado dos paginas distintas sin necesidad de recargar, pero en realidad todo esta dentro de un mismo html unico -->
+<div class="col s12">
+  <ul class="tabs #00838f cyan darken-3" >
+    <li class="tab col s3"><a style="color:#ffffff;" class="active" href="#Contratos">Contracts</a></li>
+    <li class="tab col s3"><a style="color:#ffffff;" href="#Reportes">Reports</a></li>
+  </ul>
+</div>
+
+<!-- ---------------------------------------------->
+
+<div id="Contratos" class="col s10"><!--Inicio de codigo que va a aparecer en el Tap de contratos-->
+  <div class="container">
+    <br><br><br><br><br /><br />
+
+<div class="row">
+  <div class="col s10">
+<!--Inicio de codigo del select, donde van a aparecer los tipos de contratos, ya sea activos, vencidos, o proximos a vencer, es un simple select el cual se usara para cambiar los elementos
+de la tabla tambien, para ir haciendo un filtrado segun las necesidades -->
+ <!--     <div class="row">
+        <div class="input-field col s3">
+         <select>
+           <option value="" disabled selected>Seleccione</option>
+           <option value="1">Activos</option>
+           <option value="2">Proximos a Vencer</option>
+           <option value="3">Vencidos</option>
+         </select>
+         <label>Seleccione un tipo de contrato</label>
+       </div>
+      </div>  -->
+
+<!--Fin de codigo del select, donde van a aparecer los tipos de contratos, ya sea activos, vencidos, o proximos a vencer, es un simple select el cual se usara para cambiar los elementos
+de la tabla tambien, para ir haciendo un filtrado segun las necesidades -->
+
+<!-- Codigo que determinara el mensaje que se va a mostrar dependiendo del nivel que este mensaje tenga, este mensaje viene desde el controlador y determina si la accion fue satisfactoria o no
+     y asi poder determinar el mensaje que el sistema mostrara -->
+      @{
+          string mensaje = "";
+          int nivelmensaje = 0;
+          
+          if(ViewData["Mensaje"] != null &&  ViewData["NivelMensaje"] !=null)
+          {
+              mensaje = (string)ViewData["Mensaje"];
+              nivelmensaje = (int)ViewData["NivelMensaje"];                   
+          }   
+          
+          if (nivelmensaje == 2)
+          {
+                 <script>swal({
+                    title: "Good job!",
+                    text: "Changes has been updated!",
+                    type: "success",
+                    timer: 5000
+                   })
+                 </script>                                                                                                         
+          }
+          else
+            if (nivelmensaje == 3)
+            {
+              <script>swal({
+                title: "Oops...",
+                text: "It does not have the necessary permissions to perform this action!",
+                type: "error",
+                timer: 5000
+                })
+              </script>          
+            }                      
+       }
+     
+<!--Fin Codigo que determinara el mensaje que se va a mostrar dependiendo del nivel que este mensaje tenga, este mensaje viene desde el controlador y determina si la accion fue satisfactoria o no
+     y asi poder determinar el mensaje que el sistema mostrara -->
+
+
+<!-- Codigo que va a mostrar la tabla donde existen todos los contratos que estan almacenados en la base de datos-->
+  <div class="row">
+        <div class="col s10">
+            <table class="striped responsive-table bordered centered" id="date-table">
+              <thead>
+                <tr class="active">                  
+                  <th >Name of Contract</th>
+                  <th >Contract Number</th>
+                  <th >Type of contract</th>
+                  <th >Cost for each payment</th>
+                  <th >Payment type</th>
+                  <th >Renewal Payment Date</th>
+                  <th >State</th>
+                  <th >Edition</th>
+               </tr>
+              </thead>
+
+              <tbody>
+                @{
+                    if ((int)ViewData["Decision"] == 1)
+                    {
+                        List<SP_selectContract_Result> Contracts = (List<SP_selectContract_Result>)ViewData["contract"];
+
+                        foreach (SP_selectContract_Result contract in Contracts)
+                        {                                                 
+                       <tr>                                                
+                        <td><a href="../Main/DetallesContrato?ContractId=@contract.ContratoId">@contract.Nombre_Contrato</a></td> 
+                        <td>@contract.Numero_Contrato</td> 
+                        <td>@contract.Nombre_Tipo_Contrato</td>
+                        <td>$@contract.Costo_Por_Cada_Pago</td>
+                        <td>@contract.Nombre_Tipo_Pago</td>
+                        <td>@contract.Fecha_Renovacion_Pago.ToString("d")</td>
+                        <td>@contract.Descripcion</td>
+                        <td>
+                          <div class="chip"><a href="../BackEnd/EditarContrato?ContractId=@contract.ContratoId">Edit</a><a>||</a><a onclick="Verificar(@contract.ContratoId)">Remove</a></div>
+                        </td>   
+                       </tr>                                                                         
+                        }
+                    }
+                    else
+                        if ((int)ViewData["Decision"] == 2)
+                        {
+                            List<SP_selectContractByArea_Result> Contracts = (List<SP_selectContractByArea_Result>)ViewData["contract2"];
+
+                            foreach (SP_selectContractByArea_Result contract in Contracts)
+                            {
+                        <tr> 
+                         <td><a href="../Main/DetallesContrato?ContractId=@contract.ContratoId">@contract.Nombre_Contrato</a></td> 
+                         <td>@contract.Numero_Contrato</td>                                                 
+                         <td>@contract.Nombre_Tipo_Contrato</td>
+                         <td>$@contract.Costo_Por_Cada_Pago</td>
+                         <td>@contract.Nombre_Tipo_Pago</td>
+                         <td>@contract.Fecha_Renovacion_Pago.ToString("d")</td>
+                         <td>@contract.Descripcion</td>
+                         <td>
+                           <div class="chip"><a href="../BackEnd/EditarContrato?ContractId=@contract.ContratoId">Edit</a><a>||</a><a  onclick="Verificar(@contract.ContratoId);">Remove</a></div>
+                         </td> 
+                        </tr>
+                        }
+                    }
+                 }
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+<!--Fin  Codigo que va a mostrar la tabla donde existen todos los contratos que estan almacenados en la base de datos-->
+
+  </div>
+
+  <!-- Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+  <div class="col s2 card-panel teal lighten-2">
+    <center><h5>Contracts</h5></center>
+      <p ALIGN=justify>The contract management system allows you to manage contracts with external
+	suppliers. <br />
+	Three types of contracts are allowed: leasing, maintenance, and software license
+.</p>
+  </div>
+  <!--Fin Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+
+</div>
+
+<!--Fin Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+</div>
+
+     <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+         <a class="btn-floating btn-large #00796b teal darken-2">
+           <i class="large material-icons">assignment_late</i>
+         </a>
+         <ul>                    
+          <li><a class="btn-floating green btn" href="../BackEnd/agregarNuevoContrato"><i class="material-icons">mode_edit</i></a></li>
+                      
+         </ul>
+      </div>
+
+
+
+</div><!--Fin de codigo que va a aparecer en el Tap de contratos-->
+
+
+<!-- Pantalla que mostrara la parte de la generacion de reportes de contratos , cuando se presione un boton se mandara a la determinada accion del controlador para que genere el reporte
+    correspondiente-->
+
+<div id="Reportes" class="col s12">
+
+  <div class="container">
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="row">
+      <div class="col s10">
+          
+        <ul class="collapsible popout" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>All contracts Reports</div>
+            <div class="collapsible-body"><p>This generates a consolidated report of all registered contracts that you have created or are part of your business unit.
+                  <div class='col s3 offset-s9'>
+                  <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="../Main/GenerarPDFTodosContratos">PDF</a></li>
+                    <li><a href="../Main/GenerarExcelTodosContratos">Excel</a></li>                 
+                  </ul>
+                  <a class="btn dropdown-button" href="#!" data-activates="dropdown1">Select<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </div>
+            </p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>Reports Contracts Assets</div>
+            <div class="collapsible-body"><p>By selecting this option you can generate reports from all the different contracts that 
+             are active and which are registered in the system according to your business area.
+                 <div class='col s3 offset-s9'>
+                  <ul id="dropdown2" class="dropdown-content">
+                    <li><a href="../main/GenerarPDFContratosActivos">PDF</a></li>
+                    <li><a href="GenerarExcelContratosActivos">Excel</a></li>                 
+                  </ul>
+                  <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Select<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </div>
+              
+            </p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>Reports Contracts close to expiration</div>
+            <div class="collapsible-body"><p>By selecting this option you can generate reports from all the different contracts that
+             are almost due and which are registered in the system according to your business area.
+                <div class='col s3 offset-s9'>
+                  <ul id="dropdown3" class="dropdown-content">
+                    <li><a href="../Main/GenerarPDFContratosProximosAVencer">PDF</a></li>
+                    <li><a href="../Main/GenerarExcelContratosProximosAVencer">Excel</a></li>                 
+                  </ul>
+                  <a class="btn dropdown-button" href="#!" data-activates="dropdown3">Select<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </div>   
+            </p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>Reports Expired Contracts</div>
+            <div class="collapsible-body"><p>By selecting this option you can generate reports from all the different contracts that have already expired but remain in the system according to your business area.           
+                <div class='col s3 offset-s9'>
+                  <ul id="dropdown4" class="dropdown-content">
+                    <li><a href="../Main/GenerarPDFContratosVencidos">PDF</a></li>
+                    <li><a href="../Main/GenerarExcelContratosVencidos">Excel</a></li>                 
+                  </ul>
+                  <a class="btn dropdown-button" href="#!" data-activates="dropdown4">Select<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </div>      
+            </p></div>
+          </li>
+          
+         </ul>
+      </div>
+
+      <!-- Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+        <div class="col s2 card-panel teal lighten-2">
+          <center><h5>Reports</h5></center>
+            <p ALIGN=justify>You can generate reports from different contracts that are registered in
+            the system and view the status of each, either by generating a report of active contracts, almost due or overdue..</p>
+        </div>
+      <!--Fin Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+    </div>
+  </div>
+
+</div>
+  <!--Fin Codigo para el menu de Tabs-->
+
+<!--Se hace la importacion de las librerias para usar materialize, bootstrap y jquery-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--Fin bloque de codigo donde se hace la importacion de las librerias para usar materialize, bootstrap y jquery-->
+<script type="text/javascript" src="../Content/js/numeral.js"></script>
+
+
+<!-- se importan las librerias que se usan unicamente para la tablas, estas librerias le agregan el funcionamiento de la paginacion, la busqueda. el ordenado y la cantidad
+de datos que se van a mostrar, 10, 20, 50, 100, etc -->
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<!-- Fin del codigo donde se importan las librerias que se usan unicamente para la tablas, estas librerias le agregan el funcionamiento de la paginacion, la busqueda. el ordenado y la cantidad
+de datos que se van a mostrar, 10, 20, 50, 100, etc -->
+ 
+
+<!--Este Script sirve para pedirle una confirmacion al usuario si realmente desea eliminar el contrato o no, se usa la libreria sweetAlert para todas las alertas del sistema,
+    esto porque tiene un diseño agradable y bonito y poder darle un toque diferente al sistema, esta libreria hace la misma funcionalidad que un Alert normal de javascript, solo que esta
+    libreria es mas vistosa y tiene mejor presentacion. -->
+  
+<script>
+    function Verificar(valor)
+    {      
+      swal(
+           {
+              title: "Are you sure?",
+              text: "You will not be able to recover this contract!",
+              type: "warning", showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "Yes, delete it!",
+              cancelButtonText: "No, cancel plx!",
+              closeOnConfirm: false,
+              closeOnCancel: false
+           },
+           function (isConfirm)
+           {
+               if (isConfirm)
+               {
+                   //si el usuario confirma que desea eliminar el contrato, se hace una redireccion al contrator BackEnd y a la accion Eliminar contrato, pasandole como parametro
+                   //El id del contrato para que elimine unicamente el contrato que el selecciono
+                   swal("Deleted!", "This contract has been deleted.", "success");
+                   var path = "../BackEnd/EliminarContrato?ContractId=" + valor;                   
+                   location.href = path;                   
+               }
+               else
+               {
+                   swal("Cancelled", "This contract is safe :)", "error");
+               }
+           });
+    }
+</script>    
+  <!--Fin Script sirve para pedirle una confirmacion al usuario si realmente desea eliminar el contrato o no, se usa la libreria sweetAlert para todas las alertas del sistema,
+  esto porque tiene un diseño agradable y bonito y poder darle un toque diferente al sistema, esta libreria hace la misma funcionalidad que un Alert normal de javascript, solo que esta
+  libreria es mas vistosa y tiene mejor presentacion. --> 
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+
+<script>
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+</script>
+
+
+<!-- Script para la tabla, esto le agrega la funcionalidad de busqueda por cualquier parametro, paginacion, ordenacion, etc -->
+<script>
+    $(document).ready(function(){
+		$('#date-table').dataTable( {
+			"bPaginate": true,
+			"bLengthChange": false,
+			"bFilter": true,
+			"bSort": true,
+			"bInfo": true,
+			"bAutoWidth": true,
+			"iDisplayStart":0,
+			"iDisplayLength":10,
+			responsive: true} );
+    });
+</script>
+<!--Fin Script para la tabla, esto le agrega la funcionalidad de busqueda por cualquier parametro, paginacion, ordenacion, etc -->
+
+<!--Script para generar el efecto popout en la lista de Reportes -->
+<script>
+$(document).ready(function(){
+  $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  });
+});
+</script>
+<!--Script para generar el efecto popout en la lista de Reportes -->
+
+</body>
+</html>

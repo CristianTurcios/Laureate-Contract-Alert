@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sistema_alertasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="sistema_alertasEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="area_contratos" EntityType="sistema_alertasModel.area_contratos" />
+    <EntitySet Name="contratos" EntityType="sistema_alertasModel.contrato" />
+    <EntitySet Name="estados" EntityType="sistema_alertasModel.estado" />
+    <EntitySet Name="metodo_pagos" EntityType="sistema_alertasModel.metodo_pagos" />
+    <EntitySet Name="orden_compras" EntityType="sistema_alertasModel.orden_compras" />
+    <EntitySet Name="perfiles" EntityType="sistema_alertasModel.perfile" />
+    <EntitySet Name="permisos" EntityType="sistema_alertasModel.permiso" />
+    <EntitySet Name="productos" EntityType="sistema_alertasModel.producto" />
+    <EntitySet Name="proveedores" EntityType="sistema_alertasModel.proveedore" />
+    <EntitySet Name="recordatorios" EntityType="sistema_alertasModel.recordatorio" />
+    <EntitySet Name="sysdiagrams" EntityType="sistema_alertasModel.sysdiagram" />
+    <EntitySet Name="tarjetas" EntityType="sistema_alertasModel.tarjeta" />
+    <EntitySet Name="tipo_contratos" EntityType="sistema_alertasModel.tipo_contratos" />
+    <EntitySet Name="tipo_pagos" EntityType="sistema_alertasModel.tipo_pagos" />
+    <EntitySet Name="tipo_proveedores" EntityType="sistema_alertasModel.tipo_proveedores" />
+    <EntitySet Name="tipo_tarjetas" EntityType="sistema_alertasModel.tipo_tarjetas" />
+    <EntitySet Name="unidad_negocios" EntityType="sistema_alertasModel.unidad_negocios" />
+    <EntitySet Name="usuarios" EntityType="sistema_alertasModel.usuario" />
+    <EntitySet Name="usuarios_perfiles_permisos" EntityType="sistema_alertasModel.usuarios_perfiles_permisos" />
+    <AssociationSet Name="FK_Area_Contratos_PK_Area_Contrato" Association="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato">
+      <End Role="area_contratos" EntitySet="area_contratos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estados_EstadoId" Association="sistema_alertasModel.FK_Estados_EstadoId">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Metodo_Pagos_PK_Metodo_PagoId" Association="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId">
+      <End Role="metodo_pagos" EntitySet="metodo_pagos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orden_Compras_PK_Orden_CompraId" Association="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId">
+      <End Role="orden_compras" EntitySet="orden_compras" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_ProductoId" Association="sistema_alertasModel.FK_Productos_ProductoId">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Distribuidor_PK_ProveedorId" Association="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Manufacturero_PK_ProveedorId" Association="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recordatorios_RecordatorioId" Association="sistema_alertasModel.FK_Recordatorios_RecordatorioId">
+      <End Role="recordatorios" EntitySet="recordatorios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarjetas_Pk_TarjetaId" Association="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId">
+      <End Role="tarjetas" EntitySet="tarjetas" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Contratos_PK_Tipo_ContratoId" Association="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId">
+      <End Role="tipo_contratos" EntitySet="tipo_contratos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Pagos_PK_Tipo_PagoId" Association="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId">
+      <End Role="tipo_pagos" EntitySet="tipo_pagos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Unidad_Negocios_PK_Unidad_NegocioId" Association="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId">
+      <End Role="unidad_negocios" EntitySet="unidad_negocios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Administrador_UsuarioId" Association="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Aprobador_PK_UsuarioId" Association="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfiles_PK_Perfil" Association="sistema_alertasModel.FK_Perfiles_PK_Perfil">
+      <End Role="perfiles" EntitySet="perfiles" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfiles_PK_PerfilId" Association="sistema_alertasModel.FK_Perfiles_PK_PerfilId">
+      <End Role="perfiles" EntitySet="perfiles" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permisos_PK_PermisoId" Association="sistema_alertasModel.FK_Permisos_PK_PermisoId">
+      <End Role="permisos" EntitySet="permisos" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedor_Distribuidores_PK_ProductoId" Association="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedor_Manufactureros_PK_ProductoId" Association="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Proveedores_PK_ProveedorId" Association="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId">
+      <End Role="tipo_proveedores" EntitySet="tipo_proveedores" />
+      <End Role="proveedores" EntitySet="proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Tarjetas_Tipo_TarjetaId" Association="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId">
+      <End Role="tipo_tarjetas" EntitySet="tipo_tarjetas" />
+      <End Role="tarjetas" EntitySet="tarjetas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_PK_UsuarioId" Association="sistema_alertasModel.FK_Usuarios_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(sistema_alertasModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(sistema_alertasModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarAreaContratos">
+      <Parameter Name="Area_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Area" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarContratos">
+      <Parameter Name="ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Numero_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Numero_Servicio_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Inicio" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Finalizacion" Mode="In" Type="String" />
+      <Parameter Name="Costo_Total" Mode="In" Type="Decimal" />
+      <Parameter Name="Costo_Por_Cada_Pago" Mode="In" Type="Decimal" />
+      <Parameter Name="Fecha_Renovacion_Pago" Mode="In" Type="String" />
+      <Parameter Name="Cantidad_Licencias" Mode="In" Type="Int32" />
+      <Parameter Name="Garantia" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Vencimiento_Garantia" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Creacion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Archivo" Mode="In" Type="String" />
+      <Parameter Name="Proveedor_ManufactureroId" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor_Distribuidor" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario_AprobadorId" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario_AdministradorId" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Metodo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Unidad_NegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Orden_CompraId" Mode="In" Type="Int32" />
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+      <Parameter Name="Area_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="ProductoId" Mode="In" Type="Int32" />
+      <Parameter Name="RecordatorioId" Mode="In" Type="Int32" />
+      <Parameter Name="EstadoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarEstados">
+      <Parameter Name="EstadoId" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarMetodoPagos">
+      <Parameter Name="Metodo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Metodo_Pago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarOrdenCompras">
+      <Parameter Name="Orden_CompraId" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha_Ultima_Orden_Compra" Mode="In" Type="String" />
+      <Parameter Name="Ultimo_Numero_Factura" Mode="In" Type="String" />
+      <Parameter Name="Codigo_Presupuestario_2016" Mode="In" Type="String" />
+      <Parameter Name="Monto_Previo" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Archivo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarPerfiles">
+      <Parameter Name="PerfilId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Perfil" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarProductos">
+      <Parameter Name="ProductoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Producto" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Proveedor_ManufactureroId" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor_DistribuidorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarProveedores">
+      <Parameter Name="ProveedorId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Proveedor" Mode="In" Type="String" />
+      <Parameter Name="Correo_Proveedor" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Contacto" Mode="In" Type="String" />
+      <Parameter Name="Telefono_Contacto" Mode="In" Type="String" />
+      <Parameter Name="Ubicacion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Tipo_ProveedorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarTarjetas">
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+      <Parameter Name="Ultimos_Digitos_Tarjeta" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Vencimiento_Tarjeta" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Persona_Asignada_A_Yarjeta" Mode="In" Type="String" />
+      <Parameter Name="Tipo_TarjetaId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarTipoContratos">
+      <Parameter Name="Tipo_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Tipo_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarTipoPagos">
+      <Parameter Name="Tipo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Tipo_Pago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarUnidadNegocios">
+      <Parameter Name="Unidad_NegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Numero_Unidad_Negocio" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Unidad_Negocio" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Previo_Unidad_Negocio" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarUsuarios">
+      <Parameter Name="UsuarioId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Codigo_Usuario" Mode="In" Type="String" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Creacion" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Fotografia" Mode="In" Type="String" />
+      <Parameter Name="PerfilId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="area_contratos">
+    <Key>
+      <PropertyRef Name="Area_ContratoId" />
+    </Key>
+    <Property Name="Area_ContratoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Area" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato" FromRole="area_contratos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="contrato">
+    <Key>
+      <PropertyRef Name="ContratoId" />
+    </Key>
+    <Property Name="ContratoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Contrato" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Numero_Contrato" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Numero_Servicio_Contrato" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Inicio" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Finalizacion" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Costo_Total" Type="Decimal" Nullable="false" Precision="5" Scale="5" />
+    <Property Name="Costo_Por_Cada_Pago" Type="Decimal" Nullable="false" Precision="5" Scale="5" />
+    <Property Name="Fecha_Renovacion_Pago" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Cantidad_Licencias" Type="Int32" Nullable="false" />
+    <Property Name="Garantia" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Vencimiento_Garantia" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Creacion" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion_Archivo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Proveedor_ManufactureroId" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor_DistribuidorId" Type="Int32" Nullable="false" />
+    <Property Name="Usuario_AprobadorId" Type="Int32" Nullable="false" />
+    <Property Name="Usuario_AdministradorId" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_ContratoId" Type="Int32" Nullable="false" />
+    <Property Name="Metodo_PagoId" Type="Int32" Nullable="false" />
+    <Property Name="Unidad_NegocioId" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_PagoId" Type="Int32" Nullable="false" />
+    <Property Name="Orden_CompraId" Type="Int32" Nullable="false" />
+    <Property Name="TarjetaId" Type="Int32" />
+    <Property Name="Area_ContratoId" Type="Int32" Nullable="false" />
+    <Property Name="ProductoId" Type="Int32" Nullable="false" />
+    <Property Name="RecordatorioId" Type="Int32" Nullable="false" />
+    <Property Name="EstadoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="area_contratos" Relationship="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato" FromRole="contratos" ToRole="area_contratos" />
+    <NavigationProperty Name="estado" Relationship="sistema_alertasModel.FK_Estados_EstadoId" FromRole="contratos" ToRole="estados" />
+    <NavigationProperty Name="metodo_pagos" Relationship="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId" FromRole="contratos" ToRole="metodo_pagos" />
+    <NavigationProperty Name="orden_compras" Relationship="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId" FromRole="contratos" ToRole="orden_compras" />
+    <NavigationProperty Name="producto" Relationship="sistema_alertasModel.FK_Productos_ProductoId" FromRole="contratos" ToRole="productos" />
+    <NavigationProperty Name="proveedore" Relationship="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId" FromRole="contratos" ToRole="proveedores" />
+    <NavigationProperty Name="proveedore1" Relationship="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId" FromRole="contratos" ToRole="proveedores" />
+    <NavigationProperty Name="recordatorio" Relationship="sistema_alertasModel.FK_Recordatorios_RecordatorioId" FromRole="contratos" ToRole="recordatorios" />
+    <NavigationProperty Name="tarjeta" Relationship="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId" FromRole="contratos" ToRole="tarjetas" />
+    <NavigationProperty Name="tipo_contratos" Relationship="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId" FromRole="contratos" ToRole="tipo_contratos" />
+    <NavigationProperty Name="tipo_pagos" Relationship="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId" FromRole="contratos" ToRole="tipo_pagos" />
+    <NavigationProperty Name="unidad_negocios" Relationship="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId" FromRole="contratos" ToRole="unidad_negocios" />
+    <NavigationProperty Name="usuario" Relationship="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId" FromRole="contratos" ToRole="usuarios" />
+    <NavigationProperty Name="usuario1" Relationship="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId" FromRole="contratos" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Estados_EstadoId" FromRole="estados" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="metodo_pagos">
+    <Key>
+      <PropertyRef Name="Metodo_PagoId" />
+    </Key>
+    <Property Name="Metodo_PagoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Metodo_Pago" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId" FromRole="metodo_pagos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="orden_compras">
+    <Key>
+      <PropertyRef Name="Orden_CompraId" />
+    </Key>
+    <Property Name="Orden_CompraId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha_Ultima_Orden_Compra" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Ultimo_Numero_Factura" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Codigo_Presupuestario2016" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Monto_Previo" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion_Archivo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId" FromRole="orden_compras" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="perfile">
+    <Key>
+      <PropertyRef Name="PerfilId" />
+    </Key>
+    <Property Name="PerfilId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Perfil" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="usuarios" Relationship="sistema_alertasModel.FK_Perfiles_PK_Perfil" FromRole="perfiles" ToRole="usuarios" />
+    <NavigationProperty Name="usuarios_perfiles_permisos" Relationship="sistema_alertasModel.FK_Perfiles_PK_PerfilId" FromRole="perfiles" ToRole="usuarios_perfiles_permisos" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="PermisoId" />
+    </Key>
+    <Property Name="PermisoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Permiso" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="usuarios_perfiles_permisos" Relationship="sistema_alertasModel.FK_Permisos_PK_PermisoId" FromRole="permisos" ToRole="usuarios_perfiles_permisos" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="ProductoId" />
+    </Key>
+    <Property Name="ProductoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Producto" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="5" Scale="5" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Proveedor_ManufactureroId" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor_DistribuidorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Productos_ProductoId" FromRole="productos" ToRole="contratos" />
+    <NavigationProperty Name="proveedore" Relationship="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId" FromRole="productos" ToRole="proveedores" />
+    <NavigationProperty Name="proveedore1" Relationship="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId" FromRole="productos" ToRole="proveedores" />
+  </EntityType>
+  <EntityType Name="proveedore">
+    <Key>
+      <PropertyRef Name="ProveedorId" />
+    </Key>
+    <Property Name="ProveedorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Proveedor" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Correo_Proveedor" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Contacto" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono_Contacto" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Ubicacion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo_ProveedorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId" FromRole="proveedores" ToRole="contratos" />
+    <NavigationProperty Name="contratos1" Relationship="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId" FromRole="proveedores" ToRole="contratos" />
+    <NavigationProperty Name="productos" Relationship="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId" FromRole="proveedores" ToRole="productos" />
+    <NavigationProperty Name="productos1" Relationship="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId" FromRole="proveedores" ToRole="productos" />
+    <NavigationProperty Name="tipo_proveedores" Relationship="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId" FromRole="proveedores" ToRole="tipo_proveedores" />
+  </EntityType>
+  <EntityType Name="recordatorio">
+    <Key>
+      <PropertyRef Name="RecordatorioId" />
+    </Key>
+    <Property Name="RecordatorioId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Recordatorios_RecordatorioId" FromRole="recordatorios" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tarjeta">
+    <Key>
+      <PropertyRef Name="TarjetaId" />
+    </Key>
+    <Property Name="TarjetaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ultimos_Digitos_Tarjeta" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Vencimiento_Tarjeta" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Persona_Asignada_A_Tarjeta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo_TarjetaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId" FromRole="tarjetas" ToRole="contratos" />
+    <NavigationProperty Name="tipo_tarjetas" Relationship="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId" FromRole="tarjetas" ToRole="tipo_tarjetas" />
+  </EntityType>
+  <EntityType Name="tipo_contratos">
+    <Key>
+      <PropertyRef Name="Tipo_ContratoId" />
+    </Key>
+    <Property Name="Tipo_ContratoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tipo_Contrato" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId" FromRole="tipo_contratos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="tipo_pagos">
+    <Key>
+      <PropertyRef Name="Tipo_PagoId" />
+    </Key>
+    <Property Name="Tipo_PagoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tipo_Pago" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId" FromRole="tipo_pagos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="tipo_proveedores">
+    <Key>
+      <PropertyRef Name="Tipo_ProveedorId" />
+    </Key>
+    <Property Name="Tipo_ProveedorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="proveedores" Relationship="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId" FromRole="tipo_proveedores" ToRole="proveedores" />
+  </EntityType>
+  <EntityType Name="tipo_tarjetas">
+    <Key>
+      <PropertyRef Name="Tipo_TarjetaId" />
+    </Key>
+    <Property Name="Tipo_TarjetaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tarjeta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tarjetas" Relationship="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId" FromRole="tipo_tarjetas" ToRole="tarjetas" />
+  </EntityType>
+  <EntityType Name="unidad_negocios">
+    <Key>
+      <PropertyRef Name="Unidad_NegocioId" />
+    </Key>
+    <Property Name="Unidad_NegocioId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Numero_Unidad_Negocio" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Unidad_Negocio" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Previo_Unidad_Negocio" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId" FromRole="unidad_negocios" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Codigo_Usuario" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Creacion" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion_Fotografia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PerfilId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId" FromRole="usuarios" ToRole="contratos" />
+    <NavigationProperty Name="contratos1" Relationship="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId" FromRole="usuarios" ToRole="contratos" />
+    <NavigationProperty Name="perfile" Relationship="sistema_alertasModel.FK_Perfiles_PK_Perfil" FromRole="usuarios" ToRole="perfiles" />
+    <NavigationProperty Name="usuarios_perfiles_permisos" Relationship="sistema_alertasModel.FK_Usuarios_PK_UsuarioId" FromRole="usuarios" ToRole="usuarios_perfiles_permisos" />
+  </EntityType>
+  <EntityType Name="usuarios_perfiles_permisos">
+    <Key>
+      <PropertyRef Name="Usuario_Perfil_PermisoId" />
+    </Key>
+    <Property Name="Usuario_Perfil_PermisoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="PerfilId" Type="Int32" Nullable="false" />
+    <Property Name="PermisoId" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="perfile" Relationship="sistema_alertasModel.FK_Perfiles_PK_PerfilId" FromRole="usuarios_perfiles_permisos" ToRole="perfiles" />
+    <NavigationProperty Name="permiso" Relationship="sistema_alertasModel.FK_Permisos_PK_PermisoId" FromRole="usuarios_perfiles_permisos" ToRole="permisos" />
+    <NavigationProperty Name="usuario" Relationship="sistema_alertasModel.FK_Usuarios_PK_UsuarioId" FromRole="usuarios_perfiles_permisos" ToRole="usuarios" />
+  </EntityType>
+  <Association Name="FK_Area_Contratos_PK_Area_Contrato">
+    <End Role="area_contratos" Type="sistema_alertasModel.area_contratos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="area_contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estados_EstadoId">
+    <End Role="estados" Type="sistema_alertasModel.estado" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="EstadoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Metodo_Pagos_PK_Metodo_PagoId">
+    <End Role="metodo_pagos" Type="sistema_alertasModel.metodo_pagos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metodo_pagos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orden_Compras_PK_Orden_CompraId">
+    <End Role="orden_compras" Type="sistema_alertasModel.orden_compras" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orden_compras">
+        <PropertyRef Name="Orden_CompraId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Orden_CompraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_ProductoId">
+    <End Role="productos" Type="sistema_alertasModel.producto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="ProductoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Distribuidor_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Proveedor_DistribuidorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Manufacturero_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Proveedor_ManufactureroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recordatorios_RecordatorioId">
+    <End Role="recordatorios" Type="sistema_alertasModel.recordatorio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="recordatorios">
+        <PropertyRef Name="RecordatorioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="RecordatorioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarjetas_Pk_TarjetaId">
+    <End Role="tarjetas" Type="sistema_alertasModel.tarjeta" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tarjetas">
+        <PropertyRef Name="TarjetaId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="TarjetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Contratos_PK_Tipo_ContratoId">
+    <End Role="tipo_contratos" Type="sistema_alertasModel.tipo_contratos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Pagos_PK_Tipo_PagoId">
+    <End Role="tipo_pagos" Type="sistema_alertasModel.tipo_pagos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_pagos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Unidad_Negocios_PK_Unidad_NegocioId">
+    <End Role="unidad_negocios" Type="sistema_alertasModel.unidad_negocios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad_negocios">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Administrador_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Usuario_AdministradorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Aprobador_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Usuario_AprobadorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfiles_PK_Perfil">
+    <End Role="perfiles" Type="sistema_alertasModel.perfile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfiles">
+        <PropertyRef Name="PerfilId" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfiles_PK_PerfilId">
+    <End Role="perfiles" Type="sistema_alertasModel.perfile" Multiplicity="1" />
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfiles">
+        <PropertyRef Name="PerfilId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permisos_PK_PermisoId">
+    <End Role="permisos" Type="sistema_alertasModel.permiso" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permisos">
+        <PropertyRef Name="PermisoId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="PermisoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedor_Distribuidores_PK_ProductoId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="productos" Type="sistema_alertasModel.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="Proveedor_DistribuidorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedor_Manufactureros_PK_ProductoId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="productos" Type="sistema_alertasModel.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="Proveedor_ManufactureroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Proveedores_PK_ProveedorId">
+    <End Role="tipo_proveedores" Type="sistema_alertasModel.tipo_proveedores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_proveedores">
+        <PropertyRef Name="Tipo_ProveedorId" />
+      </Principal>
+      <Dependent Role="proveedores">
+        <PropertyRef Name="Tipo_ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Tarjetas_Tipo_TarjetaId">
+    <End Role="tipo_tarjetas" Type="sistema_alertasModel.tipo_tarjetas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tarjetas" Type="sistema_alertasModel.tarjeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_tarjetas">
+        <PropertyRef Name="Tipo_TarjetaId" />
+      </Principal>
+      <Dependent Role="tarjetas">
+        <PropertyRef Name="Tipo_TarjetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="1" />
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

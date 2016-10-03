@@ -1,0 +1,214 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <title>Detallles Proveedor</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<div class="container">
+  <br><br><br><br><br>
+    <div class="row">
+
+      <div class="col s3">
+        <div class="collection">
+          <a href="#!" class="collection-item active">General Description</a>
+        </div>
+      </div>
+
+
+      <div class="col s5">
+        <table class="bordered striped responsive-table">
+          <thead>
+          </thead>
+            <tbody>
+           @{
+               List<SP_selectProviderById_Result> Provider = (List<SP_selectProviderById_Result>)ViewData["Provider"];
+              foreach (SP_selectProviderById_Result provider in Provider)
+              {                                                     
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Name Supplier:</td>
+                <td>@provider.Nombre_Proveedor</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Mail Provider:</td>
+                <td>@provider.Correo_Proveedor</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Contact Supplier:</td>
+                <td>@provider.Nombre_Contacto</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Phone Contact:</td>
+                <td>@provider.Telefono_Contacto</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Location Provider</td>
+                <td>@provider.Ubicacion</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Description:</td>
+                <td>@provider.Descripcion</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              }
+             }
+            </tbody>
+          </table>
+
+
+          <div class="row">
+            <br><br><br>
+            <center>
+              <a class="waves-effect waves-light btn" href="../Main/main">Back to Contracts</a>
+            </center>
+          </div>
+      </div>
+
+      <div class="col s4">
+        <div class="collection">
+          <a href="#!" class="collection-item active">List of products from this supplier:</a>
+        @{
+            List<SP_selectProductByProviderId_Result> ProductByProvider = (List<SP_selectProductByProviderId_Result>)ViewData["ProductByProviderId"];
+          foreach (SP_selectProductByProviderId_Result products in ProductByProvider)
+          {     
+            <a href="../Main/DetallesProducto?ProductId=@products.ProductoId" class="collection-item">@products.Nombre_Producto </a>
+          }
+        }
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--End Import jQuery before materialize.js-->
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+
+</body>
+</html>

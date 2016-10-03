@@ -1,0 +1,1228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sistema_alertasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="sistema_alertasModelStoreContainer">
+    <EntitySet Name="area_contratos" EntityType="sistema_alertasModel.Store.area_contratos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Borradorcontratos" EntityType="sistema_alertasModel.Store.Borradorcontratos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="contratos" EntityType="sistema_alertasModel.Store.contratos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="estados" EntityType="sistema_alertasModel.Store.estados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="metodo_pagos" EntityType="sistema_alertasModel.Store.metodo_pagos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="orden_compras" EntityType="sistema_alertasModel.Store.orden_compras" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="perfiles" EntityType="sistema_alertasModel.Store.perfiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="permisos" EntityType="sistema_alertasModel.Store.permisos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="productos" EntityType="sistema_alertasModel.Store.productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="proveedores" EntityType="sistema_alertasModel.Store.proveedores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="recordatorios" EntityType="sistema_alertasModel.Store.recordatorios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tarjetas" EntityType="sistema_alertasModel.Store.tarjetas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_contratos" EntityType="sistema_alertasModel.Store.tipo_contratos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_pagos" EntityType="sistema_alertasModel.Store.tipo_pagos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_proveedores" EntityType="sistema_alertasModel.Store.tipo_proveedores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_tarjetas" EntityType="sistema_alertasModel.Store.tipo_tarjetas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unidad_negocios" EntityType="sistema_alertasModel.Store.unidad_negocios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="usuarios" EntityType="sistema_alertasModel.Store.usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="usuarios_perfiles_permisos" EntityType="sistema_alertasModel.Store.usuarios_perfiles_permisos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Area_Contratos_PK_Area_Contrato" Association="sistema_alertasModel.Store.FK_Area_Contratos_PK_Area_Contrato">
+      <End Role="area_contratos" EntitySet="area_contratos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estados_EstadoId" Association="sistema_alertasModel.Store.FK_Estados_EstadoId">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Metodo_Pagos_PK_Metodo_PagoId" Association="sistema_alertasModel.Store.FK_Metodo_Pagos_PK_Metodo_PagoId">
+      <End Role="metodo_pagos" EntitySet="metodo_pagos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orden_Compras_PK_Orden_CompraId" Association="sistema_alertasModel.Store.FK_Orden_Compras_PK_Orden_CompraId">
+      <End Role="orden_compras" EntitySet="orden_compras" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfiles_PK_Perfil" Association="sistema_alertasModel.Store.FK_Perfiles_PK_Perfil">
+      <End Role="perfiles" EntitySet="perfiles" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfiles_PK_PerfilId" Association="sistema_alertasModel.Store.FK_Perfiles_PK_PerfilId">
+      <End Role="perfiles" EntitySet="perfiles" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permisos_PK_PermisoId" Association="sistema_alertasModel.Store.FK_Permisos_PK_PermisoId">
+      <End Role="permisos" EntitySet="permisos" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_ProductoId" Association="sistema_alertasModel.Store.FK_Productos_ProductoId">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedor_Distribuidores_PK_ProductoId" Association="sistema_alertasModel.Store.FK_Proveedor_Distribuidores_PK_ProductoId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedor_Manufactureros_PK_ProductoId" Association="sistema_alertasModel.Store.FK_Proveedor_Manufactureros_PK_ProductoId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Distribuidor_PK_ProveedorId" Association="sistema_alertasModel.Store.FK_Proveedores_Distribuidor_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Manufacturero_PK_ProveedorId" Association="sistema_alertasModel.Store.FK_Proveedores_Manufacturero_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recordatorios_RecordatorioId" Association="sistema_alertasModel.Store.FK_Recordatorios_RecordatorioId">
+      <End Role="recordatorios" EntitySet="recordatorios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarjetas_Pk_TarjetaId" Association="sistema_alertasModel.Store.FK_Tarjetas_Pk_TarjetaId">
+      <End Role="tarjetas" EntitySet="tarjetas" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Contratos_PK_Tipo_ContratoId" Association="sistema_alertasModel.Store.FK_Tipo_Contratos_PK_Tipo_ContratoId">
+      <End Role="tipo_contratos" EntitySet="tipo_contratos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Pagos_PK_Tipo_PagoId" Association="sistema_alertasModel.Store.FK_Tipo_Pagos_PK_Tipo_PagoId">
+      <End Role="tipo_pagos" EntitySet="tipo_pagos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Proveedores_PK_ProveedorId" Association="sistema_alertasModel.Store.FK_Tipo_Proveedores_PK_ProveedorId">
+      <End Role="tipo_proveedores" EntitySet="tipo_proveedores" />
+      <End Role="proveedores" EntitySet="proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Tarjetas_Tipo_TarjetaId" Association="sistema_alertasModel.Store.FK_Tipo_Tarjetas_Tipo_TarjetaId">
+      <End Role="tipo_tarjetas" EntitySet="tipo_tarjetas" />
+      <End Role="tarjetas" EntitySet="tarjetas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Unidad_Negocios_PK_Unidad_NegocioId" Association="sistema_alertasModel.Store.FK_Unidad_Negocios_PK_Unidad_NegocioId">
+      <End Role="unidad_negocios" EntitySet="unidad_negocios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Administrador_UsuarioId" Association="sistema_alertasModel.Store.FK_Usuarios_Administrador_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Aprobador_PK_UsuarioId" Association="sistema_alertasModel.Store.FK_Usuarios_Aprobador_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_PK_UsuarioId" Association="sistema_alertasModel.Store.FK_Usuarios_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Area_Contratos_PK_Area_Contrato" Association="sistema_alertasModel.Store.FK2_Area_Contratos_PK_Area_Contrato">
+      <End Role="area_contratos" EntitySet="area_contratos" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Estados_EstadoId" Association="sistema_alertasModel.Store.FK2_Estados_EstadoId">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Metodo_Pagos_PK_Metodo_PagoId" Association="sistema_alertasModel.Store.FK2_Metodo_Pagos_PK_Metodo_PagoId">
+      <End Role="metodo_pagos" EntitySet="metodo_pagos" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Orden_Compras_PK_Orden_CompraId" Association="sistema_alertasModel.Store.FK2_Orden_Compras_PK_Orden_CompraId">
+      <End Role="orden_compras" EntitySet="orden_compras" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Productos_ProductoId" Association="sistema_alertasModel.Store.FK2_Productos_ProductoId">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Proveedores_Distribuidor_PK_ProveedorId" Association="sistema_alertasModel.Store.FK2_Proveedores_Distribuidor_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Proveedores_Manufacturero_PK_ProveedorId" Association="sistema_alertasModel.Store.FK2_Proveedores_Manufacturero_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Recordatorios_RecordatorioId" Association="sistema_alertasModel.Store.FK2_Recordatorios_RecordatorioId">
+      <End Role="recordatorios" EntitySet="recordatorios" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Tarjetas_Pk_TarjetaId" Association="sistema_alertasModel.Store.FK2_Tarjetas_Pk_TarjetaId">
+      <End Role="tarjetas" EntitySet="tarjetas" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Tipo_Contratos_PK_Tipo_ContratoId" Association="sistema_alertasModel.Store.FK2_Tipo_Contratos_PK_Tipo_ContratoId">
+      <End Role="tipo_contratos" EntitySet="tipo_contratos" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Tipo_Pagos_PK_Tipo_PagoId" Association="sistema_alertasModel.Store.FK2_Tipo_Pagos_PK_Tipo_PagoId">
+      <End Role="tipo_pagos" EntitySet="tipo_pagos" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Unidad_Negocios_PK_Unidad_NegocioId" Association="sistema_alertasModel.Store.FK2_Unidad_Negocios_PK_Unidad_NegocioId">
+      <End Role="unidad_negocios" EntitySet="unidad_negocios" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Usuarios_Administrador_UsuarioId" Association="sistema_alertasModel.Store.FK2_Usuarios_Administrador_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK2_Usuarios_Aprobador_PK_UsuarioId" Association="sistema_alertasModel.Store.FK2_Usuarios_Aprobador_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="Borradorcontratos" EntitySet="Borradorcontratos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="area_contratos">
+    <Key>
+      <PropertyRef Name="Area_ContratoId" />
+    </Key>
+    <Property Name="Area_ContratoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Area" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Borradorcontratos">
+    <Key>
+      <PropertyRef Name="ContratoId2" />
+    </Key>
+    <Property Name="ContratoId2" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Contrato2" Type="varchar" MaxLength="25" />
+    <Property Name="Numero_Contrato2" Type="varchar" MaxLength="15" />
+    <Property Name="Numero_Servicio_Contrato2" Type="varchar" MaxLength="15" />
+    <Property Name="Fecha_Inicio2" Type="date" />
+    <Property Name="Fecha_Finalizacion2" Type="date" />
+    <Property Name="Costo_Total2" Type="numeric" Scale="2" />
+    <Property Name="Costo_Por_Cada_Pago2" Type="numeric" Scale="2" />
+    <Property Name="Fecha_Renovacion_Pago2" Type="date" />
+    <Property Name="Cantidad_Licencias2" Type="int" />
+    <Property Name="Garantia2" Type="varchar" MaxLength="25" />
+    <Property Name="Fecha_Vencimiento_Garantia2" Type="date" />
+    <Property Name="Fecha_Creacion2" Type="date" />
+    <Property Name="Descripcion2" Type="varchar" MaxLength="100" />
+    <Property Name="Direccion_Archivo2" Type="varchar" MaxLength="100" />
+    <Property Name="Proveedor_ManufactureroId2" Type="int" />
+    <Property Name="Proveedor_DistribuidorId2" Type="int" />
+    <Property Name="Usuario_AprobadorId2" Type="int" />
+    <Property Name="Usuario_AdministradorId2" Type="int" />
+    <Property Name="Tipo_ContratoId2" Type="int" />
+    <Property Name="Metodo_PagoId2" Type="int" />
+    <Property Name="Unidad_NegocioId2" Type="int" />
+    <Property Name="Tipo_PagoId2" Type="int" />
+    <Property Name="Orden_CompraId2" Type="int" />
+    <Property Name="TarjetaId2" Type="int" />
+    <Property Name="Area_ContratoId2" Type="int" />
+    <Property Name="ProductoId2" Type="int" />
+    <Property Name="RecordatorioId2" Type="int" />
+    <Property Name="EstadoId2" Type="int" />
+    <Property Name="Detalles_Producto2" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="contratos">
+    <Key>
+      <PropertyRef Name="ContratoId" />
+    </Key>
+    <Property Name="ContratoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Contrato" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Numero_Contrato" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Numero_Servicio_Contrato" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Fecha_Inicio" Type="date" Nullable="false" />
+    <Property Name="Fecha_Finalizacion" Type="date" Nullable="false" />
+    <Property Name="Costo_Total" Type="numeric" Nullable="false" Scale="2" />
+    <Property Name="Costo_Por_Cada_Pago" Type="numeric" Nullable="false" Scale="2" />
+    <Property Name="Fecha_Renovacion_Pago" Type="date" Nullable="false" />
+    <Property Name="Cantidad_Licencias" Type="int" />
+    <Property Name="Garantia" Type="varchar" MaxLength="25" />
+    <Property Name="Fecha_Vencimiento_Garantia" Type="date" Nullable="false" />
+    <Property Name="Fecha_Creacion" Type="date" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Direccion_Archivo" Type="varchar" MaxLength="100" />
+    <Property Name="Proveedor_ManufactureroId" Type="int" Nullable="false" />
+    <Property Name="Proveedor_DistribuidorId" Type="int" Nullable="false" />
+    <Property Name="Usuario_AprobadorId" Type="int" Nullable="false" />
+    <Property Name="Usuario_AdministradorId" Type="int" Nullable="false" />
+    <Property Name="Tipo_ContratoId" Type="int" Nullable="false" />
+    <Property Name="Metodo_PagoId" Type="int" Nullable="false" />
+    <Property Name="Unidad_NegocioId" Type="int" Nullable="false" />
+    <Property Name="Tipo_PagoId" Type="int" Nullable="false" />
+    <Property Name="Orden_CompraId" Type="int" Nullable="false" />
+    <Property Name="TarjetaId" Type="int" Nullable="false" />
+    <Property Name="Area_ContratoId" Type="int" Nullable="false" />
+    <Property Name="ProductoId" Type="int" Nullable="false" />
+    <Property Name="RecordatorioId" Type="int" Nullable="false" />
+    <Property Name="EstadoId" Type="int" Nullable="false" />
+    <Property Name="Detalles_Producto" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="estados">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="metodo_pagos">
+    <Key>
+      <PropertyRef Name="Metodo_PagoId" />
+    </Key>
+    <Property Name="Metodo_PagoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Metodo_Pago" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="orden_compras">
+    <Key>
+      <PropertyRef Name="Orden_CompraId" />
+    </Key>
+    <Property Name="Orden_CompraId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha_Ultima_Orden_Compra" Type="date" Nullable="false" />
+    <Property Name="Ultimo_Numero_Factura" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Codigo_Presupuestario2016" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Monto_Previo" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Direccion_Archivo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="perfiles">
+    <Key>
+      <PropertyRef Name="PerfilId" />
+    </Key>
+    <Property Name="PerfilId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Perfil" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="permisos">
+    <Key>
+      <PropertyRef Name="PermisoId" />
+    </Key>
+    <Property Name="PermisoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Permiso" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="ProductoId" />
+    </Key>
+    <Property Name="ProductoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Producto" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Precio" Type="numeric" Nullable="false" Scale="2" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Direccion_Fotografia" Type="varchar" MaxLength="100" />
+    <Property Name="Proveedor_ManufactureroId" Type="int" Nullable="false" />
+    <Property Name="Proveedor_DistribuidorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="proveedores">
+    <Key>
+      <PropertyRef Name="ProveedorId" />
+    </Key>
+    <Property Name="ProveedorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Proveedor" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Correo_Proveedor" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Nombre_Contacto" Type="varchar" MaxLength="25" />
+    <Property Name="Telefono_Contacto" Type="varchar" MaxLength="20" />
+    <Property Name="Ubicacion" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Tipo_ProveedorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="recordatorios">
+    <Key>
+      <PropertyRef Name="RecordatorioId" />
+    </Key>
+    <Property Name="RecordatorioId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="tarjetas">
+    <Key>
+      <PropertyRef Name="TarjetaId" />
+    </Key>
+    <Property Name="TarjetaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Ultimos_Digitos_Tarjeta" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="Fecha_Vencimiento_Tarjeta" Type="date" Nullable="false" />
+    <Property Name="Nombre_Persona_Asignada_A_Tarjeta" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Tipo_TarjetaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_contratos">
+    <Key>
+      <PropertyRef Name="Tipo_ContratoId" />
+    </Key>
+    <Property Name="Tipo_ContratoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tipo_Contrato" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tipo_pagos">
+    <Key>
+      <PropertyRef Name="Tipo_PagoId" />
+    </Key>
+    <Property Name="Tipo_PagoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tipo_Pago" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="tipo_proveedores">
+    <Key>
+      <PropertyRef Name="Tipo_ProveedorId" />
+    </Key>
+    <Property Name="Tipo_ProveedorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="tipo_tarjetas">
+    <Key>
+      <PropertyRef Name="Tipo_TarjetaId" />
+    </Key>
+    <Property Name="Tipo_TarjetaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tarjeta" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="unidad_negocios">
+    <Key>
+      <PropertyRef Name="Unidad_NegocioId" />
+    </Key>
+    <Property Name="Unidad_NegocioId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Numero_Unidad_Negocio" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombre_Unidad_Negocio" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombre_Previo_Unidad_Negocio" Type="varchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="Apellido" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="pass" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Codigo_Usuario" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Fecha_Creacion" Type="date" Nullable="false" />
+    <Property Name="Direccion_Fotografia" Type="varchar" MaxLength="100" />
+    <Property Name="PerfilId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuarios_perfiles_permisos">
+    <Key>
+      <PropertyRef Name="Usuario_Perfil_PermisoId" />
+    </Key>
+    <Property Name="Usuario_Perfil_PermisoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="PerfilId" Type="int" Nullable="false" />
+    <Property Name="PermisoId" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Area_Contratos_PK_Area_Contrato">
+    <End Role="area_contratos" Type="sistema_alertasModel.Store.area_contratos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="area_contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estados_EstadoId">
+    <End Role="estados" Type="sistema_alertasModel.Store.estados" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="EstadoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Metodo_Pagos_PK_Metodo_PagoId">
+    <End Role="metodo_pagos" Type="sistema_alertasModel.Store.metodo_pagos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metodo_pagos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orden_Compras_PK_Orden_CompraId">
+    <End Role="orden_compras" Type="sistema_alertasModel.Store.orden_compras" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orden_compras">
+        <PropertyRef Name="Orden_CompraId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Orden_CompraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfiles_PK_Perfil">
+    <End Role="perfiles" Type="sistema_alertasModel.Store.perfiles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarios" Type="sistema_alertasModel.Store.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfiles">
+        <PropertyRef Name="PerfilId" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfiles_PK_PerfilId">
+    <End Role="perfiles" Type="sistema_alertasModel.Store.perfiles" Multiplicity="1" />
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.Store.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfiles">
+        <PropertyRef Name="PerfilId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permisos_PK_PermisoId">
+    <End Role="permisos" Type="sistema_alertasModel.Store.permisos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.Store.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permisos">
+        <PropertyRef Name="PermisoId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="PermisoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_ProductoId">
+    <End Role="productos" Type="sistema_alertasModel.Store.productos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="ProductoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedor_Distribuidores_PK_ProductoId">
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="1" />
+    <End Role="productos" Type="sistema_alertasModel.Store.productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="Proveedor_DistribuidorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedor_Manufactureros_PK_ProductoId">
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="1" />
+    <End Role="productos" Type="sistema_alertasModel.Store.productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="Proveedor_ManufactureroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Distribuidor_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Proveedor_DistribuidorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Manufacturero_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Proveedor_ManufactureroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recordatorios_RecordatorioId">
+    <End Role="recordatorios" Type="sistema_alertasModel.Store.recordatorios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="recordatorios">
+        <PropertyRef Name="RecordatorioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="RecordatorioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarjetas_Pk_TarjetaId">
+    <End Role="tarjetas" Type="sistema_alertasModel.Store.tarjetas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tarjetas">
+        <PropertyRef Name="TarjetaId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="TarjetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Contratos_PK_Tipo_ContratoId">
+    <End Role="tipo_contratos" Type="sistema_alertasModel.Store.tipo_contratos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Pagos_PK_Tipo_PagoId">
+    <End Role="tipo_pagos" Type="sistema_alertasModel.Store.tipo_pagos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_pagos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Proveedores_PK_ProveedorId">
+    <End Role="tipo_proveedores" Type="sistema_alertasModel.Store.tipo_proveedores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_proveedores">
+        <PropertyRef Name="Tipo_ProveedorId" />
+      </Principal>
+      <Dependent Role="proveedores">
+        <PropertyRef Name="Tipo_ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Tarjetas_Tipo_TarjetaId">
+    <End Role="tipo_tarjetas" Type="sistema_alertasModel.Store.tipo_tarjetas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tarjetas" Type="sistema_alertasModel.Store.tarjetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_tarjetas">
+        <PropertyRef Name="Tipo_TarjetaId" />
+      </Principal>
+      <Dependent Role="tarjetas">
+        <PropertyRef Name="Tipo_TarjetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Unidad_Negocios_PK_Unidad_NegocioId">
+    <End Role="unidad_negocios" Type="sistema_alertasModel.Store.unidad_negocios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad_negocios">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Administrador_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.Store.usuarios" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Usuario_AdministradorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Aprobador_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.Store.usuarios" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.Store.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Usuario_AprobadorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.Store.usuarios" Multiplicity="1" />
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.Store.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Area_Contratos_PK_Area_Contrato">
+    <End Role="area_contratos" Type="sistema_alertasModel.Store.area_contratos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="area_contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Area_ContratoId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Estados_EstadoId">
+    <End Role="estados" Type="sistema_alertasModel.Store.estados" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="EstadoId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="EstadoId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Metodo_Pagos_PK_Metodo_PagoId">
+    <End Role="metodo_pagos" Type="sistema_alertasModel.Store.metodo_pagos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metodo_pagos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Metodo_PagoId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Orden_Compras_PK_Orden_CompraId">
+    <End Role="orden_compras" Type="sistema_alertasModel.Store.orden_compras" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orden_compras">
+        <PropertyRef Name="Orden_CompraId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Orden_CompraId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Productos_ProductoId">
+    <End Role="productos" Type="sistema_alertasModel.Store.productos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="ProductoId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="ProductoId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Proveedores_Distribuidor_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="0..1" />
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Proveedor_DistribuidorId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Proveedores_Manufacturero_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.Store.proveedores" Multiplicity="0..1" />
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Proveedor_ManufactureroId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Recordatorios_RecordatorioId">
+    <End Role="recordatorios" Type="sistema_alertasModel.Store.recordatorios" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="recordatorios">
+        <PropertyRef Name="RecordatorioId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="RecordatorioId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Tarjetas_Pk_TarjetaId">
+    <End Role="tarjetas" Type="sistema_alertasModel.Store.tarjetas" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tarjetas">
+        <PropertyRef Name="TarjetaId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="TarjetaId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Tipo_Contratos_PK_Tipo_ContratoId">
+    <End Role="tipo_contratos" Type="sistema_alertasModel.Store.tipo_contratos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Tipo_ContratoId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Tipo_Pagos_PK_Tipo_PagoId">
+    <End Role="tipo_pagos" Type="sistema_alertasModel.Store.tipo_pagos" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_pagos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Tipo_PagoId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Unidad_Negocios_PK_Unidad_NegocioId">
+    <End Role="unidad_negocios" Type="sistema_alertasModel.Store.unidad_negocios" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad_negocios">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Unidad_NegocioId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Usuarios_Administrador_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.Store.usuarios" Multiplicity="0..1" />
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Usuario_AdministradorId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK2_Usuarios_Aprobador_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.Store.usuarios" Multiplicity="0..1" />
+    <End Role="Borradorcontratos" Type="sistema_alertasModel.Store.Borradorcontratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="Borradorcontratos">
+        <PropertyRef Name="Usuario_AprobadorId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AboutToFinishContractByAreaForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AboutToFinishContractForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ActiveContractByAreaForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ActiveContractForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="AllDetailsContractByAreaForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AllDetailsContractForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="defeatedContractByAreaForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="defeatedContractForReportPDF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DeleteAreaContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AreaContratosId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContratoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteMethodPaymentById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MetodoPagoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteOrdenCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrdenCompraId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProveedorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteTarjetas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TarjetaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteTipoContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoContratosId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteUnidadNegocios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadNegocioId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UsuarioId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EditAreaContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AreaContratosId" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Area" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_EditContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContratoId" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Numero_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Numero_Servicio_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+    <Parameter Name="Fecha_Finalizacion" Type="date" Mode="In" />
+    <Parameter Name="Costo_Total" Type="numeric" Mode="In" />
+    <Parameter Name="Costo_Por_Cada_Pago" Type="numeric" Mode="In" />
+    <Parameter Name="Fecha_Renovacion_Pago" Type="date" Mode="In" />
+    <Parameter Name="Cantidad_Licencias" Type="int" Mode="In" />
+    <Parameter Name="Garantia" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Vencimiento_Garantia" Type="date" Mode="In" />
+    <Parameter Name="Fecha_Creacion" Type="date" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Proveedor_ManufactureroId" Type="int" Mode="In" />
+    <Parameter Name="Proveedor_Distribuidor" Type="int" Mode="In" />
+    <Parameter Name="Usuario_AprobadorId" Type="int" Mode="In" />
+    <Parameter Name="Usuario_AdministradorId" Type="int" Mode="In" />
+    <Parameter Name="Tipo_ContratoId" Type="int" Mode="In" />
+    <Parameter Name="Metodo_PagoId" Type="int" Mode="In" />
+    <Parameter Name="Unidad_NegocioId" Type="int" Mode="In" />
+    <Parameter Name="Tipo_PagoId" Type="int" Mode="In" />
+    <Parameter Name="Orden_CompraId" Type="int" Mode="In" />
+    <Parameter Name="TarjetaId" Type="int" Mode="In" />
+    <Parameter Name="Area_ContratoId" Type="int" Mode="In" />
+    <Parameter Name="ProductoId" Type="int" Mode="In" />
+    <Parameter Name="RecordatorioId" Type="int" Mode="In" />
+    <Parameter Name="EstadoId" Type="int" Mode="In" />
+    <Parameter Name="Detalles_Producto" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_EditMethodPaymentById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MetodoPagoId" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Metodo_Pago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_EditOrdenCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrdenCompraId" Type="int" Mode="In" />
+    <Parameter Name="Fecha_Ultima_Orden_Compra" Type="date" Mode="In" />
+    <Parameter Name="Ultimo_Numero_Factura" Type="varchar" Mode="In" />
+    <Parameter Name="Codigo_Presupuestario_2016" Type="varchar" Mode="In" />
+    <Parameter Name="Monto_Previo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_EditProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductoId" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Producto" Type="varchar" Mode="In" />
+    <Parameter Name="Precio" Type="numeric" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Proveedor_ManufactureroId" Type="int" Mode="In" />
+    <Parameter Name="Proveedor_DistribuidorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EditProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProveedorId" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Proveedor" Type="varchar" Mode="In" />
+    <Parameter Name="Correo_Proveedor" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre_Contacto" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono_Contacto" Type="varchar" Mode="In" />
+    <Parameter Name="Ubicacion" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Tipo_ProveedorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EditTarjetas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TarjetaId" Type="int" Mode="In" />
+    <Parameter Name="Ultimos_Digitos_Tarjeta" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Vencimiento_Tarjeta" Type="date" Mode="In" />
+    <Parameter Name="Nombre_Persona_Asignada_A_Yarjeta" Type="varchar" Mode="In" />
+    <Parameter Name="Tipo_TarjetaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_EditTipoContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoContratosId" Type="int" Mode="In" />
+    <Parameter Name="Nombre_Tipo_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_EditUnidadNegociosById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadNegocioId" Type="int" Mode="In" />
+    <Parameter Name="Numero_Unidad_Negocio" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre_Unidad_Negocio" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre_Previo_Unidad_Negocio" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_EditUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UsuarioId" Type="int" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="Codigo_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="username" Type="varchar" Mode="In" />
+    <Parameter Name="PerfilId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarAreaContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Area" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarBorradorContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Numero_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Numero_Servicio_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+    <Parameter Name="Fecha_Finalizacion" Type="date" Mode="In" />
+    <Parameter Name="Costo_Total" Type="numeric" Mode="In" />
+    <Parameter Name="Costo_Por_Cada_Pago" Type="numeric" Mode="In" />
+    <Parameter Name="Fecha_Renovacion_Pago" Type="date" Mode="In" />
+    <Parameter Name="Cantidad_Licencias" Type="int" Mode="In" />
+    <Parameter Name="Garantia" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Vencimiento_Garantia" Type="date" Mode="In" />
+    <Parameter Name="Fecha_Creacion" Type="date" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Direccion_Archivo" Type="varchar" Mode="In" />
+    <Parameter Name="Proveedor_ManufactureroId" Type="int" Mode="In" />
+    <Parameter Name="Proveedor_Distribuidor" Type="int" Mode="In" />
+    <Parameter Name="Usuario_AprobadorId" Type="int" Mode="In" />
+    <Parameter Name="Usuario_AdministradorId" Type="int" Mode="In" />
+    <Parameter Name="Tipo_ContratoId" Type="int" Mode="In" />
+    <Parameter Name="Metodo_PagoId" Type="int" Mode="In" />
+    <Parameter Name="Unidad_NegocioId" Type="int" Mode="In" />
+    <Parameter Name="Tipo_PagoId" Type="int" Mode="In" />
+    <Parameter Name="Orden_CompraId" Type="int" Mode="In" />
+    <Parameter Name="TarjetaId" Type="int" Mode="In" />
+    <Parameter Name="Area_ContratoId" Type="int" Mode="In" />
+    <Parameter Name="ProductoId" Type="int" Mode="In" />
+    <Parameter Name="RecordatorioId" Type="int" Mode="In" />
+    <Parameter Name="EstadoId" Type="int" Mode="In" />
+    <Parameter Name="Detalles_Producto" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Numero_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Numero_Servicio_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Inicio" Type="date" Mode="In" />
+    <Parameter Name="Fecha_Finalizacion" Type="date" Mode="In" />
+    <Parameter Name="Costo_Total" Type="numeric" Mode="In" />
+    <Parameter Name="Costo_Por_Cada_Pago" Type="numeric" Mode="In" />
+    <Parameter Name="Fecha_Renovacion_Pago" Type="date" Mode="In" />
+    <Parameter Name="Cantidad_Licencias" Type="int" Mode="In" />
+    <Parameter Name="Garantia" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Vencimiento_Garantia" Type="date" Mode="In" />
+    <Parameter Name="Fecha_Creacion" Type="date" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Direccion_Archivo" Type="varchar" Mode="In" />
+    <Parameter Name="Proveedor_ManufactureroId" Type="int" Mode="In" />
+    <Parameter Name="Proveedor_Distribuidor" Type="int" Mode="In" />
+    <Parameter Name="Usuario_AprobadorId" Type="int" Mode="In" />
+    <Parameter Name="Usuario_AdministradorId" Type="int" Mode="In" />
+    <Parameter Name="Tipo_ContratoId" Type="int" Mode="In" />
+    <Parameter Name="Metodo_PagoId" Type="int" Mode="In" />
+    <Parameter Name="Unidad_NegocioId" Type="int" Mode="In" />
+    <Parameter Name="Tipo_PagoId" Type="int" Mode="In" />
+    <Parameter Name="Orden_CompraId" Type="int" Mode="In" />
+    <Parameter Name="TarjetaId" Type="int" Mode="In" />
+    <Parameter Name="Area_ContratoId" Type="int" Mode="In" />
+    <Parameter Name="ProductoId" Type="int" Mode="In" />
+    <Parameter Name="RecordatorioId" Type="int" Mode="In" />
+    <Parameter Name="EstadoId" Type="int" Mode="In" />
+    <Parameter Name="Detalles_Producto" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarEstados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarMetodoPagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Metodo_Pago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarOrdenCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fecha_Ultima_Orden_Compra" Type="date" Mode="In" />
+    <Parameter Name="Ultimo_Numero_Factura" Type="varchar" Mode="In" />
+    <Parameter Name="Codigo_Presupuestario_2016" Type="varchar" Mode="In" />
+    <Parameter Name="Monto_Previo" Type="varchar" Mode="In" />
+    <Parameter Name="Direccion_Archivo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarPerfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Perfil" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Producto" Type="varchar" Mode="In" />
+    <Parameter Name="Precio" Type="numeric" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Direccion_Fotografia" Type="varchar" Mode="In" />
+    <Parameter Name="Proveedor_ManufactureroId" Type="int" Mode="In" />
+    <Parameter Name="Proveedor_DistribuidorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarProveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Proveedor" Type="varchar" Mode="In" />
+    <Parameter Name="Correo_Proveedor" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre_Contacto" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono_Contacto" Type="varchar" Mode="In" />
+    <Parameter Name="Ubicacion" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+    <Parameter Name="Tipo_ProveedorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarTarjetas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ultimos_Digitos_Tarjeta" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Vencimiento_Tarjeta" Type="date" Mode="In" />
+    <Parameter Name="Nombre_Persona_Asignada_A_Yarjeta" Type="varchar" Mode="In" />
+    <Parameter Name="Tipo_TarjetaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarTipoContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Tipo_Contrato" Type="varchar" Mode="In" />
+    <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarTipoPagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre_Tipo_Pago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarUnidadNegocios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Numero_Unidad_Negocio" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre_Unidad_Negocio" Type="varchar" Mode="In" />
+    <Parameter Name="Nombre_Previo_Unidad_Negocio" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_insertarUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Nombre" Type="varchar" Mode="In" />
+    <Parameter Name="Apellido" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+    <Parameter Name="Telefono" Type="varchar" Mode="In" />
+    <Parameter Name="Codigo_Usuario" Type="varchar" Mode="In" />
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+    <Parameter Name="Fecha_Creacion" Type="datetime" Mode="In" />
+    <Parameter Name="Direccion_Fotografia" Type="varchar" Mode="In" />
+    <Parameter Name="PerfilId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectAdministrator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAdminUserPermissions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuarioId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectAllBusinessunit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllCards" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllContractArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllDetailsContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="contratoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectAllMethodPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllPurchaseOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllTypeContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllTypeProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectAllUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectApprover" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectBusinessUnit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectCard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectContractArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectContractAreaById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Area_ContratoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectContractByArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SelectContractForEdit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContratoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectDraftContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectDraftContractByArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CodigoArea" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectMethodPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectMethodPaymentById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MetodoPagoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_SelectOrdenComprasById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrdenCompraId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_selectProductById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectProductByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_selectProductByProviderId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProveedorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectProductsAccordingSuppliers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProviderManufacturing" Type="int" Mode="In" />
+    <Parameter Name="ProviderVendor" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectProfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectProviderById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProveedorId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectProviderManufacturing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectProviderVender" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectPurchaseOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectState" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectTarjetasById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TarjetaId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectTypeCard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectTypeContract" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectTypeContractById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TipoContratoId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectTypePayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_selectTypeProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_SelectUnidadNegociosById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UnidadNegocioId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectUserById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UsuarioId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_selectUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="username" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_selectWeatherAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

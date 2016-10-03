@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e42af2cf2c4e488fa07ffe69ecceb0ae" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="sistema_alertasModel.area_contratos" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.Borradorcontrato" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.contrato" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.estado" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.metodo_pagos" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.orden_compras" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.perfile" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.permiso" Width="1.5" PointX="9" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.producto" Width="1.5" PointX="3" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.proveedore" Width="1.5" PointX="0.75" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.recordatorio" Width="1.5" PointX="3" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.tarjeta" Width="1.5" PointX="3" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.tipo_contratos" Width="1.5" PointX="3" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.tipo_pagos" Width="1.5" PointX="3" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.tipo_proveedores" Width="1.5" PointX="1.5" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.tipo_tarjetas" Width="1.5" PointX="0.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.unidad_negocios" Width="1.5" PointX="3" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.usuario" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_alertasModel.usuarios_perfiles_permisos" Width="1.5" PointX="11.25" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Area_Contratos_PK_Area_Contrato" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Estados_EstadoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Metodo_Pagos_PK_Metodo_PagoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Orden_Compras_PK_Orden_CompraId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Productos_ProductoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Proveedores_Distribuidor_PK_ProveedorId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Proveedores_Manufacturero_PK_ProveedorId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Recordatorios_RecordatorioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Tarjetas_Pk_TarjetaId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Tipo_Contratos_PK_Tipo_ContratoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Tipo_Pagos_PK_Tipo_PagoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Unidad_Negocios_PK_Unidad_NegocioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Usuarios_Administrador_UsuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK2_Usuarios_Aprobador_PK_UsuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Estados_EstadoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Productos_ProductoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Recordatorios_RecordatorioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Perfiles_PK_Perfil" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Perfiles_PK_PerfilId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Permisos_PK_PermisoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId" ManuallyRouted="false" />
+        <AssociationConnector Association="sistema_alertasModel.FK_Usuarios_PK_UsuarioId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

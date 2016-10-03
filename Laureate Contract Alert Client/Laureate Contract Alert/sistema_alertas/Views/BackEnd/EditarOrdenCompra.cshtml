@@ -1,0 +1,290 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Add Purchase Order</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+   
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="post" action="../BackEnd/EditarOrdenCompra" onsubmit='return validar()' enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Edition Purchase Order</h6>
+            </div>
+          </div>
+          <br>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+          <div class="row">
+            <div class="input-field col s5">
+             @{
+                 List<SP_SelectOrdenComprasById_Result> PurchaseOrder = (List<SP_SelectOrdenComprasById_Result>)ViewData["purchaseOrder"];
+
+                 foreach (SP_SelectOrdenComprasById_Result purchaseOrder in PurchaseOrder)
+                 {
+                      <input id="Budget_Code" name="Budget_Code" value="@purchaseOrder.Codigo_Presupuestario2016" type="text" required>
+                      <input id="OrdenCompraId" name="OrdenCompraId" style="display:none" value="@purchaseOrder.Orden_CompraId" type="text" >
+                 }
+             }            
+              <label for="Budget_Code" class="flow-text">Budgetary code</label>
+            </div>
+
+            <div class="input-field col s4">
+             @{              
+                 foreach (SP_SelectOrdenComprasById_Result purchaseOrder in PurchaseOrder)
+                 {
+                      <input id="Previous_Value" name="Previous_Value" value="@purchaseOrder.Monto_Previo" type="text" style="display:none">
+                      <input id="Previous_Value2" name="Previous_Value" type="text" onblur="number_format();" required value="@purchaseOrder.Monto_Previo"  pattern="[0-9.,]{1,20}" title="No letters are allowed in this field">
+ 
+                 }
+              }            
+              <label for="Previous_Value2" class="flow-text">Previous value</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+            @{              
+                foreach (SP_SelectOrdenComprasById_Result purchaseOrder in PurchaseOrder)
+                {
+                   <input id ="Last_Purchase_Order_Date" name="Last_Purchase_Order_Date" value="@purchaseOrder.Fecha_Ultima_Orden_Compra.ToString("d")" type="date" class="datepicker">
+                }
+              }                
+               <label for="Last_Purchase_Order_Date" class="flow-text">Date last purchase order<span style="color:red;"> *</span></label>
+             </div>
+
+             <div class="input-field col s5">
+             @{              
+                 foreach (SP_SelectOrdenComprasById_Result purchaseOrder in PurchaseOrder)
+                 {                  
+                    <input id="Last_Invoice_Number" name="Last_Invoice_Number" value="@purchaseOrder.Ultimo_Numero_Factura" type="text" class="validate">
+                 }
+              }               
+                 <label for="Last_Invoice_Number" class="flow-text">Last invoice number<span style="color:red;"> *</span></label>
+             </div>
+          </div>
+
+             <label for="Contract_Name">¿Enable file upload?</label>
+             <div class="switch">
+               <label>
+                 Off
+                  <input type="checkbox" id="switch" onClick="if (this.checked == true) { Habiliar() } else { DesHabiliar() }" >
+                  <span class="lever"></span>
+                 On
+               </label>
+             </div> 
+
+
+          <div class="row">
+            <div class="col s10">
+              <div class="file-field input-field">
+                @{   
+                    foreach (SP_SelectOrdenComprasById_Result purchaseOrder in PurchaseOrder)
+                    {
+                        if (purchaseOrder.Direccion_Archivo.Equals(""))
+                        {
+                          <div class="btn">
+                            <span>File</span>
+                              <input type="file"   name="imagen">
+                           </div>
+
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" name="imagen" type="text" placeholder="Upload a file">
+                          </div>  
+                        }
+
+                        else
+                        {
+                         <div class="btn">
+                           <span>File</span>
+                             <input type="file" disabled id="Upload"  name="imagen">
+                           </div>
+
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" id="Upload2" name="imagen" disabled value="@purchaseOrder.Direccion_Archivo" type="text" placeholder="Upload a file">
+                            <input  id="UploadOculto" name="UploadOculto" value="@purchaseOrder.Direccion_Archivo" type="text" style="display:none">
+                          </div>  
+                        }
+                    }                       
+                 }
+            </div>
+          </div>
+          </div>
+
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancel">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Registration Purchase Order</h5></center>
+                <p ALIGN=justify>The purchase order registration module allows you to add all possible purchase
+	            orders have been generated for a contract. This purchase order control then serve to better order when creating a new contract.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<script type="text/javascript" src="../Content/js/numeral.js"></script>
+
+<script>
+    function Habiliar() {
+        $("#Upload").attr("disabled", false);
+        $("#Upload2").attr("disabled", false);
+        $("#Upload2").attr("value", "");
+    }
+</script>
+
+<script>
+    function DesHabiliar() {
+        $("#Upload").attr("disabled", true);
+        $("#Upload2").attr("disabled", true);
+    }
+</script>
+
+
+<script>
+    function number_format()
+    {
+        var Valor = document.getElementById("Previous_Value2").value;
+        Valor = numeral().unformat(Valor);
+        $("#Previous_Value").val(Valor);
+
+        Valor = numeral(Valor).format('0,0.00');
+        $("#Previous_Value2").val(Valor);
+    }
+</script>
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function ()
+    {
+        $('select').material_select();
+
+        if ($("#Upload2").val() == null)
+        {
+            $("#switch").prop("checked", "checked");
+        }
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+<script type='text/javascript'>
+function validar()
+{
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Budget_Code').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Previous_Value').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Last_Purchase_Order_Date').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Last_Invoice_Number').value.length =='' )
+{
+    todo_correcto = false;
+}
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+            
+}
+
+  return todo_correcto;
+}
+
+</script>
+
+
+</body>
+</html>

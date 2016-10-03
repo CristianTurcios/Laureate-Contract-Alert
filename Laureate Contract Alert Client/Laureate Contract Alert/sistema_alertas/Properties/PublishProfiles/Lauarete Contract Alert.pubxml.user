@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/ClosedXML.dll">
+      <publishTime>12/16/2014 16:34:10</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>07/06/2016 13:58:58</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>06/07/2016 11:48:40</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>03/17/2016 01:53:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>06/06/2016 16:03:04</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/15/2016 15:13:38</publishTime>
+    </File>
+    <File Include="bin/sistema_alertas.dll">
+      <publishTime>08/31/2016 16:51:24</publishTime>
+    </File>
+    <File Include="bin/SpreadsheetLight.dll">
+      <publishTime>07/28/2013 00:19:54</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/15/2016 15:13:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>07/15/2016 15:13:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>06/06/2016 16:03:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>07/15/2016 15:13:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/15/2016 15:13:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/15/2016 15:35:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>06/06/2016 16:03:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>06/06/2016 16:03:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>06/06/2016 16:03:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>06/06/2016 16:03:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>06/06/2016 16:03:05</publishTime>
+    </File>
+    <File Include="Content/Base de datos modelo/Modelo Base de datos Actual.png">
+      <publishTime>06/06/2016 14:29:00</publishTime>
+    </File>
+    <File Include="Content/Base de datos modelo/Modelo Base de datos.mwb">
+      <publishTime>06/06/2016 14:29:28</publishTime>
+    </File>
+    <File Include="Content/Base de datos modelo/Modelo Base de datos.mwb.bak">
+      <publishTime>06/06/2016 11:54:37</publishTime>
+    </File>
+    <File Include="Content/Base de datos modelo/Script.sql">
+      <publishTime>06/06/2016 14:27:42</publishTime>
+    </File>
+    <File Include="Content/ClosedXML.dll">
+      <publishTime>12/16/2014 16:34:10</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>11/24/2015 19:34:20</publishTime>
+    </File>
+    <File Include="Content/css/estilo2.css">
+      <publishTime>07/11/2016 13:33:14</publishTime>
+    </File>
+    <File Include="Content/css/estiloParaElSearch.css">
+      <publishTime>05/26/2016 11:38:32</publishTime>
+    </File>
+    <File Include="Content/css/estilos.css">
+      <publishTime>09/05/2016 09:38:19</publishTime>
+    </File>
+    <File Include="Content/css/font-awesome.min.css">
+      <publishTime>05/27/2016 08:21:25</publishTime>
+    </File>
+    <File Include="Content/css/joyride-2.1.css">
+      <publishTime>01/22/2014 21:46:46</publishTime>
+    </File>
+    <File Include="Content/css/materialize.min.css">
+      <publishTime>04/02/2016 04:48:00</publishTime>
+    </File>
+    <File Include="Content/css/sweetalert.css">
+      <publishTime>10/21/2015 02:20:02</publishTime>
+    </File>
+    <File Include="Content/DocumentFormat.OpenXml.dll">
+      <publishTime>07/06/2016 13:58:58</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>06/16/2015 15:56:18</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>06/16/2015 15:56:18</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>06/16/2015 15:56:18</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>06/16/2015 15:56:18</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>06/16/2015 15:56:18</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Bold.eot">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Bold.ttf">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Bold.woff">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Bold.woff2">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Light.eot">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Light.ttf">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Light.woff">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Light.woff2">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Medium.eot">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Medium.ttf">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Medium.woff">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Medium.woff2">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Regular.eot">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Regular.ttf">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Regular.woff">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Regular.woff2">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Thin.eot">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Thin.ttf">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Thin.woff">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/fonts/roboto/Roboto-Thin.woff2">
+      <publishTime>03/05/2016 02:45:44</publishTime>
+    </File>
+    <File Include="Content/img/ejemplo_de_especificacion_de_requerimientos_-_para_sesion_9.pdf">
+      <publishTime>06/01/2016 10:44:42</publishTime>
+    </File>
+    <File Include="Content/img/Excel.png">
+      <publishTime>07/06/2016 14:21:01</publishTime>
+    </File>
+    <File Include="Content/img/favicon.png">
+      <publishTime>05/24/2016 13:46:19</publishTime>
+    </File>
+    <File Include="Content/img/fondo-total.jpg">
+      <publishTime>07/11/2016 13:24:52</publishTime>
+    </File>
+    <File Include="Content/img/Fondo.jpg">
+      <publishTime>09/04/2016 22:09:04</publishTime>
+    </File>
+    <File Include="Content/img/iconoInfo.png">
+      <publishTime>07/13/2016 17:30:48</publishTime>
+    </File>
+    <File Include="Content/img/PDF.png">
+      <publishTime>07/06/2016 14:40:52</publishTime>
+    </File>
+    <File Include="Content/img/Producto.jpg">
+      <publishTime>05/27/2016 10:00:58</publishTime>
+    </File>
+    <File Include="Content/img/prueba.png">
+      <publishTime>05/23/2016 14:54:16</publishTime>
+    </File>
+    <File Include="Content/img/sample-1.jpg">
+      <publishTime>05/18/2016 17:22:05</publishTime>
+    </File>
+    <File Include="Content/img/User.png">
+      <publishTime>05/18/2016 17:25:21</publishTime>
+    </File>
+    <File Include="Content/img/UserLogin.png">
+      <publishTime>09/02/2015 19:45:28</publishTime>
+    </File>
+    <File Include="Content/itextsharp.dll">
+      <publishTime>03/17/2016 01:53:19</publishTime>
+    </File>
+    <File Include="Content/js/bootstrap.min.js">
+      <publishTime>11/24/2015 19:34:22</publishTime>
+    </File>
+    <File Include="Content/js/jquery-1.10.1.js">
+      <publishTime>01/22/2014 21:46:46</publishTime>
+    </File>
+    <File Include="Content/js/jquery-2.2.3.min.js">
+      <publishTime>05/16/2016 16:50:51</publishTime>
+    </File>
+    <File Include="Content/js/jquery.cookie.js">
+      <publishTime>01/22/2014 21:46:46</publishTime>
+    </File>
+    <File Include="Content/js/jquery.joyride-2.1.js">
+      <publishTime>01/22/2014 21:46:46</publishTime>
+    </File>
+    <File Include="Content/js/materialize.min.js">
+      <publishTime>04/02/2016 04:48:00</publishTime>
+    </File>
+    <File Include="Content/js/modernizr-custom.js">
+      <publishTime>07/05/2016 11:02:52</publishTime>
+    </File>
+    <File Include="Content/js/modernizr.mq.js">
+      <publishTime>01/22/2014 21:46:46</publishTime>
+    </File>
+    <File Include="Content/js/numeral.js">
+      <publishTime>07/17/2014 08:49:30</publishTime>
+    </File>
+    <File Include="Content/js/sweetalert.min.js">
+      <publishTime>10/21/2015 02:20:02</publishTime>
+    </File>
+    <File Include="Content/SpreadsheetLight.dll">
+      <publishTime>07/28/2013 00:19:54</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/06/2016 16:02:58</publishTime>
+    </File>
+    <File Include="Models/BaseProyectoSistemaAlertas.Context.tt">
+      <publishTime>08/26/2016 13:56:02</publishTime>
+    </File>
+    <File Include="Models/BaseProyectoSistemaAlertas.edmx.diagram">
+      <publishTime>08/26/2016 13:56:06</publishTime>
+    </File>
+    <File Include="Models/BaseProyectoSistemaAlertas.tt">
+      <publishTime>08/26/2016 13:56:02</publishTime>
+    </File>
+    <File Include="Models/BaseProyectoSistemasAlertas.Context.tt">
+      <publishTime>07/12/2016 08:23:23</publishTime>
+    </File>
+    <File Include="Models/BaseProyectoSistemasAlertas.edmx.diagram">
+      <publishTime>07/12/2016 08:23:27</publishTime>
+    </File>
+    <File Include="Models/BaseProyectoSistemasAlertas.tt">
+      <publishTime>07/12/2016 08:23:23</publishTime>
+    </File>
+    <File Include="Models/Model1.Context.tt">
+      <publishTime>07/05/2016 14:39:19</publishTime>
+    </File>
+    <File Include="Models/Model1.edmx.diagram">
+      <publishTime>07/05/2016 14:39:23</publishTime>
+    </File>
+    <File Include="Models/Model1.tt">
+      <publishTime>07/05/2016 14:39:19</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/15/2016 15:35:43</publishTime>
+    </File>
+    <File Include="sistema_alertasDataSet.xsc">
+      <publishTime>06/24/2016 15:13:16</publishTime>
+    </File>
+    <File Include="sistema_alertasDataSet.xss">
+      <publishTime>06/24/2016 15:13:16</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevaAreaContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevaOrdenCompra.cshtml">
+      <publishTime>09/05/2016 09:55:09</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevaTarjetas.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevaUnidadNegocio.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/AgregarNuevoContrato.cshtml">
+      <publishTime>09/05/2016 09:46:09</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevoMetodoPago.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevoProducto.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarNuevoTipoContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarProveedor.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/agregarUsuario.cshtml">
+      <publishTime>09/05/2016 09:51:44</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarAreaContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarBorradorContrato.cshtml">
+      <publishTime>09/05/2016 09:46:48</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarContrato.cshtml">
+      <publishTime>09/05/2016 09:46:26</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarMetodoPago.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarOrdenCompra.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarProducto.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarProveedor.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarTarjetas.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarTipoContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarUnidadNegocio.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/EditarUsuario.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/MainBackEnd.cshtml">
+      <publishTime>09/05/2016 09:58:07</publishTime>
+    </File>
+    <File Include="Views/BackEnd/MainBackEnd2.cshtml">
+      <publishTime>09/05/2016 09:59:44</publishTime>
+    </File>
+    <File Include="Views/BackEnd/MainBackEnd3.cshtml">
+      <publishTime>09/05/2016 10:01:00</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarAreaContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarBorrador.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarMetodoPago.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarOrdenCompra.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarProducto.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarProveedor.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarTarjetas.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarTipoContrato.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarUnidadNegocio.cshtml">
+      <publishTime>08/05/2016 17:35:45</publishTime>
+    </File>
+    <File Include="Views/BackEnd/ModificarUsuario.cshtml">
+      <publishTime>08/05/2016 17:35:44</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>09/05/2016 09:40:39</publishTime>
+    </File>
+    <File Include="Views/Home/RecuperarContraseña.cshtml">
+      <publishTime>08/05/2016 17:37:41</publishTime>
+    </File>
+    <File Include="Views/Main/DetallesContrato.cshtml">
+      <publishTime>08/26/2016 13:57:53</publishTime>
+    </File>
+    <File Include="Views/Main/DetallesProducto.cshtml">
+      <publishTime>08/05/2016 17:31:49</publishTime>
+    </File>
+    <File Include="Views/Main/DetallesProducto2.cshtml">
+      <publishTime>08/05/2016 17:31:58</publishTime>
+    </File>
+    <File Include="Views/Main/DetallesProveedor.cshtml">
+      <publishTime>08/05/2016 17:32:09</publishTime>
+    </File>
+    <File Include="Views/Main/DetallesUsuario.cshtml">
+      <publishTime>08/05/2016 17:32:09</publishTime>
+    </File>
+    <File Include="Views/Main/main.cshtml">
+      <publishTime>09/05/2016 09:56:51</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/26/2016 16:21:27</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/05/2016 10:01:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

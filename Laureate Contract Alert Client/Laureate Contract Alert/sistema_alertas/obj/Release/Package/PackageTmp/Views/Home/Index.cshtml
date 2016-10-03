@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Inicio de Sesión</title>
+  <link rel="stylesheet" href="../Content/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../Content/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../Content/css/estilos.css">
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+</head>
+
+<body id="login">
+
+<br><br><br><br><br><br><br><br><br><br>
+    @{        
+        int nivelmensaje = 0;
+          
+        if(ViewData["NivelMensaje"] !=null)
+        {           
+            nivelmensaje = (int)ViewData["NivelMensaje"];                   
+        }
+           
+        if (nivelmensaje == 1)
+        {
+           <script>swal({
+           title: "Good Job!",
+           text: "It sent the password is your email!",
+           type: "success",
+           timer: 5000
+           })
+           </script>                                                                                                         
+        }
+        else
+          if (nivelmensaje == 2)
+          {
+             <script>swal({
+             title: "Oops...",
+             text: "mail you provided is not registered in the system!",
+             type: "error",
+             timer: 5000
+             })
+             </script>          
+          }
+          
+        else
+          if (nivelmensaje == 3)
+          {
+             <script>swal({
+             title: "Oops...",
+             text: "Username and password are not listed in the system logs!",
+             type: "error",
+             timer: 5000
+             })
+             </script>          
+          }    
+     }                         
+<div class="container well" id="container-login">
+  <div class="row">
+      <div class="col-xs-12">
+          <img src="../Content/img/UserLogin.png" alt="" class="img-responsive" id="avatar"/>
+      </div>
+  </div>
+
+  <form method="POST" action="../Home/Index">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </div>
+            <input type="text" name="user" placeholder="Enter your username:" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+             <span class="glyphicon glyphicon-wrench"></span>
+          </div>
+              <input type="password" name="pass" placeholder="Password" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <input type="submit" name="InicioSesion" value="Login" class="btn btn-success btn-block">
+      </div>
+
+      <div class="form-group">
+          <p class="help-block">
+              <center><a href="../Home/RecuperarContraseña" id="ProblemasSesion">¿I can not access your account?</a></center>
+          </p>        
+      </div>
+  </form>
+</div>
+
+</body>
+</html>

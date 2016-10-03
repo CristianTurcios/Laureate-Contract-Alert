@@ -1,0 +1,136 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Add Payment Method</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+       
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="post" action="../BackEnd/EditarMetodoPago" onsubmit='return validar()' enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Edit Payment Method</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s10">
+              @{
+                  List<SP_selectMethodPaymentById_Result> MethodPayment = (List<SP_selectMethodPaymentById_Result>)ViewData["metodoPago"];
+                  foreach (SP_selectMethodPaymentById_Result methodPayment in MethodPayment)
+                  {
+                      <input id="Method_Pay" name="Method_Pay" type="text" value="@methodPayment.Nombre_Metodo_Pago" class="validate" required>
+                      <input id="Method_PayId" name="Method_PayId" style="display:none"  type="text" value="@methodPayment.Metodo_PagoId" class="validate" required>                 
+                  }
+               }             
+               <label for="Method_Pay" class="flow-text">Name of payment method<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancelar">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Guardar">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Registration Payment Method</h5></center>
+                <p ALIGN=justify>The registration module payment method allows you to add a new payment method to the system. <br /><br /> The payment methods that the system defines by default 
+                are listed below: 1) Cash 2) Cheque 3) Direct Credit 4) Credit Card</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--End Import jQuery before materialize.js-->
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+<script type='text/javascript'>
+function validar()
+{
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Method_Pay').value == '')
+{
+    todo_correcto = false;
+}
+
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+}
+
+  return todo_correcto;
+}
+
+</script>
+
+
+</body>
+</html>

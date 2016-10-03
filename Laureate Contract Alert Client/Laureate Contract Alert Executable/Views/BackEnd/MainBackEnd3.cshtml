@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/joyride-2.1.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Laureate Contract Alert</title>
+</head>
+<body>
+
+<!-- Nota: para la mayoria del diseño se creo usando materialize , una libreria de google, muy parecida a bootstrap, la mayoria del estilo y elementos como imputs, tables, dropdown, etc
+fueron creados usados esa libreria, se recomienda primero estudiar esta libreria o consultarla para poder entender de una manera mas rapida y facil el codigo -->
+
+<!-- Nota: el sistema presenta un bug en el sistema de paginacion, se muestra un color azul y un color rojo, esto sucede porque se utilizan dos librerias para el css, materialize y bootstrap
+este ultimo usado unicamente en el diseño de la tabla, al momento es que se quita una de estas dos librerias se quita el problema, pero se pierde el diseño ya sea de toda la tabla o de
+de la pagina completa , este bug persiste aun y no se ha solucionado porque es un detalle estetico que no afecta el rendimiento de la pagina -->
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Los tabs se utilizan para hacer creer que se ha programado dos paginas distintas sin necesidad de recargar, pero en realidad todo esta dentro de un mismo html unico -->
+
+<!-- ---------------------------------------------->
+  <div class="container">
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="row">
+      <div class="col s10">
+
+        <!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <div class="row">
+          <div class="col s10">
+            <a class="waves-effect waves-light btn" href="../Main/main">Back Home Panel</a>
+            <a onclick="Tutorial();"><img src="../Content/img/iconoInfo.png" class="responsive-img"/></a>
+          </div>
+        </div>
+        <!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+
+        <ul class="collapsible popout" data-collapsible="accordion">
+          
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>Modify User</div>
+            <div class="collapsible-body"><p>In this module you can register a new user in the system, adding all user information in the various fields that the system offers, pressing the button Get in.
+              <div class='col s3 offset-s9'>
+                 <a class="waves-effect waves-light btn" href="../BackEnd/ModificarUsuario">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header" id="numero1"><i class="material-icons">star</i>Register Supplier</div>
+            <div class="collapsible-body"><p>In this module you will be able to register new vendors into the system by adding all vendor information in the various fields that the system offers and classifying
+            according to their category, whether they are suppliers manufacturers or distributors. 	Add by pressing the button Select> Add.
+              <div class='col s3 offset-s9'>
+                 <a class="waves-effect waves-light btn" href="../BackEnd/agregarProveedor">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header" id="numero2"><i class="material-icons">star</i>Register Products</div>
+            <div class="collapsible-body"><p>In this module you can register a new product in the system by adding all the product information in the different fields that the system offers.
+               Add by pressing the button Selecione> Add.
+              <div class='col s3 offset-s9'>
+                <a class="waves-effect waves-light btn" href="../BackEnd/agregarNuevoProducto">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>Register Type Contracts</div>
+              <div class="collapsible-body"><p>In this module you can register a new type of contract in the system by adding all the 	information on contract type in the different fields
+              the system offers. Add by pressing the button Select> Add.
+                <div class='col s3 offset-s9'>
+                  <a class="waves-effect waves-light btn" href="../BackEnd/agregarNuevoTipoContrato">Get in</a>
+                </div>
+              </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header" id="numero100"><i class="material-icons">star</i>Register Payment Method</div>
+            <div class="collapsible-body"><p>In this module you can register a new payment method in the system by adding all
+            payment method information in different fields offered by the system. Add by pressing the button Select> Add. 
+              <div class='col s3 offset-s9'>
+                 <a class="waves-effect waves-light btn" href="../BackEnd/agregarNuevoMetodoPago">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header" id="numero3"><i class="material-icons">star</i>Register Cards</div>
+            <div class="collapsible-body"><p>In this module you may register a new card in the system by adding all the information on the card in different fields that the system offers. Add by pressing the button
+            Select> Add.
+              <div class='col s3 offset-s9'>
+                <a class="waves-effect waves-light btn" href="../BackEnd/AgregarNuevaTarjetas">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons">star</i>Register Business Unit</div>
+            <div class="collapsible-body"><p>In this module you may register a new business unit in the system by adding all information on the Business Unit in different fields the system offers. 
+            Add by pressing the button Select> Add.
+              <div class='col s3 offset-s9'>
+                 <a class="waves-effect waves-light btn" href="../BackEnd/AgregarNuevaUnidadNegocio">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header" id="numero4"><i class="material-icons">star</i>Register Purchase Order</div>
+            <div class="collapsible-body"><p>In this module you may register a new Purchase Order in the system by adding all the Purchase Orden information in different fields the system offers. 
+            Add by pressing the button Select> Add.
+              <div class='col s3 offset-s9'>
+                 <a class="waves-effect waves-light btn" href="../BackEnd/AgregarNuevaOrdenCompra">Get in</a>
+              </div>
+            </p></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header" id="numero5"><i class="material-icons">star</i>Register Contracts</div>
+            <div class="collapsible-body"><p>In this module you can register a new contract in the system by adding all contract information in the various fields that the system offers. 
+             Add by pressing the button Select> Add.
+            <div class='col s3 offset-s9'>
+                   <ul id="dropdown11" class="dropdown-content">
+                    <li><a href="../BackEnd/AgregarNuevoContrato">Add</a></li>                   
+                    <li><a href="../BackEnd/ModificarBorrador">Draft</a></li>                 
+                  </ul>
+                <a class="btn dropdown-button" href="#!" data-activates="dropdown11">Select<i class="mdi-navigation-arrow-drop-down right"></i></a>
+              </div>
+            </p></div>
+          </li>
+         </ul>
+      </div>
+
+      <!-- Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+        <div class="col s2 card-panel teal lighten-2">
+          <center><h5>Main administration</h5></center>
+            <p ALIGN=justify>This is the main screen of the site management system. From this view you can ADD, EDIT or DELETE any system item. Only Administrating users have access to EDIT or DELETE any item within the system.<br /><br />
+                Other users are limited may ADD items to the system but will not be able to DELETE any item.</p>
+        </div>
+      <!--Fin Codigo que muestra una pequeña leyenda de informacion de la funcionalidad de la pantalla-->
+    </div>
+  </div>
+
+       <!-- Tip Content -->
+    <ol id="joyRideTipContent">
+      
+      <li data-id="numero1" data-button="Next" data-options="tipLocation:left">
+        <h2>Step #1</h2>
+        <p>Then you must register the contractual vendors.By default these are divided into manufacturers and distributors.</p>
+      </li>
+      <li data-id="numero2" data-button="Next" data-options="tipLocation:left">
+        <h2>Step #2</h2>
+        <p>Then register the products each contract details per vendor.</p>
+      </li>
+
+       <li data-id="numero10" data-button="Next" data-options="tipLocation:left">
+        <h2>Step #10</h2>
+        <p>Once done the above steps and data stored in the system occupies you're ready to create an entirely new contract</p>
+      </li>
+
+        <li data-id="numero3" data-button="Next" data-options="tipLocation:left">
+        <h2>Step #3</h2>
+        <p>If the contract is paid by a credit or debit card not registered in the system please register here.</p>
+      </li>
+      <li data-id="numero4" data-button="Next"  data-options="tipLocation:left">
+        <h2>Step #4</h2>
+        <p>Some contracts manage various Purchase Orders. If the contract must manage purchase orders please register the PO´s here.</p>
+      </li>
+      <li data-id="numero5" data-button="Close" data-options="tipLocation:left">
+        <h2>Step #5</h2>
+        <p>Once the above steps are completed, you are ready to use the "Register Contract" Module.</p>
+      </li>
+       
+    </ol>
+
+
+
+<!--Se hace la importacion de las librerias para usar materialize, bootstrap y jquery-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--Fin bloque de codigo donde se hace la importacion de las librerias para usar materialize, bootstrap y jquery-->
+
+<!-- Run the plugin -->
+<script type="text/javascript" src="../Content/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../Content/js/modernizr.mq.js"></script>
+<script type="text/javascript" src="../Content/js/jquery.joyride-2.1.js"></script>
+
+<script>
+    function Tutorial() {
+        $('#joyRideTipContent').joyride(
+         {
+             autoStart: true,
+             postStepCallback: function (index, tip) {
+                 if (index == 2) {
+                     $(this).joyride('set_li', false, 1);
+                 }
+             },
+             modal: true,
+             expose: true
+         });
+    }
+</script>
+
+
+<script>
+    $(window).load(function () {
+        var lasCookies = document.cookie;
+        var ValorCookie = lasCookies.split("=");
+
+        if (lasCookies.length == 0) {
+            var testvalue = "1";
+            document.cookie = "testcookie=" + encodeURIComponent(testvalue);
+
+            $('#joyRideTipContent').joyride(
+               {
+                   autoStart: true,
+                   postStepCallback: function (index, tip) {
+                       if (index == 2) {
+                           $(this).joyride('set_li', false, 1);
+                       }
+                   },
+                   modal: true,
+                   expose: true
+               });
+        }
+    });
+ </script>
+<!-- Run the plugin -->
+
+
+
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+
+
+<!--Script para generar el efecto popout en la lista de Reportes -->
+<script>
+$(document).ready(function(){
+  $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  });
+});
+</script>
+<!--Script para generar el efecto popout en la lista de Reportes -->
+
+
+
+</body>
+</html>

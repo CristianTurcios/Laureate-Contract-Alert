@@ -1,0 +1,233 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">  
+  <script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+  <title>Add New Cards</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="post" action="../BackEnd/EditarTarjetas" onsubmit='return validar()' enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Edition Cards</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s5">
+             @{
+                 List<SP_selectTarjetasById_Result> Cards = (List<SP_selectTarjetasById_Result>)ViewData["CardsById"];                
+                 foreach (SP_selectTarjetasById_Result cards in Cards)
+                 {
+                    <input id="Last_Digits_Card" name="Last_Digits_Card" value="@cards.Ultimos_Digitos_Tarjeta" type="number" class="validate" required  length="4">
+                    <input id="TarjetaId" name="TarjetaId" style="display:none" value="@cards.TarjetaId" type="number" class="validate" required  length="4">
+                 }
+              }             
+               <label for="Last_Digits_Card" class="flow-text">Last digit card<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              <select id="Type_Card" name="Type_Card" >
+                <option value="" disabled selected class="flow-text">Select</option>
+               @{
+                   List<string> TypeCards = (List<string>)ViewData["TypeCards"];
+                   int contador = 1;
+                   int idSelect = 0;
+
+                   foreach (SP_selectTarjetasById_Result cards in Cards)
+                   {
+                       idSelect = cards.Tipo_TarjetaId;
+                       break;
+                   }
+                   foreach (string typeCards in TypeCards)
+                   {
+                      if (contador == idSelect)
+                      {
+                         <option value="@contador" selected class="flow-text">@typeCards</option>
+                         contador++;
+                      }
+                      else
+                      {
+                        <option value="@contador" class="flow-text">@typeCards</option>
+                         contador++; 
+                      }                     
+                   }
+                 }
+              </select>          
+              <label class="flow-text">Card Type<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              @{                
+                 foreach (SP_selectTarjetasById_Result cards in Cards)
+                 {
+                     <input id="Name_Person_Assigned_To_Card" value="@cards.Nombre_Persona_Asignada_A_Tarjeta" name="Name_Person_Assigned_To_Card" type="text" class="validate" required>  
+                 }
+               }
+            
+              <label for="Name_Person_Assigned_To_Card" class="flow-text">Name Person assigned to card<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              @{                
+                 foreach (SP_selectTarjetasById_Result cards in Cards)
+                 {
+                     <input id ="End_Date_Card" name="End_Date_Card" value="@cards.Fecha_Vencimiento_Tarjeta.ToString("d")" type="date" class="datepicker">  
+                 }
+               }              
+               <label for="End_Date_Card" class="flow-text">Card expiration date<span style="color:red;"> *</span></label>
+             </div>
+          </div>
+
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancel">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>New Registration Cards</h5></center>
+                <p ALIGN=justify>The Credit Card registration module lets you add a new CC on record. To add a new 
+	            Credit Card you must fill-in some required fields. If the expiration date on a card is close to end, the system will send an alert by mail.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--End Import jQuery before materialize.js-->
+
+    <script>
+        $(document).ready(function () {
+            $('input#input_text, textarea#textarea1').characterCounter();
+        });
+    </script>
+   
+
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<script type='text/javascript'>
+function validar()
+{
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Last_Digits_Card').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+if (document.getElementById('Last_Digits_Card').value.length > 4)
+{
+    todo_correcto = false;
+}
+
+/*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+introduzca al menos 10 caracteres.*/
+if(document.getElementById('Name_Person_Assigned_To_Card').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Para validar el select debemos añadir un value distinto a cada option. En el
+código, he asignado un value con  valor vacío al primer option. Los siguientes,
+al no estar definidos toman el valor por defecto. Por tanto, si todos tienen value,
+lo único que tenemos que comprobar es que este no sea vacío. Si es vacío, todo_correcto
+será false.*/
+if(document.getElementById('End_Date_Card').value == '')
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Type_Card').value == '' )
+{
+    todo_correcto = false;
+}
+
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+}
+
+  return todo_correcto;
+}
+
+</script>
+
+
+</body>
+</html>

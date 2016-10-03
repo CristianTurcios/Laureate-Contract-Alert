@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sistema_alertasModelStoreContainer" CdmEntityContainer="sistema_alertasEntities1">
+    <EntitySetMapping Name="area_contratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.area_contratos">
+        <MappingFragment StoreEntitySet="area_contratos">
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="Nombre_Area" ColumnName="Nombre_Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.contrato">
+        <MappingFragment StoreEntitySet="contratos">
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+          <ScalarProperty Name="Usuario_AprobadorId" ColumnName="Usuario_AprobadorId" />
+          <ScalarProperty Name="Usuario_AdministradorId" ColumnName="Usuario_AdministradorId" />
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Tipo_PagoId" ColumnName="Tipo_PagoId" />
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="RecordatorioId" ColumnName="RecordatorioId" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estados">
+      <EntityTypeMapping TypeName="sistema_alertasModel.estado">
+        <MappingFragment StoreEntitySet="estados">
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="metodo_pagos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.metodo_pagos">
+        <MappingFragment StoreEntitySet="metodo_pagos">
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orden_compras">
+      <EntityTypeMapping TypeName="sistema_alertasModel.orden_compras">
+        <MappingFragment StoreEntitySet="orden_compras">
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="Fecha_Ultima_Orden_Compra" ColumnName="Fecha_Ultima_Orden_Compra" />
+          <ScalarProperty Name="Ultimo_Numero_Factura" ColumnName="Ultimo_Numero_Factura" />
+          <ScalarProperty Name="Codigo_Presupuestario2016" ColumnName="Codigo_Presupuestario2016" />
+          <ScalarProperty Name="Monto_Previo" ColumnName="Monto_Previo" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="perfiles">
+      <EntityTypeMapping TypeName="sistema_alertasModel.perfile">
+        <MappingFragment StoreEntitySet="perfiles">
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+          <ScalarProperty Name="Nombre_Perfil" ColumnName="Nombre_Perfil" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permisos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.permiso">
+        <MappingFragment StoreEntitySet="permisos">
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="Nombre_Permiso" ColumnName="Nombre_Permiso" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.producto">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedores">
+      <EntityTypeMapping TypeName="sistema_alertasModel.proveedore">
+        <MappingFragment StoreEntitySet="proveedores">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Nombre_Proveedor" ColumnName="Nombre_Proveedor" />
+          <ScalarProperty Name="Correo_Proveedor" ColumnName="Correo_Proveedor" />
+          <ScalarProperty Name="Nombre_Contacto" ColumnName="Nombre_Contacto" />
+          <ScalarProperty Name="Telefono_Contacto" ColumnName="Telefono_Contacto" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo_ProveedorId" ColumnName="Tipo_ProveedorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recordatorios">
+      <EntityTypeMapping TypeName="sistema_alertasModel.recordatorio">
+        <MappingFragment StoreEntitySet="recordatorios">
+          <ScalarProperty Name="RecordatorioId" ColumnName="RecordatorioId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="sistema_alertasModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjetas">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tarjeta">
+        <MappingFragment StoreEntitySet="tarjetas">
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Tipo_TarjetaId" ColumnName="Tipo_TarjetaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_contratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_contratos">
+        <MappingFragment StoreEntitySet="tipo_contratos">
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_pagos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_pagos">
+        <MappingFragment StoreEntitySet="tipo_pagos">
+          <ScalarProperty Name="Tipo_PagoId" ColumnName="Tipo_PagoId" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_proveedores">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_proveedores">
+        <MappingFragment StoreEntitySet="tipo_proveedores">
+          <ScalarProperty Name="Tipo_ProveedorId" ColumnName="Tipo_ProveedorId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_tarjetas">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_tarjetas">
+        <MappingFragment StoreEntitySet="tipo_tarjetas">
+          <ScalarProperty Name="Tipo_TarjetaId" ColumnName="Tipo_TarjetaId" />
+          <ScalarProperty Name="Nombre_Tarjeta" ColumnName="Nombre_Tarjeta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad_negocios">
+      <EntityTypeMapping TypeName="sistema_alertasModel.unidad_negocios">
+        <MappingFragment StoreEntitySet="unidad_negocios">
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Numero_Unidad_Negocio" ColumnName="Numero_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Previo_Unidad_Negocio" ColumnName="Nombre_Previo_Unidad_Negocio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="sistema_alertasModel.usuario">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Codigo_Usuario" ColumnName="Codigo_Usuario" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios_perfiles_permisos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.usuarios_perfiles_permisos">
+        <MappingFragment StoreEntitySet="usuarios_perfiles_permisos">
+          <ScalarProperty Name="Usuario_Perfil_PermisoId" ColumnName="Usuario_Perfil_PermisoId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="sistema_alertasModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="sistema_alertasModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="sistema_alertasModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="sistema_alertasModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="sistema_alertasModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_insertarAreaContratos" FunctionName="sistema_alertasModel.Store.SP_insertarAreaContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarContratos" FunctionName="sistema_alertasModel.Store.SP_insertarContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarEstados" FunctionName="sistema_alertasModel.Store.SP_insertarEstados" />
+    <FunctionImportMapping FunctionImportName="SP_insertarMetodoPagos" FunctionName="sistema_alertasModel.Store.SP_insertarMetodoPagos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarOrdenCompras" FunctionName="sistema_alertasModel.Store.SP_insertarOrdenCompras" />
+    <FunctionImportMapping FunctionImportName="SP_insertarPerfiles" FunctionName="sistema_alertasModel.Store.SP_insertarPerfiles" />
+    <FunctionImportMapping FunctionImportName="SP_insertarProductos" FunctionName="sistema_alertasModel.Store.SP_insertarProductos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarProveedores" FunctionName="sistema_alertasModel.Store.SP_insertarProveedores" />
+    <FunctionImportMapping FunctionImportName="SP_insertarTarjetas" FunctionName="sistema_alertasModel.Store.SP_insertarTarjetas" />
+    <FunctionImportMapping FunctionImportName="SP_insertarTipoContratos" FunctionName="sistema_alertasModel.Store.SP_insertarTipoContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarTipoPagos" FunctionName="sistema_alertasModel.Store.SP_insertarTipoPagos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarUnidadNegocios" FunctionName="sistema_alertasModel.Store.SP_insertarUnidadNegocios" />
+    <FunctionImportMapping FunctionImportName="SP_insertarUsuarios" FunctionName="sistema_alertasModel.Store.SP_insertarUsuarios" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="sistema_alertasModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="sistema_alertasModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

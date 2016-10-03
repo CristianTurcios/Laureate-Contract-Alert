@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sistema_alertasModelStoreContainer" CdmEntityContainer="sistema_alertasEntities">
+    <EntitySetMapping Name="area_contratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.area_contratos">
+        <MappingFragment StoreEntitySet="area_contratos">
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="Nombre_Area" ColumnName="Nombre_Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Borradorcontratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.Borradorcontrato">
+        <MappingFragment StoreEntitySet="Borradorcontratos">
+          <ScalarProperty Name="ContratoId2" ColumnName="ContratoId2" />
+          <ScalarProperty Name="Nombre_Contrato2" ColumnName="Nombre_Contrato2" />
+          <ScalarProperty Name="Numero_Contrato2" ColumnName="Numero_Contrato2" />
+          <ScalarProperty Name="Numero_Servicio_Contrato2" ColumnName="Numero_Servicio_Contrato2" />
+          <ScalarProperty Name="Fecha_Inicio2" ColumnName="Fecha_Inicio2" />
+          <ScalarProperty Name="Fecha_Finalizacion2" ColumnName="Fecha_Finalizacion2" />
+          <ScalarProperty Name="Costo_Total2" ColumnName="Costo_Total2" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago2" ColumnName="Costo_Por_Cada_Pago2" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago2" ColumnName="Fecha_Renovacion_Pago2" />
+          <ScalarProperty Name="Cantidad_Licencias2" ColumnName="Cantidad_Licencias2" />
+          <ScalarProperty Name="Garantia2" ColumnName="Garantia2" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia2" ColumnName="Fecha_Vencimiento_Garantia2" />
+          <ScalarProperty Name="Fecha_Creacion2" ColumnName="Fecha_Creacion2" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+          <ScalarProperty Name="Direccion_Archivo2" ColumnName="Direccion_Archivo2" />
+          <ScalarProperty Name="Proveedor_ManufactureroId2" ColumnName="Proveedor_ManufactureroId2" />
+          <ScalarProperty Name="Proveedor_DistribuidorId2" ColumnName="Proveedor_DistribuidorId2" />
+          <ScalarProperty Name="Usuario_AprobadorId2" ColumnName="Usuario_AprobadorId2" />
+          <ScalarProperty Name="Usuario_AdministradorId2" ColumnName="Usuario_AdministradorId2" />
+          <ScalarProperty Name="Tipo_ContratoId2" ColumnName="Tipo_ContratoId2" />
+          <ScalarProperty Name="Metodo_PagoId2" ColumnName="Metodo_PagoId2" />
+          <ScalarProperty Name="Unidad_NegocioId2" ColumnName="Unidad_NegocioId2" />
+          <ScalarProperty Name="Tipo_PagoId2" ColumnName="Tipo_PagoId2" />
+          <ScalarProperty Name="Orden_CompraId2" ColumnName="Orden_CompraId2" />
+          <ScalarProperty Name="TarjetaId2" ColumnName="TarjetaId2" />
+          <ScalarProperty Name="Area_ContratoId2" ColumnName="Area_ContratoId2" />
+          <ScalarProperty Name="ProductoId2" ColumnName="ProductoId2" />
+          <ScalarProperty Name="RecordatorioId2" ColumnName="RecordatorioId2" />
+          <ScalarProperty Name="EstadoId2" ColumnName="EstadoId2" />
+          <ScalarProperty Name="Detalles_Producto2" ColumnName="Detalles_Producto2" />
+          <ScalarProperty Name="Gastos2" ColumnName="Gastos2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.contrato">
+        <MappingFragment StoreEntitySet="contratos">
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+          <ScalarProperty Name="Usuario_AprobadorId" ColumnName="Usuario_AprobadorId" />
+          <ScalarProperty Name="Usuario_AdministradorId" ColumnName="Usuario_AdministradorId" />
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Tipo_PagoId" ColumnName="Tipo_PagoId" />
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="RecordatorioId" ColumnName="RecordatorioId" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estados">
+      <EntityTypeMapping TypeName="sistema_alertasModel.estado">
+        <MappingFragment StoreEntitySet="estados">
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="metodo_pagos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.metodo_pagos">
+        <MappingFragment StoreEntitySet="metodo_pagos">
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orden_compras">
+      <EntityTypeMapping TypeName="sistema_alertasModel.orden_compras">
+        <MappingFragment StoreEntitySet="orden_compras">
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="Fecha_Ultima_Orden_Compra" ColumnName="Fecha_Ultima_Orden_Compra" />
+          <ScalarProperty Name="Ultimo_Numero_Factura" ColumnName="Ultimo_Numero_Factura" />
+          <ScalarProperty Name="Codigo_Presupuestario2016" ColumnName="Codigo_Presupuestario2016" />
+          <ScalarProperty Name="Monto_Previo" ColumnName="Monto_Previo" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="perfiles">
+      <EntityTypeMapping TypeName="sistema_alertasModel.perfile">
+        <MappingFragment StoreEntitySet="perfiles">
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+          <ScalarProperty Name="Nombre_Perfil" ColumnName="Nombre_Perfil" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permisos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.permiso">
+        <MappingFragment StoreEntitySet="permisos">
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="Nombre_Permiso" ColumnName="Nombre_Permiso" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.producto">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proveedores">
+      <EntityTypeMapping TypeName="sistema_alertasModel.proveedore">
+        <MappingFragment StoreEntitySet="proveedores">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Nombre_Proveedor" ColumnName="Nombre_Proveedor" />
+          <ScalarProperty Name="Correo_Proveedor" ColumnName="Correo_Proveedor" />
+          <ScalarProperty Name="Nombre_Contacto" ColumnName="Nombre_Contacto" />
+          <ScalarProperty Name="Telefono_Contacto" ColumnName="Telefono_Contacto" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo_ProveedorId" ColumnName="Tipo_ProveedorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recordatorios">
+      <EntityTypeMapping TypeName="sistema_alertasModel.recordatorio">
+        <MappingFragment StoreEntitySet="recordatorios">
+          <ScalarProperty Name="RecordatorioId" ColumnName="RecordatorioId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjetas">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tarjeta">
+        <MappingFragment StoreEntitySet="tarjetas">
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Tipo_TarjetaId" ColumnName="Tipo_TarjetaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_contratos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_contratos">
+        <MappingFragment StoreEntitySet="tipo_contratos">
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_pagos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_pagos">
+        <MappingFragment StoreEntitySet="tipo_pagos">
+          <ScalarProperty Name="Tipo_PagoId" ColumnName="Tipo_PagoId" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_proveedores">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_proveedores">
+        <MappingFragment StoreEntitySet="tipo_proveedores">
+          <ScalarProperty Name="Tipo_ProveedorId" ColumnName="Tipo_ProveedorId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_tarjetas">
+      <EntityTypeMapping TypeName="sistema_alertasModel.tipo_tarjetas">
+        <MappingFragment StoreEntitySet="tipo_tarjetas">
+          <ScalarProperty Name="Tipo_TarjetaId" ColumnName="Tipo_TarjetaId" />
+          <ScalarProperty Name="Nombre_Tarjeta" ColumnName="Nombre_Tarjeta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad_negocios">
+      <EntityTypeMapping TypeName="sistema_alertasModel.unidad_negocios">
+        <MappingFragment StoreEntitySet="unidad_negocios">
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Numero_Unidad_Negocio" ColumnName="Numero_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Previo_Unidad_Negocio" ColumnName="Nombre_Previo_Unidad_Negocio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="sistema_alertasModel.usuario">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Codigo_Usuario" ColumnName="Codigo_Usuario" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+          <ScalarProperty Name="pass2" ColumnName="pass2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios_perfiles_permisos">
+      <EntityTypeMapping TypeName="sistema_alertasModel.usuarios_perfiles_permisos">
+        <MappingFragment StoreEntitySet="usuarios_perfiles_permisos">
+          <ScalarProperty Name="Usuario_Perfil_PermisoId" ColumnName="Usuario_Perfil_PermisoId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AboutToFinishContractByAreaForReportPDF" FunctionName="sistema_alertasModel.Store.AboutToFinishContractByAreaForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.AboutToFinishContractByAreaForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AboutToFinishContractForReportPDF" FunctionName="sistema_alertasModel.Store.AboutToFinishContractForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.AboutToFinishContractForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ActiveContractByAreaForReportPDF" FunctionName="sistema_alertasModel.Store.ActiveContractByAreaForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.ActiveContractByAreaForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ActiveContractForReportPDF" FunctionName="sistema_alertasModel.Store.ActiveContractForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.ActiveContractForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AllDetailsContractByAreaForReportPDF" FunctionName="sistema_alertasModel.Store.AllDetailsContractByAreaForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.AllDetailsContractByAreaForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Estado_Contrato" ColumnName="Estado_Contrato" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AllDetailsContractForReportPDF" FunctionName="sistema_alertasModel.Store.AllDetailsContractForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.AllDetailsContractForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Estado_Contrato" ColumnName="Estado_Contrato" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="defeatedContractByAreaForReportPDF" FunctionName="sistema_alertasModel.Store.defeatedContractByAreaForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.defeatedContractByAreaForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="defeatedContractForReportPDF" FunctionName="sistema_alertasModel.Store.defeatedContractForReportPDF">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.defeatedContractForReportPDF_Result">
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DeleteAreaContratos" FunctionName="sistema_alertasModel.Store.SP_DeleteAreaContratos" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteContract" FunctionName="sistema_alertasModel.Store.SP_DeleteContract" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteDraftContract" FunctionName="sistema_alertasModel.Store.SP_DeleteDraftContract" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteMethodPaymentById" FunctionName="sistema_alertasModel.Store.SP_DeleteMethodPaymentById" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteOrdenCompras" FunctionName="sistema_alertasModel.Store.SP_DeleteOrdenCompras" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteProduct" FunctionName="sistema_alertasModel.Store.SP_DeleteProduct" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteProvider" FunctionName="sistema_alertasModel.Store.SP_DeleteProvider" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteTarjetas" FunctionName="sistema_alertasModel.Store.SP_DeleteTarjetas" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteTipoContratos" FunctionName="sistema_alertasModel.Store.SP_DeleteTipoContratos" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteUnidadNegocios" FunctionName="sistema_alertasModel.Store.SP_DeleteUnidadNegocios" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteUser" FunctionName="sistema_alertasModel.Store.SP_DeleteUser" />
+    <FunctionImportMapping FunctionImportName="SP_EditAreaContratos" FunctionName="sistema_alertasModel.Store.SP_EditAreaContratos" />
+    <FunctionImportMapping FunctionImportName="SP_EditContratos" FunctionName="sistema_alertasModel.Store.SP_EditContratos" />
+    <FunctionImportMapping FunctionImportName="SP_EditMethodPaymentById" FunctionName="sistema_alertasModel.Store.SP_EditMethodPaymentById" />
+    <FunctionImportMapping FunctionImportName="SP_EditOrdenCompras" FunctionName="sistema_alertasModel.Store.SP_EditOrdenCompras" />
+    <FunctionImportMapping FunctionImportName="SP_EditProduct" FunctionName="sistema_alertasModel.Store.SP_EditProduct" />
+    <FunctionImportMapping FunctionImportName="SP_EditProvider" FunctionName="sistema_alertasModel.Store.SP_EditProvider" />
+    <FunctionImportMapping FunctionImportName="SP_EditTarjetas" FunctionName="sistema_alertasModel.Store.SP_EditTarjetas" />
+    <FunctionImportMapping FunctionImportName="SP_EditTipoContratos" FunctionName="sistema_alertasModel.Store.SP_EditTipoContratos" />
+    <FunctionImportMapping FunctionImportName="SP_EditUnidadNegociosById" FunctionName="sistema_alertasModel.Store.SP_EditUnidadNegociosById" />
+    <FunctionImportMapping FunctionImportName="SP_EditUser" FunctionName="sistema_alertasModel.Store.SP_EditUser" />
+    <FunctionImportMapping FunctionImportName="SP_insertarAreaContratos" FunctionName="sistema_alertasModel.Store.SP_insertarAreaContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarBorradorContratos" FunctionName="sistema_alertasModel.Store.SP_insertarBorradorContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarContratos" FunctionName="sistema_alertasModel.Store.SP_insertarContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarEstados" FunctionName="sistema_alertasModel.Store.SP_insertarEstados" />
+    <FunctionImportMapping FunctionImportName="SP_insertarMetodoPagos" FunctionName="sistema_alertasModel.Store.SP_insertarMetodoPagos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarOrdenCompras" FunctionName="sistema_alertasModel.Store.SP_insertarOrdenCompras" />
+    <FunctionImportMapping FunctionImportName="SP_insertarPerfiles" FunctionName="sistema_alertasModel.Store.SP_insertarPerfiles" />
+    <FunctionImportMapping FunctionImportName="SP_insertarProductos" FunctionName="sistema_alertasModel.Store.SP_insertarProductos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarProveedores" FunctionName="sistema_alertasModel.Store.SP_insertarProveedores" />
+    <FunctionImportMapping FunctionImportName="SP_insertarTarjetas" FunctionName="sistema_alertasModel.Store.SP_insertarTarjetas" />
+    <FunctionImportMapping FunctionImportName="SP_insertarTipoContratos" FunctionName="sistema_alertasModel.Store.SP_insertarTipoContratos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarTipoPagos" FunctionName="sistema_alertasModel.Store.SP_insertarTipoPagos" />
+    <FunctionImportMapping FunctionImportName="SP_insertarUnidadNegocios" FunctionName="sistema_alertasModel.Store.SP_insertarUnidadNegocios" />
+    <FunctionImportMapping FunctionImportName="SP_insertarUsuarios" FunctionName="sistema_alertasModel.Store.SP_insertarUsuarios" />
+    <FunctionImportMapping FunctionImportName="SP_selectAdministrator" FunctionName="sistema_alertasModel.Store.SP_selectAdministrator">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAdministrator_Result">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAdminUserPermissions" FunctionName="sistema_alertasModel.Store.SP_selectAdminUserPermissions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAdminUserPermissions_Result">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+          <ScalarProperty Name="PermisoId" ColumnName="PermisoId" />
+          <ScalarProperty Name="Usuario_Perfil_PermisoId" ColumnName="Usuario_Perfil_PermisoId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllBusinessunit" FunctionName="sistema_alertasModel.Store.SP_selectAllBusinessunit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllBusinessunit_Result">
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Numero_Unidad_Negocio" ColumnName="Numero_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Previo_Unidad_Negocio" ColumnName="Nombre_Previo_Unidad_Negocio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllCards" FunctionName="sistema_alertasModel.Store.SP_selectAllCards">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllCards_Result">
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Nombre_Tarjeta" ColumnName="Nombre_Tarjeta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllContractArea" FunctionName="sistema_alertasModel.Store.SP_selectAllContractArea">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllContractArea_Result">
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="Nombre_Area" ColumnName="Nombre_Area" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllDetailsContract" FunctionName="sistema_alertasModel.Store.SP_selectAllDetailsContract">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllDetailsContract_Result">
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+          <ScalarProperty Name="Usuario_AprobadorId" ColumnName="Usuario_AprobadorId" />
+          <ScalarProperty Name="Usuario_AdministradorId" ColumnName="Usuario_AdministradorId" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Codigo_Presupuestario2016" ColumnName="Codigo_Presupuestario2016" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Detalles_contrato" ColumnName="Detalles_contrato" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllMethodPayment" FunctionName="sistema_alertasModel.Store.SP_selectAllMethodPayment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllMethodPayment_Result">
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllProducts" FunctionName="sistema_alertasModel.Store.SP_selectAllProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllProducts_Result">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllProvider" FunctionName="sistema_alertasModel.Store.SP_selectAllProvider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllProvider_Result">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Nombre_Proveedor" ColumnName="Nombre_Proveedor" />
+          <ScalarProperty Name="Correo_Proveedor" ColumnName="Correo_Proveedor" />
+          <ScalarProperty Name="Nombre_Contacto" ColumnName="Nombre_Contacto" />
+          <ScalarProperty Name="Telefono_Contacto" ColumnName="Telefono_Contacto" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllPurchaseOrder" FunctionName="sistema_alertasModel.Store.SP_selectAllPurchaseOrder">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllPurchaseOrder_Result">
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="Fecha_Ultima_Orden_Compra" ColumnName="Fecha_Ultima_Orden_Compra" />
+          <ScalarProperty Name="Ultimo_Numero_Factura" ColumnName="Ultimo_Numero_Factura" />
+          <ScalarProperty Name="Codigo_Presupuestario2016" ColumnName="Codigo_Presupuestario2016" />
+          <ScalarProperty Name="Monto_Previo" ColumnName="Monto_Previo" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllTypeContract" FunctionName="sistema_alertasModel.Store.SP_selectAllTypeContract">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllTypeContract_Result">
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllTypeProvider" FunctionName="sistema_alertasModel.Store.SP_selectAllTypeProvider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllTypeProvider_Result">
+          <ScalarProperty Name="Tipo_ProveedorId" ColumnName="Tipo_ProveedorId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectAllUser" FunctionName="sistema_alertasModel.Store.SP_selectAllUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectAllUser_Result">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Codigo_Usuario" ColumnName="Codigo_Usuario" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Nombre_Perfil" ColumnName="Nombre_Perfil" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectApprover" FunctionName="sistema_alertasModel.Store.SP_selectApprover">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectApprover_Result">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectBusinessUnit" FunctionName="sistema_alertasModel.Store.SP_selectBusinessUnit" />
+    <FunctionImportMapping FunctionImportName="SP_selectCard" FunctionName="sistema_alertasModel.Store.SP_selectCard">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectCard_Result">
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Nombre_Tarjeta" ColumnName="Nombre_Tarjeta" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectContract" FunctionName="sistema_alertasModel.Store.SP_selectContract">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectContract_Result">
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectContractArea" FunctionName="sistema_alertasModel.Store.SP_selectContractArea" />
+    <FunctionImportMapping FunctionImportName="SP_selectContractAreaById" FunctionName="sistema_alertasModel.Store.SP_selectContractAreaById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectContractAreaById_Result">
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="Nombre_Area" ColumnName="Nombre_Area" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectContractByArea" FunctionName="sistema_alertasModel.Store.SP_selectContractByArea">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectContractByArea_Result">
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectContractForEdit" FunctionName="sistema_alertasModel.Store.SP_SelectContractForEdit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_SelectContractForEdit_Result">
+          <ScalarProperty Name="ContratoId" ColumnName="ContratoId" />
+          <ScalarProperty Name="Nombre_Contrato" ColumnName="Nombre_Contrato" />
+          <ScalarProperty Name="Numero_Contrato" ColumnName="Numero_Contrato" />
+          <ScalarProperty Name="Numero_Servicio_Contrato" ColumnName="Numero_Servicio_Contrato" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+          <ScalarProperty Name="Costo_Total" ColumnName="Costo_Total" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago" ColumnName="Costo_Por_Cada_Pago" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago" ColumnName="Fecha_Renovacion_Pago" />
+          <ScalarProperty Name="Cantidad_Licencias" ColumnName="Cantidad_Licencias" />
+          <ScalarProperty Name="Garantia" ColumnName="Garantia" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia" ColumnName="Fecha_Vencimiento_Garantia" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+          <ScalarProperty Name="Usuario_AprobadorId" ColumnName="Usuario_AprobadorId" />
+          <ScalarProperty Name="Usuario_AdministradorId" ColumnName="Usuario_AdministradorId" />
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Tipo_PagoId" ColumnName="Tipo_PagoId" />
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Area_ContratoId" ColumnName="Area_ContratoId" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="RecordatorioId" ColumnName="RecordatorioId" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Detalles_Producto" ColumnName="Detalles_Producto" />
+          <ScalarProperty Name="Gastos" ColumnName="Gastos" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectDraftContract" FunctionName="sistema_alertasModel.Store.SP_selectDraftContract">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectDraftContract_Result">
+          <ScalarProperty Name="ContratoId2" ColumnName="ContratoId2" />
+          <ScalarProperty Name="Nombre_Contrato2" ColumnName="Nombre_Contrato2" />
+          <ScalarProperty Name="Numero_Contrato2" ColumnName="Numero_Contrato2" />
+          <ScalarProperty Name="Numero_Servicio_Contrato2" ColumnName="Numero_Servicio_Contrato2" />
+          <ScalarProperty Name="Fecha_Inicio2" ColumnName="Fecha_Inicio2" />
+          <ScalarProperty Name="Fecha_Finalizacion2" ColumnName="Fecha_Finalizacion2" />
+          <ScalarProperty Name="Costo_Total2" ColumnName="Costo_Total2" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago2" ColumnName="Costo_Por_Cada_Pago2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectDraftContractByArea" FunctionName="sistema_alertasModel.Store.SP_selectDraftContractByArea">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectDraftContractByArea_Result">
+          <ScalarProperty Name="ContratoId2" ColumnName="ContratoId2" />
+          <ScalarProperty Name="Nombre_Contrato2" ColumnName="Nombre_Contrato2" />
+          <ScalarProperty Name="Numero_Contrato2" ColumnName="Numero_Contrato2" />
+          <ScalarProperty Name="Numero_Servicio_Contrato2" ColumnName="Numero_Servicio_Contrato2" />
+          <ScalarProperty Name="Fecha_Inicio2" ColumnName="Fecha_Inicio2" />
+          <ScalarProperty Name="Fecha_Finalizacion2" ColumnName="Fecha_Finalizacion2" />
+          <ScalarProperty Name="Costo_Total2" ColumnName="Costo_Total2" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago2" ColumnName="Costo_Por_Cada_Pago2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectDraftContractForEdit" FunctionName="sistema_alertasModel.Store.SP_SelectDraftContractForEdit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_SelectDraftContractForEdit_Result">
+          <ScalarProperty Name="ContratoId2" ColumnName="ContratoId2" />
+          <ScalarProperty Name="Nombre_Contrato2" ColumnName="Nombre_Contrato2" />
+          <ScalarProperty Name="Numero_Contrato2" ColumnName="Numero_Contrato2" />
+          <ScalarProperty Name="Numero_Servicio_Contrato2" ColumnName="Numero_Servicio_Contrato2" />
+          <ScalarProperty Name="Fecha_Inicio2" ColumnName="Fecha_Inicio2" />
+          <ScalarProperty Name="Fecha_Finalizacion2" ColumnName="Fecha_Finalizacion2" />
+          <ScalarProperty Name="Costo_Total2" ColumnName="Costo_Total2" />
+          <ScalarProperty Name="Costo_Por_Cada_Pago2" ColumnName="Costo_Por_Cada_Pago2" />
+          <ScalarProperty Name="Fecha_Renovacion_Pago2" ColumnName="Fecha_Renovacion_Pago2" />
+          <ScalarProperty Name="Cantidad_Licencias2" ColumnName="Cantidad_Licencias2" />
+          <ScalarProperty Name="Garantia2" ColumnName="Garantia2" />
+          <ScalarProperty Name="Fecha_Vencimiento_Garantia2" ColumnName="Fecha_Vencimiento_Garantia2" />
+          <ScalarProperty Name="Fecha_Creacion2" ColumnName="Fecha_Creacion2" />
+          <ScalarProperty Name="Descripcion2" ColumnName="Descripcion2" />
+          <ScalarProperty Name="Direccion_Archivo2" ColumnName="Direccion_Archivo2" />
+          <ScalarProperty Name="Proveedor_ManufactureroId2" ColumnName="Proveedor_ManufactureroId2" />
+          <ScalarProperty Name="Proveedor_DistribuidorId2" ColumnName="Proveedor_DistribuidorId2" />
+          <ScalarProperty Name="Usuario_AprobadorId2" ColumnName="Usuario_AprobadorId2" />
+          <ScalarProperty Name="Usuario_AdministradorId2" ColumnName="Usuario_AdministradorId2" />
+          <ScalarProperty Name="Tipo_ContratoId2" ColumnName="Tipo_ContratoId2" />
+          <ScalarProperty Name="Metodo_PagoId2" ColumnName="Metodo_PagoId2" />
+          <ScalarProperty Name="Unidad_NegocioId2" ColumnName="Unidad_NegocioId2" />
+          <ScalarProperty Name="Tipo_PagoId2" ColumnName="Tipo_PagoId2" />
+          <ScalarProperty Name="Orden_CompraId2" ColumnName="Orden_CompraId2" />
+          <ScalarProperty Name="TarjetaId2" ColumnName="TarjetaId2" />
+          <ScalarProperty Name="Area_ContratoId2" ColumnName="Area_ContratoId2" />
+          <ScalarProperty Name="ProductoId2" ColumnName="ProductoId2" />
+          <ScalarProperty Name="RecordatorioId2" ColumnName="RecordatorioId2" />
+          <ScalarProperty Name="EstadoId2" ColumnName="EstadoId2" />
+          <ScalarProperty Name="Detalles_Producto2" ColumnName="Detalles_Producto2" />
+          <ScalarProperty Name="Gastos2" ColumnName="Gastos2" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectEmailByUSerId" FunctionName="sistema_alertasModel.Store.SP_selectEmailByUSerId" />
+    <FunctionImportMapping FunctionImportName="SP_selectMethodPayment" FunctionName="sistema_alertasModel.Store.SP_selectMethodPayment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectMethodPayment_Result">
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectMethodPaymentById" FunctionName="sistema_alertasModel.Store.SP_selectMethodPaymentById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectMethodPaymentById_Result">
+          <ScalarProperty Name="Metodo_PagoId" ColumnName="Metodo_PagoId" />
+          <ScalarProperty Name="Nombre_Metodo_Pago" ColumnName="Nombre_Metodo_Pago" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_SelectOrdenComprasById" FunctionName="sistema_alertasModel.Store.SP_SelectOrdenComprasById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_SelectOrdenComprasById_Result">
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="Fecha_Ultima_Orden_Compra" ColumnName="Fecha_Ultima_Orden_Compra" />
+          <ScalarProperty Name="Ultimo_Numero_Factura" ColumnName="Ultimo_Numero_Factura" />
+          <ScalarProperty Name="Codigo_Presupuestario2016" ColumnName="Codigo_Presupuestario2016" />
+          <ScalarProperty Name="Monto_Previo" ColumnName="Monto_Previo" />
+          <ScalarProperty Name="Direccion_Archivo" ColumnName="Direccion_Archivo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectPass" FunctionName="sistema_alertasModel.Store.SP_selectPass">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectPass_Result">
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProductById" FunctionName="sistema_alertasModel.Store.SP_selectProductById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProductById_Result">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProductByName" FunctionName="sistema_alertasModel.Store.SP_selectProductByName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProductByName_Result">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProductByProviderId" FunctionName="sistema_alertasModel.Store.SP_selectProductByProviderId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProductByProviderId_Result">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="Proveedor_ManufactureroId" ColumnName="Proveedor_ManufactureroId" />
+          <ScalarProperty Name="Proveedor_DistribuidorId" ColumnName="Proveedor_DistribuidorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProductsAccordingSuppliers" FunctionName="sistema_alertasModel.Store.SP_selectProductsAccordingSuppliers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProductsAccordingSuppliers_Result">
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProfiles" FunctionName="sistema_alertasModel.Store.SP_selectProfiles" />
+    <FunctionImportMapping FunctionImportName="SP_selectProviderById" FunctionName="sistema_alertasModel.Store.SP_selectProviderById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProviderById_Result">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Nombre_Proveedor" ColumnName="Nombre_Proveedor" />
+          <ScalarProperty Name="Correo_Proveedor" ColumnName="Correo_Proveedor" />
+          <ScalarProperty Name="Nombre_Contacto" ColumnName="Nombre_Contacto" />
+          <ScalarProperty Name="Telefono_Contacto" ColumnName="Telefono_Contacto" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo_ProveedorId" ColumnName="Tipo_ProveedorId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProviderManufacturing" FunctionName="sistema_alertasModel.Store.SP_selectProviderManufacturing">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProviderManufacturing_Result">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Nombre_Proveedor" ColumnName="Nombre_Proveedor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectProviderVender" FunctionName="sistema_alertasModel.Store.SP_selectProviderVender">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectProviderVender_Result">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Nombre_Proveedor" ColumnName="Nombre_Proveedor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectPurchaseOrder" FunctionName="sistema_alertasModel.Store.SP_selectPurchaseOrder">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectPurchaseOrder_Result">
+          <ScalarProperty Name="Orden_CompraId" ColumnName="Orden_CompraId" />
+          <ScalarProperty Name="Codigo_Presupuestario2016" ColumnName="Codigo_Presupuestario2016" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectState" FunctionName="sistema_alertasModel.Store.SP_selectState">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectState_Result">
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectTarjetasById" FunctionName="sistema_alertasModel.Store.SP_selectTarjetasById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectTarjetasById_Result">
+          <ScalarProperty Name="TarjetaId" ColumnName="TarjetaId" />
+          <ScalarProperty Name="Ultimos_Digitos_Tarjeta" ColumnName="Ultimos_Digitos_Tarjeta" />
+          <ScalarProperty Name="Fecha_Vencimiento_Tarjeta" ColumnName="Fecha_Vencimiento_Tarjeta" />
+          <ScalarProperty Name="Nombre_Persona_Asignada_A_Tarjeta" ColumnName="Nombre_Persona_Asignada_A_Tarjeta" />
+          <ScalarProperty Name="Tipo_TarjetaId" ColumnName="Tipo_TarjetaId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectTypeCard" FunctionName="sistema_alertasModel.Store.SP_selectTypeCard" />
+    <FunctionImportMapping FunctionImportName="SP_selectTypeContract" FunctionName="sistema_alertasModel.Store.SP_selectTypeContract">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectTypeContract_Result">
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectTypeContractById" FunctionName="sistema_alertasModel.Store.SP_selectTypeContractById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectTypeContractById_Result">
+          <ScalarProperty Name="Tipo_ContratoId" ColumnName="Tipo_ContratoId" />
+          <ScalarProperty Name="Nombre_Tipo_Contrato" ColumnName="Nombre_Tipo_Contrato" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectTypePayment" FunctionName="sistema_alertasModel.Store.SP_selectTypePayment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectTypePayment_Result">
+          <ScalarProperty Name="Tipo_PagoId" ColumnName="Tipo_PagoId" />
+          <ScalarProperty Name="Nombre_Tipo_Pago" ColumnName="Nombre_Tipo_Pago" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectTypeProvider" FunctionName="sistema_alertasModel.Store.SP_selectTypeProvider" />
+    <FunctionImportMapping FunctionImportName="SP_SelectUnidadNegociosById" FunctionName="sistema_alertasModel.Store.SP_SelectUnidadNegociosById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_SelectUnidadNegociosById_Result">
+          <ScalarProperty Name="Unidad_NegocioId" ColumnName="Unidad_NegocioId" />
+          <ScalarProperty Name="Numero_Unidad_Negocio" ColumnName="Numero_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Unidad_Negocio" ColumnName="Nombre_Unidad_Negocio" />
+          <ScalarProperty Name="Nombre_Previo_Unidad_Negocio" ColumnName="Nombre_Previo_Unidad_Negocio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectUserById" FunctionName="sistema_alertasModel.Store.SP_selectUserById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sistema_alertasModel.SP_selectUserById_Result">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Codigo_Usuario" ColumnName="Codigo_Usuario" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Direccion_Fotografia" ColumnName="Direccion_Fotografia" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_selectUserId" FunctionName="sistema_alertasModel.Store.SP_selectUserId" />
+    <FunctionImportMapping FunctionImportName="SP_selectWeatherAlerts" FunctionName="sistema_alertasModel.Store.SP_selectWeatherAlerts" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1156 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/sweetalert.css">
+  <title>Edit Contract</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br><br>
+
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s10">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+
+          </div>
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="POST" action="../BackEnd/EditarContrato" name="formulario" onsubmit='return validar()' enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Contracts Edition</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s5">
+             @{
+                 List<SP_SelectContractForEdit_Result> ContractEdit = (List<SP_SelectContractForEdit_Result>)ViewData["ContractForEdit"];
+
+                 foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                 {
+                     <input id="Contract_Name" name="Contract_Name" type="text" value="@contratos.Nombre_Contrato" class="validate" required>
+                     <input id="values" name="values" disabled style="display:none" type="text" value="@contratos.Usuario_AprobadorId @contratos.Usuario_AdministradorId @contratos.Proveedor_ManufactureroId @contratos.Proveedor_DistribuidorId @contratos.Orden_CompraId @contratos.TarjetaId @contratos.Unidad_NegocioId @contratos.Tipo_ContratoId @contratos.EstadoId @contratos.Metodo_PagoId @contratos.Tipo_PagoId">                                  
+                 }
+             } 
+               <label for="Contract_Name" class="flow-text">Name of Contract<span style="color:red;"> *</span></label>
+            </div>
+
+<!-- Codigo que mostrara nombre del contrato-->
+            <div class="input-field col s5">
+              @{
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id="Number_Of_Contract" name="Number_Of_Contract" value="@contratos.Numero_Contrato" type="text">
+                      break;
+                  }
+              }
+              <label for="Number_Of_Contract" class="flow-text">Contract Number</label>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s5">
+                  <select id="Type_Of_Contract" name="Type_Of_Contract">
+                      <option value="" disabled class="flow-text">Select</option>
+                      @{
+                          List<SP_selectTypeContract_Result> TypeContract = (List<SP_selectTypeContract_Result>) ViewData["typecontract"];
+
+                          foreach (SP_selectTypeContract_Result typecontract in TypeContract)
+                          {
+                              <option value="@typecontract.Tipo_ContratoId" class="flow-text">@typecontract.Nombre_Tipo_Contrato</option>
+                          }
+                      }
+                  </select>
+                  <label class="flow-text">Type of contract<span style="color: red;"> *</span></label>
+              </div>
+              
+             <div class="input-field col s5">
+              <select id="expenses" name="expenses" >
+                  <option value="" disabled selected class="flow-text">Select</option>
+                  @{                      
+                     foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                     {
+
+                         if (contratos.Gastos.Equals("Capex"))
+                         {
+                             <option value="Capex" selected class="flow-text">Capex</option>
+                             <option value="Opex" class="flow-text">Opex</option>  
+                         }
+                         else
+                         {                          
+                             <option value="Capex" class="flow-text">Capex</option>
+                             <option value="Opex" selected class="flow-text">Opex</option>                             
+                         }
+                     } 
+                   }                                                             
+              </select>
+              <label class="flow-text">Type Expenses<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <select id="State" name="State">
+                <option value="" disabled class="flow-text">Select</option>
+                @{
+                    List<SP_selectState_Result> stateContract = (List<SP_selectState_Result>)ViewData["statecontract"];
+
+                    foreach (SP_selectState_Result statecontract in stateContract)
+                    {
+                       <option value="@statecontract.EstadoId" class="flow-text">@statecontract.Descripcion</option>                        
+                    }
+                 }
+              </select>
+              <label class="flow-text">Contract Status<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              @{
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id="Number_Service_Contract" name="Number_Service_Contract" value="@contratos.Numero_Servicio_Contrato" type="text">
+                      break;
+                  }
+              } 
+              <label for="Number_Service_Contract" class="flow-text">Service Contract Number</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <select id="Approver" name="Approver">
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                    List<SP_selectApprover_Result> ApproverContract = (List<SP_selectApprover_Result>)ViewData["approver"];
+
+                    foreach (SP_selectApprover_Result approver in ApproverContract)
+                    {                                                 
+                      <option value="@approver.UsuarioId" class="flow-text">@approver.Nombre  @approver.Apellido</option>                                                 
+                    }
+                 } 
+                 
+              </select>
+              <label class="flow-text">Approver<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              <select id="administrator" name="administrator">
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                    List<SP_selectAdministrator_Result> AdministratorContract = (List<SP_selectAdministrator_Result>)ViewData["administrator"];
+
+                    foreach (SP_selectAdministrator_Result administrator in AdministratorContract)
+                    {                       
+                       <option value="@administrator.UsuarioId" class="flow-text">@administrator.Nombre  @administrator.Apellido</option>                      
+                    }
+                 }
+                  
+              </select>
+              <label class="flow-text">Administrator<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <select id="Provider_Manufacturing" onChange="ajax();" name="Provider_Manufacturing">
+                <option value="" disabled selected class="flow-text">Select</option>
+                   @{
+                       List<SP_selectProviderManufacturing_Result> Provider_Manufacturing = (List<SP_selectProviderManufacturing_Result>)ViewData["providerManufacturing"];
+
+                       foreach (SP_selectProviderManufacturing_Result providerManufacturing in Provider_Manufacturing)
+                       {                          
+                          <option value="@providerManufacturing.ProveedorId" class="flow-text">@providerManufacturing.Nombre_Proveedor</option>                         
+                       }
+                 }
+                 
+              </select>
+              <label class="flow-text">Manufacturing Supplier<span style="color:red;"> *</span></label>
+            </div>
+
+
+            <div class="input-field col s5">
+              <select id="Provider_Vendor" onChange="ajax();" name="Provider_Vendor">
+                <option value="" disabled  selected class="flow-text">Select</option>
+                 @{
+                     List<SP_selectProviderVender_Result> Provider_Vendor = (List<SP_selectProviderVender_Result>)ViewData["providervendor"];
+
+                     foreach (SP_selectProviderVender_Result providerVendor in Provider_Vendor)
+                     {                        
+                        <option value="@providerVendor.ProveedorId" class="flow-text">@providerVendor.Nombre_Proveedor</option>                      
+                     }
+                 }
+                  
+              </select>
+              <label class="flow-text">Distributor Supplier<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+           <div class="row">
+            <div class="input-field col s10">  
+               <select id="Product2" name ="Product2" multiple>
+                <option value="" disabled selected class="flow-text">Select<</option>                         
+              </select>                                
+             @{
+                 foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                 {                   
+                     <input id="Product" name="Product" type="number" value="@contratos.ProductoId" style="display:none">                                                        
+                 }
+              }            
+              
+              <label class="flow-text">Product<span style="color:red;"> *</span></label>              
+              @{
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id="pig" name="pig" type="text" value="@contratos.Detalles_Producto" style="display:none" disabled>   
+                  }
+              }                                
+            </div>
+          </div>
+
+          <div class="row">  
+             <div class="input-field col s5">                              
+              @{               
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id="Quantity" name="Quantity" type="number" class="validate" value="@contratos.Cantidad_Licencias"  placeholder="Solo se permite el ingreso de numeros">
+                      break;
+                  }
+              } 
+                <label for="Quantity" class="flow-text">Number Licenses</label>
+             </div>
+
+             <div class="input-field col s5">
+               <select id="Purchase_Order_Code" name="Purchase_Order_Code" onChange="addNewPurchaseOrder();">
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                    List<SP_selectPurchaseOrder_Result> PurchaseOrder = (List<SP_selectPurchaseOrder_Result>)ViewData["purchaseorder"];
+
+                    foreach (SP_selectPurchaseOrder_Result purchaseorder in PurchaseOrder)
+                    {                       
+                        <option value="@purchaseorder.Orden_CompraId" class="flow-text">@purchaseorder.Codigo_Presupuestario2016</option>                          
+                    }                   
+                }
+                  
+              </select>
+              <label class="flow-text">Budget Code</label>
+            </div>
+            </div>
+
+          <div class="row">
+            <div class="col s10">
+              <p  style="background-color:#000000; color:#ffffff; text-align:center;">Contract payments</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <select id="Method_Pay" name="Method_Pay">
+                <option value="" disabled  selected class="flow-text">Select</option>
+                @{
+                    List<SP_selectMethodPayment_Result> MethodPayment = (List<SP_selectMethodPayment_Result>)ViewData["methodPayment"];
+
+                    foreach (SP_selectMethodPayment_Result methodPayment in MethodPayment)
+                    {
+                       <option value="@methodPayment.Metodo_PagoId" class="flow-text">@methodPayment.Nombre_Metodo_Pago</option>
+                    }
+                  }
+              </select>
+              <label class="flow-text">Payment Method<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              <select id="Card_Type" name="Card_Type" >
+                <option value=""  class="flow-text">Select</option>
+                 @{
+                     List<SP_selectCard_Result> Cards = (List<SP_selectCard_Result>)ViewData["cards"];
+
+                     foreach (SP_selectCard_Result card in Cards)
+                     {                         
+                        <option value="@card.TarjetaId" class="flow-text">@card.Nombre_Tarjeta @card.Ultimos_Digitos_Tarjeta</option>                                            
+                     }
+                  }
+                  
+              </select>
+              <label class="flow-text">Card Type</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              @{             
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id="Cost2" name="Cost2" type="text" onblur="number_format();" required value="@contratos.Costo_Total"  pattern="[0-9.,]{1,20}" title="No se permite letras en este campo" >
+                     <input id="Cost" name="Cost" type="text"  required value="@contratos.Costo_Total" style="display:none">
+                      break;
+                  }
+              } 
+                <label for="Cost2" class="flow-text">Total Cost ($)<span style="color:red;"> *</span></label>
+   
+            </div>
+
+            <div class="input-field col s5">
+              <select id="Type_Pay" name="Type_Pay">
+                <option value="" disabled selected class="flow-text">Select</option>
+                 @{
+                     List<SP_selectTypePayment_Result> TypePayment = (List<SP_selectTypePayment_Result>)ViewData["typepayment"];
+
+                     foreach (SP_selectTypePayment_Result typePayment in TypePayment)
+                     {                      
+                        <option value="@typePayment.Tipo_PagoId" class="flow-text">@typePayment.Nombre_Tipo_Pago</option>                      
+                     }
+                  }
+              </select>
+              <label class="flow-text">Payment type<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+             @{
+                 foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                 {
+                     <input id="Cost_Per_Payment2" name="Cost_Per_Payment2" type="text" onblur="number_format2();" value="@contratos.Costo_Por_Cada_Pago" required  pattern="[0-9.,]{1,20}" title="No se permite letras en este campo" >
+                     <input id="Cost_Per_Payment" name="Cost_Per_Payment" type="text" value="@contratos.Costo_Por_Cada_Pago" style="display:none">
+                
+                 }
+              } 
+                <label for="Cost_Per_Payment2" class="flow-text">Cost for each payment ($)<span style="color:red;"> *</span></label>                          
+             
+            </div>
+
+             <div class="input-field col s5">
+              @{
+    
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id="Warranty" name="Warranty" type="text" value="@contratos.Garantia" class="validate">
+                    
+                  }
+              } 
+              <label for="Warranty" class="flow-text">Warranty</label>
+            </div>         
+          </div>
+
+          <div class="row">
+           <div class="input-field col s5">
+             <label for="Date_Renewal" class="flow-text">Renewal Payment Date<span style="color:red;"> *</span></label>               
+              <br />
+              <div class="input-field">
+            @{                
+                foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                {
+                  <input id ="Date_Renewal" name="Date_Renewal" type="date" value="@contratos.Fecha_Renovacion_Pago.ToString("yyyy-MM-dd")" class="datepicker">
+                    break;
+                }
+             }            
+               </div>
+             </div>
+
+           <div class="input-field col s5">              
+               <label for="Date_Warranty_End" class="flow-text">Warranty expiration date</label>                 
+                <br/>
+                <div class="input-field">
+              @{                 
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                      if (contratos.Fecha_Vencimiento_Garantia.ToString("yyyy-MM-dd").Equals("1901-01-01"))
+                      {
+                          <input type="date" id ="Date_Warranty_End" name="Date_Warranty_End" value=""  class="datepicker">
+                      }
+                      else
+                      {
+                          <input type="date" id ="Date_Warranty_End" name="Date_Warranty_End" value="@contratos.Fecha_Vencimiento_Garantia.ToString("yyyy-MM-dd")"  class="datepicker">
+                      }
+                  }
+              } 
+               
+             </div>
+          </div>
+        </div>
+  
+          <div class="row">
+            <div class="col s10">
+              <p  style="background-color:#000000; color:#ffffff; text-align:center;">Contract Area</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+              <select id="Bussines_Unit_Name" name="Bussines_Unit_Name" >
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                    List<SP_selectAllBusinessunit_Result> BusinessUnit = (List<SP_selectAllBusinessunit_Result>)ViewData["businessUnit"];
+
+                    foreach (SP_selectAllBusinessunit_Result businessUnit in BusinessUnit)
+                    {                       
+                       <option value="@businessUnit.Unidad_NegocioId" class="flow-text">@businessUnit.Nombre_Unidad_Negocio</option>                       
+                    }
+                 }
+                  
+              </select>
+              <label class="flow-text">Business Unit Name<span style="color:red;"> *</span></label>
+            </div>
+
+            <div class="input-field col s5">
+              <select id="Area_Contract" name="Area_Contract">
+                <option value="" disabled selected class="flow-text">Select</option>
+                 @{
+                     List<string> ContractArea = (List<string>)ViewData["contractarea"];
+                     int contador12 = 1;
+                     int idSelect = 0;
+
+                     foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                     {
+                         idSelect = contratos.Area_ContratoId;
+                     }
+                     foreach (string contractarea in ContractArea)
+                     {
+                         if (contador12 == idSelect)
+                         {
+                            <option value="@contador12" selected class="flow-text">@contractarea</option>
+                             contador12++;
+                         }
+                         else
+                         { 
+                            <option value="@contador12" class="flow-text">@contractarea</option>
+                             contador12++;
+                         }
+                     }
+                   }
+              </select>
+              <label class="flow-text">Contract Area<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s10">
+              <p  style="background-color:#000000; color:#ffffff; text-align:center;">Term of Agreement</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+               <label for="Date_Start" class="flow-text">Start Date<span style="color:red;"> *</span></label>
+                <br/>
+                <div class="input-field">
+                @{                  
+                    foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                    {
+                     <input id ="Date_Start" name="Date_Start" value="@contratos.Fecha_Inicio.ToString("yyyy-MM-dd")" type="date" class="datepicker">
+                        break;
+                    }
+                 }
+               </div>                            
+             </div>
+             <div class="input-field col s5">
+               <label for="Date_End" class="flow-text">Finish Date<span style="color:red;"> *</span></label>             
+               <br />
+                <div class="input-field">
+              @{                 
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <input id ="Date_End" name="Date_End" type="date" value="@contratos.Fecha_Finalizacion.ToString("yyyy-MM-dd")" class="datepicker" >
+                      break;
+                  }
+              }
+              </div>
+          </div>
+              </div>
+
+
+          <div class="row">
+            <div class="col s10">
+              <p  style="background-color:#000000; color:#ffffff; text-align:center;">Others</p>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="input-field col s10">
+              @{                
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                     <textarea id="Description" name="Description" length="500" placeholder="A brief description of the contract" class="materialize-textarea">@contratos.Descripcion</textarea>
+                      break;
+                  }
+               } 
+                <label for="textarea1" class="flow-text">Description Contract</label>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s3">
+              <select id="Notify_Before" name="Notify_Before">
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                    List<string> WeatherAlerts = (List<string>)ViewData["weatherAlerts"];
+                    int contador13 = 1;
+                    idSelect = 0;
+
+                    foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                    {
+                        idSelect = contratos.RecordatorioId;
+                        break;
+                    }
+
+                    foreach (string weatherAlerts in WeatherAlerts)
+                    {
+                        if (contador13 == idSelect)
+                        {
+                            <option value="@contador13" selected class="flow-text">@weatherAlerts <span>days before</span></option>
+                            contador13++;
+                        }
+                        else
+                        { 
+                            <option value="@contador13" class="flow-text">@weatherAlerts <span>days before</span></option>
+                            contador13++;
+                        }
+
+                    }
+                  }
+              </select>
+              <label class="flow-text">Set time alerts<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+                 
+              @{                   
+                  foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                  {
+                    <input id ="Contract_Id" name="Contract_Id" hidden type="text"  value="@contratos.ContratoId" >
+                      break;
+                  }
+               }                      
+
+            <label for="Contract_Name">¿Enable file upload?</label>
+             <div class="switch">
+               <label>
+                 Off
+                  <input type="checkbox" id="switch" onClick="if (this.checked == true) { Habiliar() } else { DesHabiliar() }" >
+                  <span class="lever"></span>
+                 On
+               </label>
+             </div> 
+
+          <div class="row">
+            <div class="col s10">
+              <div class="file-field input-field">
+                @{   
+                    foreach (SP_SelectContractForEdit_Result contratos in ContractEdit)
+                    {
+                        if (contratos.Direccion_Archivo.Equals(""))
+                        {
+                          <div class="btn">
+                            <span>File</span>
+                              <input type="file"   name="imagen">
+                           </div>
+
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" length="256" name="imagen" type="text" placeholder="Upload a file">
+                          </div>  
+                        }
+
+                        else
+                        {
+                         <div class="btn">
+                           <span>File</span>
+                             <input type="file" disabled id="Upload"  name="imagen">
+                           </div>
+
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" id="Upload2" length="256" name="imagen" disabled value="@contratos.Direccion_Archivo" type="text" placeholder="Upload a file">
+                            <input  id="UploadOculto" name="UploadOculto" value="@contratos.Direccion_Archivo" type="text" style="display:none">
+                          </div>  
+                        }
+                    }                       
+                 }
+            </div>
+          </div>
+          </div>
+
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Cancel</a>
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+
+            <div class="col s2 card-panel teal lighten-2">
+              <center><h5>Registration Contracts</h5></center>
+                <p ALIGN=justify>The contract registration module is the main module of the system, in this module you can create a new contract which has been established with any supplier; 
+                 specify the category, area of the contract, indicate the start dates, completion and payment dates of the contract.
+                 By providing this information, the system will easily generate email alerts to indicate when contracts are close to expiration.</p>
+            </div>
+        </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<script type="text/javascript" src="../Content/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../Content/js/numeral.js"></script>
+
+<script>
+    function Habiliar() {
+        $("#Upload").attr("disabled", false);
+        $("#Upload2").attr("disabled", false);
+        $("#Upload2").attr("value", "");
+    }
+</script>
+
+<script>
+    function DesHabiliar() {
+        $("#Upload").attr("disabled", true);
+        $("#Upload2").attr("disabled", true);
+    }
+</script>
+
+<script>
+    function number_format2() {
+        var Valor = document.getElementById("Cost_Per_Payment2").value;
+        Valor = numeral().unformat(Valor);
+        $("#Cost_Per_Payment").val(Valor);
+
+        Valor = numeral(Valor).format('0,0.000');
+        $("#Cost_Per_Payment2").val(Valor);
+    }
+</script>
+
+<script>
+    function number_format() {
+        var Valor = document.getElementById("Cost2").value;
+        Valor = numeral().unformat(Valor);
+        $("#Cost").val(Valor);
+
+        Valor = numeral(Valor).format('0,0.000');
+        $("#Cost2").val(Valor);
+    }
+</script>
+
+
+<!--End Import jQuery before materialize.js-->
+
+<!--Con este script lo que se hace es que se selecciona una vez la pagina este lista los combobox 1.Aprobadores, 2.Administradores, 3.Proveedores Manufactureros 4.Proveedores Distribuidores
+    No se hace de la forma en como se hace con los demas, ya que estos estan guardados con un id especifico en el sistema, y el value con que se inserten debe ser el mismo id con el que estan registrados en el sistema
+    Para hacer la seleccion de estos una vez se encuentra cargado el documento, se hace por medio de jquery jalando el valor que tiene un input que se encuentra deshabilitado, esto se hace asi porque no encontre otra forma en el momento de pasar
+    valores entre c# y javascript directamente.
+    Luego que se tienen los valores se hace un split y ya se manipula el elemento con jquery y se cambia la propiedad y queda listo
+    -->
+   <script>
+       $(document).ready(function ()
+       {
+           var valor = document.getElementById("values").value;
+           var valor2 = valor.split(" ");         
+
+           $('#Approver > option[value="' + valor2[0] + '"]').attr('selected', 'selected');
+           $("#Approver").trigger('contentChanged');
+           $('#Approver').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#administrator > option[value="' + valor2[1] + '"]').attr('selected', 'selected');
+           $("#administrator").trigger('contentChanged');
+           $('#administrator').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#Provider_Manufacturing > option[value="' + valor2[2] + '"]').attr('selected', 'selected');
+           $("#Provider_Manufacturing").trigger('contentChanged');
+           $('#Provider_Manufacturing').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#Provider_Vendor > option[value="' + valor2[3] + '"]').attr('selected', 'selected');
+           $("#Provider_Vendor").trigger('contentChanged');
+           $('#Provider_Vendor').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#Purchase_Order_Code > option[value="' + valor2[4] + '"]').attr('selected', 'selected');
+           $("#Purchase_Order_Code").trigger('contentChanged');
+           $('#Purchase_Order_Code').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#Card_Type > option[value="' + valor2[5] + '"]').attr('selected', 'selected');
+           $("#Card_Type").trigger('contentChanged');
+           $('#Card_Type').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           }); 
+
+           $('#Bussines_Unit_Name > option[value="' + valor2[6] + '"]').attr('selected', 'selected');
+           $("#Bussines_Unit_Name").trigger('contentChanged');
+           $('#Bussines_Unit_Name').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#Type_Of_Contract > option[value="' + valor2[7] + '"]').attr('selected', 'selected');
+           $("#Type_Of_Contract").trigger('contentChanged');
+           $('#Type_Of_Contract').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           $('#State > option[value="' + valor2[8] + '"]').attr('selected', 'selected');
+           $("#State").trigger('contentChanged');
+           $('#State').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           }); 
+
+           $('#Method_Pay > option[value="' + valor2[9] + '"]').attr('selected', 'selected');
+           $("#Method_Pay").trigger('contentChanged');
+           $('#Method_Pay').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           }); 
+
+           $('#Type_Pay > option[value="' + valor2[10] + '"]').attr('selected', 'selected');
+           $("#Type_Pay").trigger('contentChanged');
+           $('#Type_Pay').on('contentChanged', function () {
+               // re-initialize (update)
+               $(this).material_select();
+           });
+
+           var $selectDropdown = $("#Product2").empty().html(' ');
+
+           var productos = document.getElementById("pig").value;
+           var productos2 = productos.split("¡");
+         
+           for (var i = 0; i < (productos2.length-1);i++)
+           {
+               $selectDropdown.append($("<option></option>").attr("value", productos2[i]).text(productos2[i]));
+               $('#Product2 > option[value="' + productos2[i] + '"]').attr('selected', 'selected');
+               // trigger event
+               $selectDropdown.trigger('contentChanged');
+               $selectDropdown.on('contentChanged', function () {
+                   // re-initialize (update)
+                   $(this).material_select();
+               });
+           }
+
+           //////////////////////////////////////////////////
+           if ($("#Upload2").val() == null)
+           {
+               $("#switch").prop("checked", "checked");
+           }
+           //////////////////////////////////////////
+       });
+   </script>
+
+<!--Fin script lo que se hace es que se selecciona una vez la pagina este lista los combobox 1.Aprobadores, 2.Administradores, 3.Proveedores Manufactureros 4.Proveedores Distribuidores
+    No se hace de la forma en como se hace con los demas, ya que estos estan guardados con un id especifico en el sistema, y el value con que se inserten debe ser el mismo id con el que estan registrados en el sistema
+    Para hacer la seleccion de estos una vez se encuentra cargado el documento, se hace por medio de jquery jalando el valor que tiene un input que se encuentra deshabilitado, esto se hace asi porque no encontre otra forma en el momento de pasar
+    valores entre c# y javascript directamente.
+    Luego que se tienen los valores se hace un split y ya se manipula el elemento con jquery y se cambia la propiedad y queda listo
+    -->
+
+<!--Script para cargar por medio de ajax los productos, esto se hace asi porque solo se deben mostrar los productos especificos de un proveedor, no todos los productos
+    y como la seleccion del proveedor se hace en tiempo se ejecucion, por medio de una llamada asincrona se deben de ir a realizar la consulta y retornar los productos-->
+    <script type="text/javascript">
+        function ajax()
+        {          
+            var Provider_Vendor = document.getElementsByName("Provider_Vendor")[0].value;
+            var Provider_Manufacturing = document.getElementsByName("Provider_Manufacturing")[0].value;
+
+            if (Provider_Vendor != "" && Provider_Manufacturing != '') {
+                $.get("http://172.20.33.13/BackEnd/selectProductAccordingSuppliers",
+                //$.get("http://localhost:62884/BackEnd/selectProductAccordingSuppliers",
+                {
+                    'ProviderManufacturing': Provider_Manufacturing,
+                    'ProviderVendor': Provider_Vendor
+                },
+                  function (data)
+                  {                    
+                      if (data=="|")
+                      {                       
+                          var $selectDropdown = $("#Product2").empty().html(' ');
+
+                          $selectDropdown.append($("<option></option>").attr({ value: "", disabled: "disabled" }).text("Select"));
+                          $selectDropdown.trigger('contentChanged');
+
+                          $selectDropdown.on('contentChanged', function () {
+                              // re-initialize (update)
+                              $(this).material_select();
+                          });
+                      }
+
+                      else
+                      {
+                          var arreglos = data.split("|");
+                          var value = arreglos[0].split(",");
+                          var text = arreglos[1].split("/");
+
+                          var $selectDropdown = $("#Product2").empty().html(' ');
+
+                          for (var i = 0 ; i < value.length - 1; i++)
+                          {
+                              // add new value
+                              $selectDropdown.append($("<option></option>").attr("value", text[i]).text(text[i]));
+                              // trigger event
+                              $selectDropdown.trigger('contentChanged');
+                              $selectDropdown.on('contentChanged', function () {
+                                  // re-initialize (update)
+                                  $(this).material_select();
+                              });
+                          }
+                      }
+                  }
+                );
+            }
+        }
+	</script>
+<!--Fin Script para cargar por medio de ajax los productos, esto se hace asi porque solo se deben mostrar los productos especificos de un proveedor, no todos los productos
+    y como la seleccion del proveedor se hace en tiempo se ejecucion, por medio de una llamada asincrona se deben de ir a realizar la consulta y retornar los productos-->
+
+<!--Este Script servira para habilitar y deshabilitar el select de tipos de tarjetas, esto se hara dependiendo lo que se haya seleccionado el select metodo de pago, sino se selecciono que el metodo de pago
+    fue tarjeta entonces se mostrara deshabilitado, si se selecciona tarjeta, entonces se habilitara  -->
+    <script>
+        function Habilitar_Deshabilitar_Card_Type() {
+            if (document.getElementById("Method_Pay").value != 4) {
+                var $selectDropdown = $("#Card_Type");
+                // add new atributo
+                $selectDropdown.attr('disabled', 'disabled');
+
+                // trigger event
+                $selectDropdown.trigger('contentChanged');
+                $selectDropdown.on('contentChanged', function () {
+                    // re-initialize (update)
+                    $(this).material_select();
+                });
+            }
+            else
+                if (document.getElementById("Method_Pay").value == 4) {
+                    var $selectDropdown = $("#Card_Type");
+                    // remove atributo
+                    $selectDropdown.removeAttr('disabled');
+
+                    // trigger event
+                    $selectDropdown.trigger('contentChanged');
+                    $selectDropdown.on('contentChanged', function () {
+                        // re-initialize (update)
+                        $(this).material_select();
+                    });
+                }
+        }
+    </script>
+
+<!--Fin Script servira para habilitar y deshabilitar el select de tipos de tarjetas, esto se hara dependiendo lo que se haya seleccionado el select metodo de pago, sino se selecciono que el metodo de pago
+    fue tarjeta entonces se mostrara deshabilitado, si se selecciona tarjeta, entonces se habilitara  -->
+
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+<script type='text/javascript'>
+    function validar() {
+
+        /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+      y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+        var todo_correcto = true;
+
+
+
+        /*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+        introduzca al menos 10 caracteres.*/
+
+
+        /*Para validar el select debemos añadir un value distinto a cada option. En el
+        código, he asignado un value con  valor vacío al primer option. Los siguientes,
+        al no estar definidos toman el valor por defecto. Por tanto, si todos tienen value,
+        lo único que tenemos que comprobar es que este no sea vacío. Si es vacío, todo_correcto
+        será false.*/
+        if (document.getElementById('Contract_Name').value == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Contract the name field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Cost2').value == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "the total cost field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Cost_Per_Payment').value == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "the cost per payment field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+        /*Para validar el select debemos añadir un value distinto a cada option. En el
+        código, he asignado un value con  valor vacío al primer option. Los siguientes,
+        al no estar definidos toman el valor por defecto. Por tanto, si todos tienen value,
+        lo único que tenemos que comprobar es que este no sea vacío. Si es vacío, todo_correcto
+        será false.*/
+
+        if (document.getElementsByName("Type_Of_Contract")[0].value == "") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Type_Of_Contract field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementsByName("State")[0].value == "") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "State field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Approver').value == '' || document.getElementById('Approver').value == "../BackEnd/agregarUsuario") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Approver field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('administrator').value == '' || document.getElementById('administrator').value == "../BackEnd/agregarUsuario") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Administrator field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Provider_Manufacturing').value == '' || document.getElementById('Provider_Manufacturing').value == '../BackEnd/agregarProveedor') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Manufacturing Supplier field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Provider_Vendor').value == '' || document.getElementById('Provider_Vendor').value == "../BackEnd/agregarProveedor") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Distributor Supplier field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('expenses').value == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Type Expenses field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementsByName("Method_Pay")[0].value == "") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Method Pay field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+
+        if (document.getElementsByName("Type_Pay")[0].value == "") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Type Pay field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Date_Renewal').value == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Date Renewal field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementsByName("Bussines_Unit_Name")[0].value == "" || document.getElementsByName("Bussines_Unit_Name")[0].value == "../BackEnd/AgregarNuevaUnidadNegocio") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Bussines Unit Name field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementsByName("Area_Contract")[0].value == "") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Area_Contract field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Date_Start').value.length == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Date_Start field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementById('Date_End').value.length == '') {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Date_End field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        if (document.getElementsByName("Notify_Before")[0].value == "") {
+            todo_correcto = false;
+            swal({
+                title: "Oops...",
+                text: "Notify_Before field is required, check them again!",
+                type: "error",
+                timer: 5000
+            })
+            return todo_correcto;
+        }
+
+        /*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+        todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+        al usuario de que algunos datos ingresados no son los que esperamos.*/
+        if (!todo_correcto) {
+            swal({
+                title: "Oops...",
+                text: "Some fields are not correct or are incomplete, check them again!",
+                type: "error",
+                timer: 5000
+            })
+
+        }
+        return todo_correcto;
+    }
+
+</script>
+
+</body>
+</html>

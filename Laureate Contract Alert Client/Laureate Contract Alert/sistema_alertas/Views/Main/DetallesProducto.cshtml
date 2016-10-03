@@ -1,0 +1,239 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <title>Detallles Proveedor</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<div class="container">
+  <br><br><br><br><br>
+    <div class="row">
+
+      <div class="col s3">
+        <div class="collection">
+          <a href="#!" class="collection-item active">General Description</a>
+        </div>
+      </div>
+
+      <div class="col s5">
+        <table class="bordered striped responsive-table">
+          <thead>
+          </thead>
+            <tbody>
+            @{
+                List<SP_selectProductById_Result> Product = (List<SP_selectProductById_Result>)ViewData["ProductDetails"];
+                foreach (SP_selectProductById_Result product in Product)
+                {
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Product Name:</td>
+                <td>@product.Nombre_Producto</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Single Price:</td>
+                <td id="Precio">@product.Precio</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+                }
+           }
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Supplier Manufacturing:</td>
+                 @{
+                    List<SP_selectProviderById_Result> ProviderManufacturing = (List<SP_selectProviderById_Result>)ViewData["ProviderManufacturingContract"];
+                    foreach (SP_selectProviderById_Result providerManufacturing in ProviderManufacturing)
+                    {
+                      <td><a href="../Main/DetallesProveedor?ProveedorId=@providerManufacturing.ProveedorId">@providerManufacturing.Nombre_Proveedor</a> </td>
+                      break;
+                    }
+                 }              
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Seller supplier</td>
+
+               @{
+                   List<SP_selectProviderById_Result> ProviderVendor = (List<SP_selectProviderById_Result>)ViewData["ProviderVendorContract"];
+                   foreach (SP_selectProviderById_Result providervendor in ProviderVendor)
+                   {
+                      <td><a href="../Main/DetallesProveedor?ProveedorId=@providervendor.ProveedorId">@providervendor.Nombre_Proveedor</a></td>
+                       break;
+                   }
+                  }
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+               @{
+                                 
+                   foreach (SP_selectProductById_Result product in Product)
+                   {
+                <td>Description:</td>
+                <td>@product.Descripcion</td>
+                   }
+           }
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+           
+            </tbody>
+          </table>
+
+
+          <div class="row">
+            <br><br><br>
+            <center>
+              <a class="waves-effect waves-light btn" href="../Main/main">Back to Contracts</a>
+            </center>
+          </div>
+      </div>
+
+       <div class="col s4">
+        <div class="card">
+         
+          @{                                  
+             foreach (SP_selectProductById_Result product in Product)
+             {    
+               <div class="card-image">
+                <img src="@Url.Action("SomeImage", "Main", new { imageName = product.Direccion_Fotografia, id=2})" class="materialboxed" >
+                  <div class="card-content">
+                   <center><p>@product.Nombre_Producto</p></center>                
+                  </div>
+               </div>
+                 break;
+             }
+          }       
+        </div>
+      </div>
+
+
+
+
+    </div>
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+<!--End Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/numeral.js"></script>
+
+<script>
+
+    $(document).ready(function ()
+    {      
+        var Valor = document.getElementById("Precio").innerText;
+       
+        Valor = numeral(Valor).format('$0,0.000');
+        $("#Precio").text(Valor);
+    });
+</script>
+
+
+<!--Script para el select-->
+  <script>
+    $(document).ready(function() {
+    $('select').material_select();
+    });
+    </script>
+  <!--Fin Script para el select-->
+
+  <!--Script para el TextArea-->
+    <script>
+    $('#textarea1').trigger('autoresize');
+    </script>
+  <!--Fin Script para el Textarea-->
+
+  <!--Script para el DatePicker-->
+    <script>
+    $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+  </script>
+<!--Script para el DatePicker-->
+
+<!--Script para taps (menu de navegacion)-->
+  <script>
+    $(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+  </script>
+<!--Script para taps (menu de navegacion)-->
+
+
+</body>
+</html>

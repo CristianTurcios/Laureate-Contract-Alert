@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sistema_alertasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="sistema_alertasEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="area_contratos" EntityType="sistema_alertasModel.area_contratos" />
+    <EntitySet Name="contratos" EntityType="sistema_alertasModel.contrato" />
+    <EntitySet Name="estados" EntityType="sistema_alertasModel.estado" />
+    <EntitySet Name="metodo_pagos" EntityType="sistema_alertasModel.metodo_pagos" />
+    <EntitySet Name="orden_compras" EntityType="sistema_alertasModel.orden_compras" />
+    <EntitySet Name="perfiles" EntityType="sistema_alertasModel.perfile" />
+    <EntitySet Name="permisos" EntityType="sistema_alertasModel.permiso" />
+    <EntitySet Name="productos" EntityType="sistema_alertasModel.producto" />
+    <EntitySet Name="proveedores" EntityType="sistema_alertasModel.proveedore" />
+    <EntitySet Name="recordatorios" EntityType="sistema_alertasModel.recordatorio" />
+    <EntitySet Name="tarjetas" EntityType="sistema_alertasModel.tarjeta" />
+    <EntitySet Name="tipo_contratos" EntityType="sistema_alertasModel.tipo_contratos" />
+    <EntitySet Name="tipo_pagos" EntityType="sistema_alertasModel.tipo_pagos" />
+    <EntitySet Name="tipo_proveedores" EntityType="sistema_alertasModel.tipo_proveedores" />
+    <EntitySet Name="tipo_tarjetas" EntityType="sistema_alertasModel.tipo_tarjetas" />
+    <EntitySet Name="unidad_negocios" EntityType="sistema_alertasModel.unidad_negocios" />
+    <EntitySet Name="usuarios" EntityType="sistema_alertasModel.usuario" />
+    <EntitySet Name="usuarios_perfiles_permisos" EntityType="sistema_alertasModel.usuarios_perfiles_permisos" />
+    <AssociationSet Name="FK_Area_Contratos_PK_Area_Contrato" Association="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato">
+      <End Role="area_contratos" EntitySet="area_contratos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Estados_EstadoId" Association="sistema_alertasModel.FK_Estados_EstadoId">
+      <End Role="estados" EntitySet="estados" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Metodo_Pagos_PK_Metodo_PagoId" Association="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId">
+      <End Role="metodo_pagos" EntitySet="metodo_pagos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orden_Compras_PK_Orden_CompraId" Association="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId">
+      <End Role="orden_compras" EntitySet="orden_compras" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_ProductoId" Association="sistema_alertasModel.FK_Productos_ProductoId">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Distribuidor_PK_ProveedorId" Association="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Manufacturero_PK_ProveedorId" Association="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recordatorios_RecordatorioId" Association="sistema_alertasModel.FK_Recordatorios_RecordatorioId">
+      <End Role="recordatorios" EntitySet="recordatorios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarjetas_Pk_TarjetaId" Association="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId">
+      <End Role="tarjetas" EntitySet="tarjetas" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Contratos_PK_Tipo_ContratoId" Association="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId">
+      <End Role="tipo_contratos" EntitySet="tipo_contratos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Pagos_PK_Tipo_PagoId" Association="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId">
+      <End Role="tipo_pagos" EntitySet="tipo_pagos" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Unidad_Negocios_PK_Unidad_NegocioId" Association="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId">
+      <End Role="unidad_negocios" EntitySet="unidad_negocios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Administrador_UsuarioId" Association="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Aprobador_PK_UsuarioId" Association="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfiles_PK_Perfil" Association="sistema_alertasModel.FK_Perfiles_PK_Perfil">
+      <End Role="perfiles" EntitySet="perfiles" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Perfiles_PK_PerfilId" Association="sistema_alertasModel.FK_Perfiles_PK_PerfilId">
+      <End Role="perfiles" EntitySet="perfiles" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Permisos_PK_PermisoId" Association="sistema_alertasModel.FK_Permisos_PK_PermisoId">
+      <End Role="permisos" EntitySet="permisos" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedor_Distribuidores_PK_ProductoId" Association="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedor_Manufactureros_PK_ProductoId" Association="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId">
+      <End Role="proveedores" EntitySet="proveedores" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Proveedores_PK_ProveedorId" Association="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId">
+      <End Role="tipo_proveedores" EntitySet="tipo_proveedores" />
+      <End Role="proveedores" EntitySet="proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tipo_Tarjetas_Tipo_TarjetaId" Association="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId">
+      <End Role="tipo_tarjetas" EntitySet="tipo_tarjetas" />
+      <End Role="tarjetas" EntitySet="tarjetas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_PK_UsuarioId" Association="sistema_alertasModel.FK_Usuarios_PK_UsuarioId">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="usuarios_perfiles_permisos" EntitySet="usuarios_perfiles_permisos" />
+    </AssociationSet>
+    <FunctionImport Name="AboutToFinishContractByAreaForReportPDF" ReturnType="Collection(sistema_alertasModel.AboutToFinishContractByAreaForReportPDF_Result)">
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AboutToFinishContractForReportPDF" ReturnType="Collection(sistema_alertasModel.AboutToFinishContractForReportPDF_Result)" />
+    <FunctionImport Name="ActiveContractByAreaForReportPDF" ReturnType="Collection(sistema_alertasModel.ActiveContractByAreaForReportPDF_Result)">
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ActiveContractForReportPDF" ReturnType="Collection(sistema_alertasModel.ActiveContractForReportPDF_Result)" />
+    <FunctionImport Name="AllDetailsContractByAreaForReportPDF" ReturnType="Collection(sistema_alertasModel.AllDetailsContractByAreaForReportPDF_Result)">
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AllDetailsContractForReportPDF" ReturnType="Collection(sistema_alertasModel.AllDetailsContractForReportPDF_Result)" />
+    <FunctionImport Name="defeatedContractByAreaForReportPDF" ReturnType="Collection(sistema_alertasModel.defeatedContractByAreaForReportPDF_Result)">
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="defeatedContractForReportPDF" ReturnType="Collection(sistema_alertasModel.defeatedContractForReportPDF_Result)" />
+    <FunctionImport Name="SP_DeleteAreaContratos">
+      <Parameter Name="AreaContratosId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteContract">
+      <Parameter Name="ContratoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteMethodPaymentById">
+      <Parameter Name="MetodoPagoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteOrdenCompras">
+      <Parameter Name="OrdenCompraId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteProduct">
+      <Parameter Name="ProductId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteProvider">
+      <Parameter Name="ProveedorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteTarjetas">
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteTipoContratos">
+      <Parameter Name="TipoContratosId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteUnidadNegocios">
+      <Parameter Name="UnidadNegocioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteUser">
+      <Parameter Name="UsuarioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditAreaContratos">
+      <Parameter Name="AreaContratosId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Area" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditContratos">
+      <Parameter Name="ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Numero_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Numero_Servicio_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha_Finalizacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Costo_Total" Mode="In" Type="Decimal" />
+      <Parameter Name="Costo_Por_Cada_Pago" Mode="In" Type="Decimal" />
+      <Parameter Name="Fecha_Renovacion_Pago" Mode="In" Type="DateTime" />
+      <Parameter Name="Cantidad_Licencias" Mode="In" Type="Int32" />
+      <Parameter Name="Garantia" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Vencimiento_Garantia" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha_Creacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Proveedor_ManufactureroId" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor_Distribuidor" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario_AprobadorId" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario_AdministradorId" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Metodo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Unidad_NegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Orden_CompraId" Mode="In" Type="Int32" />
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+      <Parameter Name="Area_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="ProductoId" Mode="In" Type="Int32" />
+      <Parameter Name="RecordatorioId" Mode="In" Type="Int32" />
+      <Parameter Name="EstadoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditMethodPaymentById">
+      <Parameter Name="MetodoPagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Metodo_Pago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditOrdenCompras">
+      <Parameter Name="OrdenCompraId" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha_Ultima_Orden_Compra" Mode="In" Type="DateTime" />
+      <Parameter Name="Ultimo_Numero_Factura" Mode="In" Type="String" />
+      <Parameter Name="Codigo_Presupuestario_2016" Mode="In" Type="String" />
+      <Parameter Name="Monto_Previo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditProduct">
+      <Parameter Name="ProductoId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Producto" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Proveedor_ManufactureroId" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor_DistribuidorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditProvider">
+      <Parameter Name="ProveedorId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Proveedor" Mode="In" Type="String" />
+      <Parameter Name="Correo_Proveedor" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Contacto" Mode="In" Type="String" />
+      <Parameter Name="Telefono_Contacto" Mode="In" Type="String" />
+      <Parameter Name="Ubicacion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Tipo_ProveedorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditTarjetas">
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+      <Parameter Name="Ultimos_Digitos_Tarjeta" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Vencimiento_Tarjeta" Mode="In" Type="DateTime" />
+      <Parameter Name="Nombre_Persona_Asignada_A_Yarjeta" Mode="In" Type="String" />
+      <Parameter Name="Tipo_TarjetaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditTipoContratos">
+      <Parameter Name="TipoContratosId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre_Tipo_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditUnidadNegociosById">
+      <Parameter Name="UnidadNegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Numero_Unidad_Negocio" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Unidad_Negocio" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Previo_Unidad_Negocio" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EditUser">
+      <Parameter Name="UsuarioId" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Codigo_Usuario" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="PerfilId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarAreaContratos">
+      <Parameter Name="Nombre_Area" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarContratos">
+      <Parameter Name="Nombre_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Numero_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Numero_Servicio_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha_Finalizacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Costo_Total" Mode="In" Type="Decimal" />
+      <Parameter Name="Costo_Por_Cada_Pago" Mode="In" Type="Decimal" />
+      <Parameter Name="Fecha_Renovacion_Pago" Mode="In" Type="DateTime" />
+      <Parameter Name="Cantidad_Licencias" Mode="In" Type="Int32" />
+      <Parameter Name="Garantia" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Vencimiento_Garantia" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha_Creacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Archivo" Mode="In" Type="String" />
+      <Parameter Name="Proveedor_ManufactureroId" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor_Distribuidor" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario_AprobadorId" Mode="In" Type="Int32" />
+      <Parameter Name="Usuario_AdministradorId" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="Metodo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Unidad_NegocioId" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_PagoId" Mode="In" Type="Int32" />
+      <Parameter Name="Orden_CompraId" Mode="In" Type="Int32" />
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+      <Parameter Name="Area_ContratoId" Mode="In" Type="Int32" />
+      <Parameter Name="ProductoId" Mode="In" Type="Int32" />
+      <Parameter Name="RecordatorioId" Mode="In" Type="Int32" />
+      <Parameter Name="EstadoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarEstados">
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarMetodoPagos">
+      <Parameter Name="Nombre_Metodo_Pago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarOrdenCompras">
+      <Parameter Name="Fecha_Ultima_Orden_Compra" Mode="In" Type="DateTime" />
+      <Parameter Name="Ultimo_Numero_Factura" Mode="In" Type="String" />
+      <Parameter Name="Codigo_Presupuestario_2016" Mode="In" Type="String" />
+      <Parameter Name="Monto_Previo" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Archivo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarPerfiles">
+      <Parameter Name="Nombre_Perfil" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarProductos">
+      <Parameter Name="Nombre_Producto" Mode="In" Type="String" />
+      <Parameter Name="Precio" Mode="In" Type="Decimal" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Fotografia" Mode="In" Type="String" />
+      <Parameter Name="Proveedor_ManufactureroId" Mode="In" Type="Int32" />
+      <Parameter Name="Proveedor_DistribuidorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarProveedores">
+      <Parameter Name="Nombre_Proveedor" Mode="In" Type="String" />
+      <Parameter Name="Correo_Proveedor" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Contacto" Mode="In" Type="String" />
+      <Parameter Name="Telefono_Contacto" Mode="In" Type="String" />
+      <Parameter Name="Ubicacion" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+      <Parameter Name="Tipo_ProveedorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarTarjetas">
+      <Parameter Name="Ultimos_Digitos_Tarjeta" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Vencimiento_Tarjeta" Mode="In" Type="DateTime" />
+      <Parameter Name="Nombre_Persona_Asignada_A_Yarjeta" Mode="In" Type="String" />
+      <Parameter Name="Tipo_TarjetaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarTipoContratos">
+      <Parameter Name="Nombre_Tipo_Contrato" Mode="In" Type="String" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarTipoPagos">
+      <Parameter Name="Nombre_Tipo_Pago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarUnidadNegocios">
+      <Parameter Name="Numero_Unidad_Negocio" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Unidad_Negocio" Mode="In" Type="String" />
+      <Parameter Name="Nombre_Previo_Unidad_Negocio" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_insertarUsuarios">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Codigo_Usuario" Mode="In" Type="String" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Fecha_Creacion" Mode="In" Type="DateTime" />
+      <Parameter Name="Direccion_Fotografia" Mode="In" Type="String" />
+      <Parameter Name="PerfilId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectAdministrator" ReturnType="Collection(sistema_alertasModel.SP_selectAdministrator_Result)" />
+    <FunctionImport Name="SP_selectAdminUserPermissions" ReturnType="Collection(sistema_alertasModel.SP_selectAdminUserPermissions_Result)">
+      <Parameter Name="usuarioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectAllBusinessunit" ReturnType="Collection(sistema_alertasModel.SP_selectAllBusinessunit_Result)" />
+    <FunctionImport Name="SP_selectAllCards" ReturnType="Collection(sistema_alertasModel.SP_selectAllCards_Result)" />
+    <FunctionImport Name="SP_selectAllContractArea" ReturnType="Collection(sistema_alertasModel.SP_selectAllContractArea_Result)" />
+    <FunctionImport Name="SP_selectAllDetailsContract" ReturnType="Collection(sistema_alertasModel.SP_selectAllDetailsContract_Result)">
+      <Parameter Name="contratoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectAllMethodPayment" ReturnType="Collection(sistema_alertasModel.SP_selectAllMethodPayment_Result)" />
+    <FunctionImport Name="SP_selectAllProducts" ReturnType="Collection(sistema_alertasModel.SP_selectAllProducts_Result)" />
+    <FunctionImport Name="SP_selectAllProvider" ReturnType="Collection(sistema_alertasModel.SP_selectAllProvider_Result)" />
+    <FunctionImport Name="SP_selectAllPurchaseOrder" ReturnType="Collection(sistema_alertasModel.SP_selectAllPurchaseOrder_Result)" />
+    <FunctionImport Name="SP_selectAllTypeContract" ReturnType="Collection(sistema_alertasModel.SP_selectAllTypeContract_Result)" />
+    <FunctionImport Name="SP_selectAllTypeProvider" ReturnType="Collection(sistema_alertasModel.SP_selectAllTypeProvider_Result)" />
+    <FunctionImport Name="SP_selectAllUser" ReturnType="Collection(sistema_alertasModel.SP_selectAllUser_Result)" />
+    <FunctionImport Name="SP_selectApprover" ReturnType="Collection(sistema_alertasModel.SP_selectApprover_Result)" />
+    <FunctionImport Name="SP_selectBusinessUnit" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectCard" ReturnType="Collection(sistema_alertasModel.SP_selectCard_Result)" />
+    <FunctionImport Name="SP_selectContract" ReturnType="Collection(sistema_alertasModel.SP_selectContract_Result)" />
+    <FunctionImport Name="SP_selectContractArea" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectContractAreaById" ReturnType="Collection(sistema_alertasModel.SP_selectContractAreaById_Result)">
+      <Parameter Name="Area_ContratoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectContractByArea" ReturnType="Collection(sistema_alertasModel.SP_selectContractByArea_Result)">
+      <Parameter Name="CodigoArea" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SelectContractForEdit" ReturnType="Collection(sistema_alertasModel.SP_SelectContractForEdit_Result)">
+      <Parameter Name="ContratoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectMethodPayment" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectMethodPaymentById" ReturnType="Collection(sistema_alertasModel.SP_selectMethodPaymentById_Result)">
+      <Parameter Name="MetodoPagoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_SelectOrdenComprasById" ReturnType="Collection(sistema_alertasModel.SP_SelectOrdenComprasById_Result)">
+      <Parameter Name="OrdenCompraId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectProductById" ReturnType="Collection(sistema_alertasModel.SP_selectProductById_Result)">
+      <Parameter Name="ProductId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectProductByProviderId" ReturnType="Collection(sistema_alertasModel.SP_selectProductByProviderId_Result)">
+      <Parameter Name="ProveedorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectProductsAccordingSuppliers" ReturnType="Collection(sistema_alertasModel.SP_selectProductsAccordingSuppliers_Result)">
+      <Parameter Name="ProviderManufacturing" Mode="In" Type="Int32" />
+      <Parameter Name="ProviderVendor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectProfiles" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectProviderById" ReturnType="Collection(sistema_alertasModel.SP_selectProviderById_Result)">
+      <Parameter Name="ProveedorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectProviderManufacturing" ReturnType="Collection(sistema_alertasModel.SP_selectProviderManufacturing_Result)" />
+    <FunctionImport Name="SP_selectProviderVender" ReturnType="Collection(sistema_alertasModel.SP_selectProviderVender_Result)" />
+    <FunctionImport Name="SP_selectPurchaseOrder" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectState" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectTarjetasById" ReturnType="Collection(sistema_alertasModel.SP_selectTarjetasById_Result)">
+      <Parameter Name="TarjetaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectTypeCard" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectTypeContract" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectTypeContractById" ReturnType="Collection(sistema_alertasModel.SP_selectTypeContractById_Result)">
+      <Parameter Name="TipoContratoId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectTypePayment" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_selectTypeProvider" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_SelectUnidadNegociosById" ReturnType="Collection(sistema_alertasModel.SP_SelectUnidadNegociosById_Result)">
+      <Parameter Name="UnidadNegocioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectUserById" ReturnType="Collection(sistema_alertasModel.SP_selectUserById_Result)">
+      <Parameter Name="UsuarioId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectUserId" ReturnType="Collection(Int32)">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="pass" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_selectWeatherAlerts" ReturnType="Collection(String)" />
+  </EntityContainer>
+  <EntityType Name="area_contratos">
+    <Key>
+      <PropertyRef Name="Area_ContratoId" />
+    </Key>
+    <Property Name="Area_ContratoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Area" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato" FromRole="area_contratos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="contrato">
+    <Key>
+      <PropertyRef Name="ContratoId" />
+    </Key>
+    <Property Name="ContratoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Contrato" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Numero_Contrato" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Numero_Servicio_Contrato" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Inicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_Finalizacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Costo_Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Costo_Por_Cada_Pago" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Fecha_Renovacion_Pago" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Cantidad_Licencias" Type="Int32" />
+    <Property Name="Garantia" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Vencimiento_Garantia" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion_Archivo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Proveedor_ManufactureroId" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor_DistribuidorId" Type="Int32" Nullable="false" />
+    <Property Name="Usuario_AprobadorId" Type="Int32" Nullable="false" />
+    <Property Name="Usuario_AdministradorId" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_ContratoId" Type="Int32" Nullable="false" />
+    <Property Name="Metodo_PagoId" Type="Int32" Nullable="false" />
+    <Property Name="Unidad_NegocioId" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_PagoId" Type="Int32" Nullable="false" />
+    <Property Name="Orden_CompraId" Type="Int32" Nullable="false" />
+    <Property Name="TarjetaId" Type="Int32" Nullable="false" />
+    <Property Name="Area_ContratoId" Type="Int32" Nullable="false" />
+    <Property Name="ProductoId" Type="Int32" Nullable="false" />
+    <Property Name="RecordatorioId" Type="Int32" Nullable="false" />
+    <Property Name="EstadoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="area_contratos" Relationship="sistema_alertasModel.FK_Area_Contratos_PK_Area_Contrato" FromRole="contratos" ToRole="area_contratos" />
+    <NavigationProperty Name="estado" Relationship="sistema_alertasModel.FK_Estados_EstadoId" FromRole="contratos" ToRole="estados" />
+    <NavigationProperty Name="metodo_pagos" Relationship="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId" FromRole="contratos" ToRole="metodo_pagos" />
+    <NavigationProperty Name="orden_compras" Relationship="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId" FromRole="contratos" ToRole="orden_compras" />
+    <NavigationProperty Name="producto" Relationship="sistema_alertasModel.FK_Productos_ProductoId" FromRole="contratos" ToRole="productos" />
+    <NavigationProperty Name="proveedore" Relationship="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId" FromRole="contratos" ToRole="proveedores" />
+    <NavigationProperty Name="proveedore1" Relationship="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId" FromRole="contratos" ToRole="proveedores" />
+    <NavigationProperty Name="recordatorio" Relationship="sistema_alertasModel.FK_Recordatorios_RecordatorioId" FromRole="contratos" ToRole="recordatorios" />
+    <NavigationProperty Name="tarjeta" Relationship="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId" FromRole="contratos" ToRole="tarjetas" />
+    <NavigationProperty Name="tipo_contratos" Relationship="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId" FromRole="contratos" ToRole="tipo_contratos" />
+    <NavigationProperty Name="tipo_pagos" Relationship="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId" FromRole="contratos" ToRole="tipo_pagos" />
+    <NavigationProperty Name="unidad_negocios" Relationship="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId" FromRole="contratos" ToRole="unidad_negocios" />
+    <NavigationProperty Name="usuario" Relationship="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId" FromRole="contratos" ToRole="usuarios" />
+    <NavigationProperty Name="usuario1" Relationship="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId" FromRole="contratos" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="EstadoId" />
+    </Key>
+    <Property Name="EstadoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Estados_EstadoId" FromRole="estados" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="metodo_pagos">
+    <Key>
+      <PropertyRef Name="Metodo_PagoId" />
+    </Key>
+    <Property Name="Metodo_PagoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Metodo_Pago" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Metodo_Pagos_PK_Metodo_PagoId" FromRole="metodo_pagos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="orden_compras">
+    <Key>
+      <PropertyRef Name="Orden_CompraId" />
+    </Key>
+    <Property Name="Orden_CompraId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha_Ultima_Orden_Compra" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Ultimo_Numero_Factura" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Codigo_Presupuestario2016" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Monto_Previo" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion_Archivo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Orden_Compras_PK_Orden_CompraId" FromRole="orden_compras" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="perfile">
+    <Key>
+      <PropertyRef Name="PerfilId" />
+    </Key>
+    <Property Name="PerfilId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Perfil" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="usuarios" Relationship="sistema_alertasModel.FK_Perfiles_PK_Perfil" FromRole="perfiles" ToRole="usuarios" />
+    <NavigationProperty Name="usuarios_perfiles_permisos" Relationship="sistema_alertasModel.FK_Perfiles_PK_PerfilId" FromRole="perfiles" ToRole="usuarios_perfiles_permisos" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="PermisoId" />
+    </Key>
+    <Property Name="PermisoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Permiso" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="usuarios_perfiles_permisos" Relationship="sistema_alertasModel.FK_Permisos_PK_PermisoId" FromRole="permisos" ToRole="usuarios_perfiles_permisos" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="ProductoId" />
+    </Key>
+    <Property Name="ProductoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Producto" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion_Fotografia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Proveedor_ManufactureroId" Type="Int32" Nullable="false" />
+    <Property Name="Proveedor_DistribuidorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Productos_ProductoId" FromRole="productos" ToRole="contratos" />
+    <NavigationProperty Name="proveedore" Relationship="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId" FromRole="productos" ToRole="proveedores" />
+    <NavigationProperty Name="proveedore1" Relationship="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId" FromRole="productos" ToRole="proveedores" />
+  </EntityType>
+  <EntityType Name="proveedore">
+    <Key>
+      <PropertyRef Name="ProveedorId" />
+    </Key>
+    <Property Name="ProveedorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Proveedor" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Correo_Proveedor" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Contacto" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono_Contacto" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Ubicacion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo_ProveedorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Proveedores_Distribuidor_PK_ProveedorId" FromRole="proveedores" ToRole="contratos" />
+    <NavigationProperty Name="contratos1" Relationship="sistema_alertasModel.FK_Proveedores_Manufacturero_PK_ProveedorId" FromRole="proveedores" ToRole="contratos" />
+    <NavigationProperty Name="productos" Relationship="sistema_alertasModel.FK_Proveedor_Distribuidores_PK_ProductoId" FromRole="proveedores" ToRole="productos" />
+    <NavigationProperty Name="productos1" Relationship="sistema_alertasModel.FK_Proveedor_Manufactureros_PK_ProductoId" FromRole="proveedores" ToRole="productos" />
+    <NavigationProperty Name="tipo_proveedores" Relationship="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId" FromRole="proveedores" ToRole="tipo_proveedores" />
+  </EntityType>
+  <EntityType Name="recordatorio">
+    <Key>
+      <PropertyRef Name="RecordatorioId" />
+    </Key>
+    <Property Name="RecordatorioId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Recordatorios_RecordatorioId" FromRole="recordatorios" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="tarjeta">
+    <Key>
+      <PropertyRef Name="TarjetaId" />
+    </Key>
+    <Property Name="TarjetaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ultimos_Digitos_Tarjeta" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Vencimiento_Tarjeta" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Nombre_Persona_Asignada_A_Tarjeta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Tipo_TarjetaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Tarjetas_Pk_TarjetaId" FromRole="tarjetas" ToRole="contratos" />
+    <NavigationProperty Name="tipo_tarjetas" Relationship="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId" FromRole="tarjetas" ToRole="tipo_tarjetas" />
+  </EntityType>
+  <EntityType Name="tipo_contratos">
+    <Key>
+      <PropertyRef Name="Tipo_ContratoId" />
+    </Key>
+    <Property Name="Tipo_ContratoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tipo_Contrato" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Tipo_Contratos_PK_Tipo_ContratoId" FromRole="tipo_contratos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="tipo_pagos">
+    <Key>
+      <PropertyRef Name="Tipo_PagoId" />
+    </Key>
+    <Property Name="Tipo_PagoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tipo_Pago" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Tipo_Pagos_PK_Tipo_PagoId" FromRole="tipo_pagos" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="tipo_proveedores">
+    <Key>
+      <PropertyRef Name="Tipo_ProveedorId" />
+    </Key>
+    <Property Name="Tipo_ProveedorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="proveedores" Relationship="sistema_alertasModel.FK_Tipo_Proveedores_PK_ProveedorId" FromRole="tipo_proveedores" ToRole="proveedores" />
+  </EntityType>
+  <EntityType Name="tipo_tarjetas">
+    <Key>
+      <PropertyRef Name="Tipo_TarjetaId" />
+    </Key>
+    <Property Name="Tipo_TarjetaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Tarjeta" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tarjetas" Relationship="sistema_alertasModel.FK_Tipo_Tarjetas_Tipo_TarjetaId" FromRole="tipo_tarjetas" ToRole="tarjetas" />
+  </EntityType>
+  <EntityType Name="unidad_negocios">
+    <Key>
+      <PropertyRef Name="Unidad_NegocioId" />
+    </Key>
+    <Property Name="Unidad_NegocioId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Numero_Unidad_Negocio" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Unidad_Negocio" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="Nombre_Previo_Unidad_Negocio" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Unidad_Negocios_PK_Unidad_NegocioId" FromRole="unidad_negocios" ToRole="contratos" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Codigo_Usuario" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Direccion_Fotografia" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PerfilId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contratos" Relationship="sistema_alertasModel.FK_Usuarios_Administrador_UsuarioId" FromRole="usuarios" ToRole="contratos" />
+    <NavigationProperty Name="contratos1" Relationship="sistema_alertasModel.FK_Usuarios_Aprobador_PK_UsuarioId" FromRole="usuarios" ToRole="contratos" />
+    <NavigationProperty Name="perfile" Relationship="sistema_alertasModel.FK_Perfiles_PK_Perfil" FromRole="usuarios" ToRole="perfiles" />
+    <NavigationProperty Name="usuarios_perfiles_permisos" Relationship="sistema_alertasModel.FK_Usuarios_PK_UsuarioId" FromRole="usuarios" ToRole="usuarios_perfiles_permisos" />
+  </EntityType>
+  <EntityType Name="usuarios_perfiles_permisos">
+    <Key>
+      <PropertyRef Name="Usuario_Perfil_PermisoId" />
+    </Key>
+    <Property Name="Usuario_Perfil_PermisoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="PerfilId" Type="Int32" Nullable="false" />
+    <Property Name="PermisoId" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="perfile" Relationship="sistema_alertasModel.FK_Perfiles_PK_PerfilId" FromRole="usuarios_perfiles_permisos" ToRole="perfiles" />
+    <NavigationProperty Name="permiso" Relationship="sistema_alertasModel.FK_Permisos_PK_PermisoId" FromRole="usuarios_perfiles_permisos" ToRole="permisos" />
+    <NavigationProperty Name="usuario" Relationship="sistema_alertasModel.FK_Usuarios_PK_UsuarioId" FromRole="usuarios_perfiles_permisos" ToRole="usuarios" />
+  </EntityType>
+  <Association Name="FK_Area_Contratos_PK_Area_Contrato">
+    <End Role="area_contratos" Type="sistema_alertasModel.area_contratos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="area_contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Area_ContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Estados_EstadoId">
+    <End Role="estados" Type="sistema_alertasModel.estado" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados">
+        <PropertyRef Name="EstadoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Metodo_Pagos_PK_Metodo_PagoId">
+    <End Role="metodo_pagos" Type="sistema_alertasModel.metodo_pagos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metodo_pagos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Metodo_PagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orden_Compras_PK_Orden_CompraId">
+    <End Role="orden_compras" Type="sistema_alertasModel.orden_compras" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orden_compras">
+        <PropertyRef Name="Orden_CompraId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Orden_CompraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_ProductoId">
+    <End Role="productos" Type="sistema_alertasModel.producto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="ProductoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Distribuidor_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Proveedor_DistribuidorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Manufacturero_PK_ProveedorId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Proveedor_ManufactureroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recordatorios_RecordatorioId">
+    <End Role="recordatorios" Type="sistema_alertasModel.recordatorio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="recordatorios">
+        <PropertyRef Name="RecordatorioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="RecordatorioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarjetas_Pk_TarjetaId">
+    <End Role="tarjetas" Type="sistema_alertasModel.tarjeta" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tarjetas">
+        <PropertyRef Name="TarjetaId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="TarjetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Contratos_PK_Tipo_ContratoId">
+    <End Role="tipo_contratos" Type="sistema_alertasModel.tipo_contratos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Tipo_ContratoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Pagos_PK_Tipo_PagoId">
+    <End Role="tipo_pagos" Type="sistema_alertasModel.tipo_pagos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_pagos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Tipo_PagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Unidad_Negocios_PK_Unidad_NegocioId">
+    <End Role="unidad_negocios" Type="sistema_alertasModel.unidad_negocios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad_negocios">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Unidad_NegocioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Administrador_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Usuario_AdministradorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Aprobador_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="1" />
+    <End Role="contratos" Type="sistema_alertasModel.contrato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="Usuario_AprobadorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfiles_PK_Perfil">
+    <End Role="perfiles" Type="sistema_alertasModel.perfile" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfiles">
+        <PropertyRef Name="PerfilId" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Perfiles_PK_PerfilId">
+    <End Role="perfiles" Type="sistema_alertasModel.perfile" Multiplicity="1" />
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfiles">
+        <PropertyRef Name="PerfilId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="PerfilId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Permisos_PK_PermisoId">
+    <End Role="permisos" Type="sistema_alertasModel.permiso" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permisos">
+        <PropertyRef Name="PermisoId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="PermisoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedor_Distribuidores_PK_ProductoId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="productos" Type="sistema_alertasModel.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="Proveedor_DistribuidorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedor_Manufactureros_PK_ProductoId">
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="1" />
+    <End Role="productos" Type="sistema_alertasModel.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proveedores">
+        <PropertyRef Name="ProveedorId" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="Proveedor_ManufactureroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Proveedores_PK_ProveedorId">
+    <End Role="tipo_proveedores" Type="sistema_alertasModel.tipo_proveedores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="proveedores" Type="sistema_alertasModel.proveedore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_proveedores">
+        <PropertyRef Name="Tipo_ProveedorId" />
+      </Principal>
+      <Dependent Role="proveedores">
+        <PropertyRef Name="Tipo_ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tipo_Tarjetas_Tipo_TarjetaId">
+    <End Role="tipo_tarjetas" Type="sistema_alertasModel.tipo_tarjetas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tarjetas" Type="sistema_alertasModel.tarjeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_tarjetas">
+        <PropertyRef Name="Tipo_TarjetaId" />
+      </Principal>
+      <Dependent Role="tarjetas">
+        <PropertyRef Name="Tipo_TarjetaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_PK_UsuarioId">
+    <End Role="usuarios" Type="sistema_alertasModel.usuario" Multiplicity="1" />
+    <End Role="usuarios_perfiles_permisos" Type="sistema_alertasModel.usuarios_perfiles_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="UsuarioId" />
+      </Principal>
+      <Dependent Role="usuarios_perfiles_permisos">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="AboutToFinishContractByAreaForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="AboutToFinishContractForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="ActiveContractByAreaForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="ActiveContractForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="AllDetailsContractByAreaForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Estado_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="AllDetailsContractForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Estado_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="defeatedContractByAreaForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="defeatedContractForReportPDF_Result">
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAdministrator_Result">
+    <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAdminUserPermissions_Result">
+    <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+    <Property Type="Int32" Name="PerfilId" Nullable="false" />
+    <Property Type="Int32" Name="PermisoId" Nullable="false" />
+    <Property Type="Int32" Name="Usuario_Perfil_PermisoId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllBusinessunit_Result">
+    <Property Type="Int32" Name="Unidad_NegocioId" Nullable="false" />
+    <Property Type="String" Name="Numero_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Previo_Unidad_Negocio" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllCards_Result">
+    <Property Type="Int32" Name="TarjetaId" Nullable="false" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="Tipo_TarjetaId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllContractArea_Result">
+    <Property Type="Int32" Name="Area_ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Area" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllDetailsContract_Result">
+    <Property Type="Int32" Name="ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor_ManufactureroId" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor_DistribuidorId" Nullable="false" />
+    <Property Type="Int32" Name="Usuario_AprobadorId" Nullable="false" />
+    <Property Type="Int32" Name="Usuario_AdministradorId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Codigo_Presupuestario2016" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="ProductoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Direccion_Archivo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Orden_CompraId" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Creacion" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllMethodPayment_Result">
+    <Property Type="Int32" Name="Metodo_PagoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllProducts_Result">
+    <Property Type="Int32" Name="ProductoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Direccion_Fotografia" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Proveedor_ManufactureroId" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor_DistribuidorId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllProvider_Result">
+    <Property Type="Int32" Name="ProveedorId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Proveedor" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Correo_Proveedor" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Nombre_Contacto" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Telefono_Contacto" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Ubicacion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Tipo_ProveedorId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllPurchaseOrder_Result">
+    <Property Type="Int32" Name="Orden_CompraId" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Ultima_Orden_Compra" Nullable="false" />
+    <Property Type="String" Name="Ultimo_Numero_Factura" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Codigo_Presupuestario2016" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Monto_Previo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Direccion_Archivo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllTypeContract_Result">
+    <Property Type="Int32" Name="Tipo_ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllTypeProvider_Result">
+    <Property Type="Int32" Name="Tipo_ProveedorId" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectAllUser_Result">
+    <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="pass" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Codigo_Usuario" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="username" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="Fecha_Creacion" Nullable="false" />
+    <Property Type="String" Name="Direccion_Fotografia" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="PerfilId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectApprover_Result">
+    <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectCard_Result">
+    <Property Type="String" Name="Nombre_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="SP_selectContract_Result">
+    <Property Type="Int32" Name="ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectContractAreaById_Result">
+    <Property Type="Int32" Name="Area_ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Area" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectContractByArea_Result">
+    <Property Type="Int32" Name="ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Nombre_Tipo_Pago" Nullable="false" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_SelectContractForEdit_Result">
+    <Property Type="Int32" Name="ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Numero_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Numero_Servicio_Contrato" Nullable="false" MaxLength="15" />
+    <Property Type="DateTime" Name="Fecha_Inicio" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Finalizacion" Nullable="false" />
+    <Property Type="Decimal" Name="Costo_Total" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Costo_Por_Cada_Pago" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="Fecha_Renovacion_Pago" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad_Licencias" Nullable="true" />
+    <Property Type="String" Name="Garantia" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Garantia" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Creacion" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Direccion_Archivo" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Proveedor_ManufactureroId" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor_DistribuidorId" Nullable="false" />
+    <Property Type="Int32" Name="Usuario_AprobadorId" Nullable="false" />
+    <Property Type="Int32" Name="Usuario_AdministradorId" Nullable="false" />
+    <Property Type="Int32" Name="Tipo_ContratoId" Nullable="false" />
+    <Property Type="Int32" Name="Metodo_PagoId" Nullable="false" />
+    <Property Type="Int32" Name="Unidad_NegocioId" Nullable="false" />
+    <Property Type="Int32" Name="Tipo_PagoId" Nullable="false" />
+    <Property Type="Int32" Name="Orden_CompraId" Nullable="false" />
+    <Property Type="Int32" Name="TarjetaId" Nullable="false" />
+    <Property Type="Int32" Name="Area_ContratoId" Nullable="false" />
+    <Property Type="Int32" Name="ProductoId" Nullable="false" />
+    <Property Type="Int32" Name="RecordatorioId" Nullable="false" />
+    <Property Type="Int32" Name="EstadoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectMethodPaymentById_Result">
+    <Property Type="Int32" Name="Metodo_PagoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Metodo_Pago" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_SelectOrdenComprasById_Result">
+    <Property Type="Int32" Name="Orden_CompraId" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha_Ultima_Orden_Compra" Nullable="false" />
+    <Property Type="String" Name="Ultimo_Numero_Factura" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Codigo_Presupuestario2016" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Monto_Previo" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Direccion_Archivo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_selectProductById_Result">
+    <Property Type="Int32" Name="ProductoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Direccion_Fotografia" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Proveedor_ManufactureroId" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor_DistribuidorId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectProductByProviderId_Result">
+    <Property Type="Int32" Name="ProductoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+    <Property Type="Decimal" Name="Precio" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Direccion_Fotografia" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Proveedor_ManufactureroId" Nullable="false" />
+    <Property Type="Int32" Name="Proveedor_DistribuidorId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectProductsAccordingSuppliers_Result">
+    <Property Type="Int32" Name="ProductoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Producto" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectProviderById_Result">
+    <Property Type="Int32" Name="ProveedorId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Proveedor" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Correo_Proveedor" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Nombre_Contacto" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Telefono_Contacto" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Ubicacion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="Tipo_ProveedorId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectProviderManufacturing_Result">
+    <Property Type="Int32" Name="ProveedorId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Proveedor" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectProviderVender_Result">
+    <Property Type="Int32" Name="ProveedorId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Proveedor" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="SP_selectTarjetasById_Result">
+    <Property Type="Int32" Name="TarjetaId" Nullable="false" />
+    <Property Type="String" Name="Ultimos_Digitos_Tarjeta" Nullable="false" MaxLength="4" />
+    <Property Type="DateTime" Name="Fecha_Vencimiento_Tarjeta" Nullable="false" />
+    <Property Type="String" Name="Nombre_Persona_Asignada_A_Tarjeta" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="Tipo_TarjetaId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_selectTypeContractById_Result">
+    <Property Type="Int32" Name="Tipo_ContratoId" Nullable="false" />
+    <Property Type="String" Name="Nombre_Tipo_Contrato" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_SelectUnidadNegociosById_Result">
+    <Property Type="Int32" Name="Unidad_NegocioId" Nullable="false" />
+    <Property Type="String" Name="Numero_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Unidad_Negocio" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Nombre_Previo_Unidad_Negocio" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="SP_selectUserById_Result">
+    <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="pass" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Codigo_Usuario" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="username" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="Fecha_Creacion" Nullable="false" />
+    <Property Type="String" Name="Direccion_Fotografia" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="PerfilId" Nullable="false" />
+  </ComplexType>
+</Schema>

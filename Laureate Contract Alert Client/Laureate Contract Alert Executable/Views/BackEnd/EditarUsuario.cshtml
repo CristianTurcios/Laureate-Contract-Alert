@@ -1,0 +1,370 @@
+﻿@using sistema_alertas.Models;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="../Content/css/materialize.min.css">
+  <link rel="stylesheet" href="../Content/css/estilo2.css">  
+  <link rel="icon" type="image/png" href="../Content/img/favicon.png" />
+  <link rel="stylesheet" href="../Content/css/estiloParaElSearch.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Add new user</title>
+</head>
+<body>
+
+<!-- Codigo para el Navbar-->
+<nav class="#212121 grey darken-4">
+  <div class="nav-wrapper">
+    <div class="container">
+      <a href="../Main/main" class="brand-logo"><img src="../Content/img/prueba.png" alt="" class="img-responsive"></a>
+    </div>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a  href="../Home/Index">Log Out</a></li>
+     </ul>
+  </div>
+</nav>
+<!--Fin Codigo para el Navbar-->
+
+<!-- Inicio de codigo del formulario -->
+  <div class="container">
+    <br><br><br><br>
+
+      <div class="row">
+        <div class="col s10">
+
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+          <div class="row">
+            <div class="col s5">
+              <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
+            </div>
+<!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+
+<!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
+        <form method="POST" action="../BackEnd/EditarUsuario"  onsubmit='return validar()' enctype="multipart/form-data">
+<!-- Codigo que mostrata ela creacion de un nuevo contrato-->
+          <div class="row">
+            <div class="col s10">
+              <h6 style="text-align:center;background-color:#000000; color:#ffffff;">Edition Users</h6>
+            </div>
+          </div>
+<!-- Codigo que mostrata la creacion de un nuevo contrato-->
+
+<!-- Codigo que mostrara nombre del contrato-->
+          <div class="row">
+            <div class="input-field col s5">
+              @{
+                  List<SP_selectUserById_Result> UserDetails = (List<SP_selectUserById_Result>)ViewData["UserById"];
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                     <input type="text" id="Name" name="Name" value="@user.Nombre" class="validate" required>
+                     <input type="text" id="UserId" name="UserId"  style="display:none" value="@user.UsuarioId" class="validate" required>
+                  }
+               }
+                 <label for="Name" class="flow-text">Name<span style="color:red;"> *</span></label>                                  
+            </div>
+
+<!-- Codigo que mostrara nombre del contrato-->
+            <div class="input-field col s5">
+               @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                    <input id="last_name" type="text" name="last_name" value="@user.Apellido" class="validate" required>
+                  }
+                }                                               
+              <label for="last_name" class="flow-text">Last name<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+               @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                     <input id="phone" type="text" name="phone" value="@user.Telefono" pattern="[0-9+-\s]{8,20}" title="No letters are allowed in this field">
+                  }
+                }             
+              <label for="phone" class="flow-text">Phone</label>
+            </div>
+
+            <div class="input-field col s5">
+               @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                     <input id="email" type="email" name="email" class="validate" value="@user.email" required>
+                  }
+                }                
+                <label for="email" class="flow-text">Mail<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s10">
+              <select id="charge_within_the_system" name="charge_within_the_system" >
+                <option value="" disabled selected class="flow-text">Select</option>
+                @{
+                    List<string> perfiles = (List<string>)ViewData["perfiles"];
+                    int contador = 1;
+                    int idSelect = 0;
+
+
+                    foreach (SP_selectUserById_Result user in UserDetails)
+                    {
+                        idSelect = user.PerfilId;
+                        break;
+                    }
+                    
+                    foreach (string perfil in perfiles)
+                    {
+                        if (contador == idSelect)
+                        {
+                            <option value="@contador" selected class="flow-text">@perfil</option>
+                            contador++;
+                        }
+                        else
+                        {
+                            <option value="@contador" class="flow-text">@perfil</option>
+                            contador++;
+                        }                                              
+                    }
+                 }
+             </select>
+              <label class="flow-text">Position within the system<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+                @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                     <input id="Code_User" type="text" name="Code_User" value="@user.Codigo_Usuario" >
+                  }
+                }                 
+                <label for="Code_User" class="flow-text">User code</label>
+            </div>
+
+            <div class="input-field col s5">
+               @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                      <input id="username" type="text" name="username" value="@user.username"  required>
+                  }
+                }             
+                <label for="username" class="flow-text">Username<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s5">
+               @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                      <input id="password" type="password"  value="@user.pass" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="The password must be at least 8 characters, and at least 1 capital letter, one lowercase letter, 1 special character or number " name="password" required>
+                  }
+                }              
+                <label for="password" class="flow-text">Password<span style="color:red;"> *</span></label>
+            </div>
+
+
+            <div class="input-field col s5">
+               @{
+                  foreach (SP_selectUserById_Result user in UserDetails)
+                  { 
+                       <input id="verify_password" type="password" value="@user.pass" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="The password must be at least 8 characters, and at least 1 capital letter, one lowercase letter, 1 special character or number " required>
+                  }
+                }               
+                <label for="verify_password" class="flow-text">Enter Password again<span style="color:red;"> *</span></label>
+            </div>
+          </div>
+
+             <label for="Contract_Name">¿Enable file upload?</label>
+             <div class="switch">
+               <label>
+                 Off
+                  <input type="checkbox" id="switch" onClick="if (this.checked == true) { Habiliar() } else { DesHabiliar() }" >
+                  <span class="lever"></span>
+                 On
+               </label>
+             </div> 
+  
+          <div class="row">
+            <div class="col s10">
+              <div class="file-field input-field">   
+              @{   
+                 foreach (SP_selectUserById_Result user in UserDetails)
+                 {
+                    if (user.Direccion_Fotografia.Equals(""))
+                    {
+                       <div class="btn">
+                         <span>File</span>
+                            <input type="file" name="imagen">
+                       </div>
+
+                       <div class="file-path-wrapper">
+                          <input class="file-path validate" name="imagen" type="text" placeholder="Upload a file">
+                       </div>  
+                    }
+
+                    else
+                    {
+                       <div class="btn">
+                         <span>File</span>
+                           <input type="file" disabled id="Upload" name="imagen">
+                       </div>
+
+                       <div class="file-path-wrapper">
+                          <input class="file-path validate" id="Upload2" name="imagen" disabled value="@user.Direccion_Fotografia" type="text" placeholder="Upload a file">
+                          <input  id="UploadOculto" name="UploadOculto" value="@user.Direccion_Fotografia" type="text" style="display:none">
+                       </div>  
+                    }
+                 }                       
+               }
+            </div>
+          </div>
+          </div>
+
+<br><br>
+          <div class="row">
+            <center>
+              <div class="col s5 ">
+                <input class="waves-effect waves-light btn" type ="reset" value ="Cancel">
+              </div>
+
+              <div class="col s3 ">
+                <input class="waves-effect waves-light btn" type ="submit" value ="Save">
+              </div>
+            </center>
+          </div>
+        </form>
+            </div>
+            
+
+        </div>
+        <div class="col s2 card-panel teal lighten-2">
+         <center><h5>User registration</h5></center>
+            <p ALIGN=justify>The user creation module allows you to add a new user to the system. This will be the first step for you to use the system, you won«t be able to access the site without a creating a user.
+               <br /><br /> All users created in the system should have a specific role, which serve to determine what actions they can or can«t perform.</p>
+        </div>
+
+</div>
+   </div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="../Content/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../Content/js/materialize.min.js"></script>
+
+<script>
+    function Habiliar()
+    {
+        $("#Upload").attr("disabled", false);
+        $("#Upload2").attr("disabled", false);
+        $("#Upload2").attr("value", "");
+    }
+</script>
+
+<script>
+   function DesHabiliar()
+   {
+      $("#Upload").attr("disabled", true);
+      $("#Upload2").attr("disabled", true);
+   }
+</script>
+
+<!--Script para el select-->
+  <script>
+      $(document).ready(function ()
+      {
+          $('select').material_select();
+
+          if ($("#Upload2").val() == null)
+          {
+              $("#switch").prop("checked", "checked");
+          }
+      });
+    </script>
+  <!--Fin Script para el select-->
+
+<script type='text/javascript'>
+function validar()
+{
+  /*creo una variable de tipo booleana que en principio tendrá un valor true(verdadero),
+y que retornaremos en false(falso) cuando nuestra condición no se cumpla*/
+var todo_correcto = true;
+
+if(document.getElementById('Name').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Hacemos lo mismo con el campo dirección. En este caso le pediremos al usuario que
+introduzca al menos 10 caracteres.*/
+if(document.getElementById('last_name').value.length =='' )
+{
+    todo_correcto = false;
+}
+
+/*Para validar el select debemos añadir un value distinto a cada option. En el
+código, he asignado un value con  valor vacío al primer option. Los siguientes,
+al no estar definidos toman el valor por defecto. Por tanto, si todos tienen value,
+lo único que tenemos que comprobar es que este no sea vacío. Si es vacío, todo_correcto
+será false.*/
+if(document.getElementById('email').value == '')
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('charge_within_the_system').value == '')
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('username').value == '')
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('password').value.length== '' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('verify_password').value.length== '' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('Code_User').value.length== '' )
+{
+    todo_correcto = false;
+}
+
+if(document.getElementById('password').value != document.getElementById('verify_password').value)
+{
+    swal({
+        title: "Oops...",
+        text: "Passwords do not match!",
+        type: "error",
+        timer: 5000
+    })
+    todo_correcto = false;
+}
+/*Por último, y como aviso para el usuario, si no está todo bién, osea, si la variable
+todo_correcto ha devuelto false al menos una vez, generaremos una alerta advirtiendo
+al usuario de que algunos datos ingresados no son los que esperamos.*/
+if(!todo_correcto)
+{
+    swal({
+        title: "Oops...",
+        text: "Some fields are not correct or are incomplete, check them again!",
+        type: "error",
+        timer: 5000
+    })
+}
+
+  return todo_correcto;
+}
+
+</script>
+</body>
+</html>
