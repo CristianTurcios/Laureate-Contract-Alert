@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.DirectoryServices;
 using sistema_alertas.Models;
+using System.Web.Configuration;
 
 namespace sistema_alertas.Controllers
 {
@@ -1833,6 +1834,36 @@ namespace sistema_alertas.Controllers
             string json3 = json + "|" + json2;
             return json3;
         }
+
+        [HttpGet]
+        public string searchUser(string user)
+        {
+            string domain = WebConfigurationManager.AppSettings["ADDomain"];
+            string path = WebConfigurationManager.AppSettings["ADPath"];
+            string json = "";
+
+            DirectoryEntry entry = new DirectoryEntry(path);
+
+            Object obj = entry.NativeObject;
+            DirectorySearcher search = new DirectorySearcher(entry);
+
+            search.Filter = "(&(objectClass=user)(sAMAccountName=" + user + "))";
+            search.PropertiesToLoad.Add("sAMAccountName");
+            search.PropertiesToLoad.Add("cn");
+            search.PropertiesToLoad.Add("displayName");
+            search.PropertiesToLoad.Add("mail");
+
+            SearchResult result = search.FindOne();
+
+            if (result == null)
+            {
+                return null;
+            }
+
+            json = result.Properties["displayName"][0].ToString() + "|" + result.Properties["sAMAccountName"][0].ToString() + "|" + result.Properties["mail"][0].ToString() + "|" + "wsfHCXPULUlICR67Did9BA==";
+            return json;
+        }
+
 
         [HttpGet]
         public ActionResult AgregarNuevoContrato(int nivelMensaje=1, string mensaje="")
