@@ -106,8 +106,13 @@
             </div>
 
             <div class="col s5">
-                 <label>Search:<input type="search" class="" placeholder=""></label>
-             </div> 
+                <div class="input-field">
+                    <input id="search" type="search" onblur="ajax(this.value)">
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </div>    
+             
 <!-- Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
 
 <!-- Fin Codigo que mostrata el boton de navegacion para regresar a la pantalla principal-->
@@ -310,10 +315,8 @@
     y como la seleccion del proveedor se hace en tiempo se ejecucion, por medio de una llamada asincrona se deben de ir a realizar la consulta y retornar los productos-->
    <script type="text/javascript">
 
-       //function ajax() {
-           var user = "cturcios"
-
-           //if (Provider_Vendor != "" && Provider_Manufacturing != '') {
+       function ajax(user) {
+           if (user != "" ) {
                //$.get("http://172.20.33.13/BackEnd/searchUser",
                $.get("http://localhost:62884/BackEnd/searchUser",
                 {
@@ -323,8 +326,8 @@
                       console.log(data);
                   }
                 );
-           //}
-       //}
+           }
+       }
 	</script> 
 <!--Fin Script para cargar por medio de ajax los productos, esto se hace asi porque solo se deben mostrar los productos especificos de un proveedor, no todos los productos
     y como la seleccion del proveedor se hace en tiempo se ejecucion, por medio de una llamada asincrona se deben de ir a realizar la consulta y retornar los productos-->
