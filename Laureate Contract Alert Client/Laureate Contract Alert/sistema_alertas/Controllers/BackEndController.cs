@@ -1860,7 +1860,7 @@ namespace sistema_alertas.Controllers
                 return null;
             }
 
-            json = result.Properties["displayName"][0].ToString() + "|" + result.Properties["sAMAccountName"][0].ToString() + "|" + result.Properties["mail"][0].ToString() + "|" + "wsfHCXPULUlICR67Did9BA==";
+            json = result.Properties["displayName"][0].ToString() + "|" + result.Properties["sAMAccountName"][0].ToString() + "|" + result.Properties["mail"][0].ToString() + "|wsfHCXPULUlICR67Did9BA==";
             return json;
         }
 

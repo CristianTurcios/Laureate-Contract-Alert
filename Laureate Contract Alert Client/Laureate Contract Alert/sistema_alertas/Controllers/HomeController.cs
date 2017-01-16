@@ -45,7 +45,7 @@ namespace sistema_alertas.Controllers
                 {
                     try
                     {
-                        List<Nullable<int>> comprobarConsultaActiveDirectory = login.ReturnUserId(user, "WSdg!%&%vsdv15615165");
+                        List<Nullable<int>> comprobarConsultaActiveDirectory = login.ReturnUserId(user, "wsfHCXPULUlICR67Did9BA==");
 
                         //Se hace una nueva consulta a la base para determinar el cual es el id del usuario (se manda el elemento 0 de la lista porque ya se que siempre viene 1 unicamente entonces no ocupo recorrerla, tomando el primero basta)
                         Session["UserId"] = Convert.ToInt32(comprobarConsultaActiveDirectory.ElementAt(0));
