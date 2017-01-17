@@ -138,11 +138,19 @@ namespace sistema_alertas.Controllers
             if (charge_within_the_system == null)
             {
                 nivelMensaje = 5;
+                return RedirectToRoute(new
+                {
+                    controller = "BackEnd",
+                    action = "agregarUsuario",
+                    NivelMensaje = nivelMensaje,
+                    Mensaje = mensaje
+                });
             }
-            if (charge_within_the_system.Length >= 4)
-            {
+            else 
+              if (charge_within_the_system.Length >= 4)
+              {
                 nivelMensaje = 6;
-            }
+              }
             
             else
               if (charge_within_the_system.Length == 1)

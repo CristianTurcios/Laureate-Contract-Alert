@@ -88,7 +88,7 @@
                            {
              <script>swal({
              title: "Oops...",
-             text: "You must select a role for the user!",
+             text: "The user can not have more than 3 roles in the system!",
              type: "error",
              timer: 5000
              })
@@ -105,9 +105,9 @@
               <a class="waves-effect waves-light btn" href="../BackEnd/MainBackEnd">Back Panel Administration</a>
             </div>
 
-            <div class="col s5">
+            <div class="col s3 push-s2">
                 <div class="input-field">
-                    <input id="search" type="search" onblur="ajax(this.value)">
+                    <input id="search" type="search" onKeyUp ="ajax(this.value)">
                     <label for="search"><i class="material-icons">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
@@ -129,12 +129,12 @@
           <div class="row">
             <div class="input-field col s5">
               <label for="Name" class="flow-text">Name<span style="color:red;"> *</span></label>
-              <input type="text" id="Name" name="Name" class="validate" required>
+              <input type="text" id="Name" name="Name" required>
             </div>
 
 <!-- Codigo que mostrara nombre del contrato-->
             <div class="input-field col s5">
-              <input id="last_name" type="text" name="last_name" class="validate" required>
+              <input id="last_name" type="text" name="last_name"  required>
               <label for="last_name" class="flow-text">Last name<span style="color:red;"> *</span></label>
             </div>
           </div>
@@ -146,7 +146,7 @@
             </div>
 
             <div class="input-field col s5">
-              <input id="email" type="email" name="email" class="validate" required placeholder="laureate@laureate.com">
+              <input id="email" type="email" name="email"  required placeholder="laureate@laureate.com">
                 <label for="email" class="flow-text">Mail<span style="color:red;"> *</span></label>
             </div>
           </div>
@@ -247,13 +247,13 @@
 
           <div class="row">
             <div class="input-field col s5">
-              <input id="password" type="password" name="password" class="validate"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener minimo 8 caracteres, y al menos 1 letra mayuscula, 1 letra minuscula, 1 caracter especial o numero " required> <!-- pattern="[A-Za-z0-9!?-]{8,12}"--> 
+              <input id="password" type="password" name="password"   pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener minimo 8 caracteres, y al menos 1 letra mayuscula, 1 letra minuscula, 1 caracter especial o numero " required> <!-- pattern="[A-Za-z0-9!?-]{8,12}"--> 
                 <label for="password" class="flow-text">Password<span style="color:red;"> *</span></label>
             </div>
 
 
             <div class="input-field col s5">
-              <input id="verify_password" type="password" class="validate" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener minimo 8 caracteres, y al menos 1 letra mayuscula, 1 letra minuscula, 1 caracter especial o numero " required>
+              <input id="verify_password" type="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener minimo 8 caracteres, y al menos 1 letra mayuscula, 1 letra minuscula, 1 caracter especial o numero " required>
                 <label for="verify_password" class="flow-text">Enter Password again<span style="color:red;"> *</span></label>
             </div>
           </div>
@@ -323,31 +323,28 @@
                     'user': user,
                 },
                   function (data) {
-                      console.log(data);
+                      if (data.length != 0) {                         
+                          var userData = [];
+                          var fullname = [];
 
-                      var userData = [];
-                      var fullname = [];
+                          userData = data.split("|");
+                          fullname = userData[0].split(" ");
 
-                      userData = data.split("|");
-                      fullname = userData[0].split(" ");
-                    
-                      document.getElementById("Name").value = fullname[0];
-                      document.getElementById("last_name").value = fullname[1];
-                      document.getElementById("username").value = userData[1];
-                      document.getElementById("email").value = userData[2];
-                      document.getElementById("password").value = userData[3]; 
-                      document.getElementById("verify_password").value = userData[3];
+                          document.getElementById("Name").value = fullname[0];
+                          document.getElementById("last_name").value = fullname[1];
+                          document.getElementById("username").value = userData[1];
+                          document.getElementById("email").value = userData[2];
+                          document.getElementById("password").value = userData[3];
+                          document.getElementById("verify_password").value = userData[3];
 
-                      console.log(userData[3]);
-
-
-                      document.getElementById("Name").readOnly = true;
-                      document.getElementById("last_name").readOnly = true;
-                      document.getElementById("username").readOnly = true;
-                      document.getElementById("email").readOnly = true;
-                      document.getElementById("password").readOnly = true;
-                      document.getElementById("verify_password").readOnly = true;
-                      Materialize.updateTextFields();
+                          document.getElementById("Name").readOnly = true;
+                          document.getElementById("last_name").readOnly = true;
+                          document.getElementById("username").readOnly = true;
+                          document.getElementById("email").readOnly = true;
+                          document.getElementById("password").readOnly = true;
+                          document.getElementById("verify_password").readOnly = true;
+                          Materialize.updateTextFields();
+                      }       
                   }
                 );
            }
